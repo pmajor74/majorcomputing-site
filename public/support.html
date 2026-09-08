@@ -1,0 +1,1171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support · Colored Sands of Egypt</title>
+<meta name="description" content="Help and contact for Colored Sands of Egypt.">
+<link rel="icon" href="img/icon.png" type="image/png">
+<style>
+  :root {
+    --ink: #2b241c; --dim: #6a5f52; --rule: #ddd2c0;
+    --ground: #f6f1e7; --panel: #fffcf6; --gold: #8a6a1f;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #e9dfcb; --dim: #a89b86; --rule: #372d22;
+      --ground: #0f0c0a; --panel: #171310; --gold: #d9b14a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0 auto; padding: 36px 22px 80px; max-width: 44rem;
+    background: var(--ground); color: var(--ink);
+    font: 17px/1.7 Georgia, "Iowan Old Style", "Times New Roman", serif;
+  }
+  header { border-bottom: 1px solid var(--rule); padding-bottom: 18px; }
+  h1 { font-size: 28px; margin: 0 0 6px; letter-spacing: .01em; }
+  h1 a { color: inherit; text-decoration: none; }
+  h1 a:hover { color: var(--gold); }
+  h2 {
+    font-size: 19px; margin: 34px 0 8px; color: var(--gold);
+    font-family: system-ui, sans-serif; letter-spacing: .01em;
+  }
+  .sub { color: var(--dim); margin: 0; font-size: 15px; }
+  .intro { color: var(--dim); }
+  .picker {
+    margin: 16px 0 0; font-family: system-ui, sans-serif; font-size: 14px;
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  }
+  .picker label { color: var(--dim); }
+  .picker select {
+    font: inherit; font-size: 15px; padding: 7px 12px; border-radius: 8px;
+    border: 1px solid var(--rule); background: var(--panel); color: var(--ink);
+    max-width: 100%;
+  }
+  .picker select:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  ul { padding-left: 1.15em; }
+  li { margin: 6px 0; }
+  dl { margin: 0; }
+  dt { font-weight: bold; margin-top: 18px; }
+  dd { margin: 4px 0 0; color: var(--dim); }
+  .note {
+    background: var(--panel); border: 1px solid var(--rule); border-radius: 10px;
+    padding: 14px 18px; margin: 22px 0; font-size: 16px;
+  }
+  a { color: var(--gold); }
+  footer {
+    margin-top: 46px; padding-top: 18px; border-top: 1px solid var(--rule);
+    color: var(--dim); font-size: 14px; font-family: system-ui, sans-serif;
+  }
+  footer p { margin: 0; }
+  [data-lang] { display: none; }
+  [data-lang].on { display: block; }
+  span[data-lang].on { display: inline; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1><a href="./">Colored Sands of Egypt</a></h1>
+  <p class="sub"><span data-lang="en" class="on">Support</span><span data-lang="de">Hilfe</span><span data-lang="es">Asistencia</span><span data-lang="fr">Assistance</span><span data-lang="id">Bantuan</span><span data-lang="it">Assistenza</span><span data-lang="pl">Pomoc</span><span data-lang="pt">Suporte</span><span data-lang="tr">Destek</span><span data-lang="hi">सहायता</span><span data-lang="ja">サポート</span><span data-lang="ko">고객 지원</span> · <span data-lang="en" class="on">Updated 8 September 2026</span><span data-lang="de">Stand 8. September 2026</span><span data-lang="es">Actualizada 8 de septiembre de 2026</span><span data-lang="fr">Mise à jour 8 septembre 2026</span><span data-lang="id">Diperbarui 8 September 2026</span><span data-lang="it">Aggiornata 8 settembre 2026</span><span data-lang="pl">Aktualizacja 8 września 2026</span><span data-lang="pt">Atualizada em 8 de setembro de 2026</span><span data-lang="tr">Güncellendi 8 Eylül 2026</span><span data-lang="hi">अद्यतन 8 सितंबर 2026</span><span data-lang="ja">更新日 2026年9月8日</span><span data-lang="ko">갱신일 2026년 9월 8일</span></p>
+  <div class="picker">
+    <label for="lang"><span data-lang="en" class="on">Language</span><span data-lang="de">Sprache</span><span data-lang="es">Idioma</span><span data-lang="fr">Langue</span><span data-lang="id">Bahasa</span><span data-lang="it">Lingua</span><span data-lang="pl">Język</span><span data-lang="pt">Idioma</span><span data-lang="tr">Dil</span><span data-lang="hi">भाषा</span><span data-lang="ja">言語</span><span data-lang="ko">언어</span></label>
+    <select id="lang">
+      <option value="en" data-dir="ltr">English</option>
+      <option value="de" data-dir="ltr">Deutsch</option>
+      <option value="es" data-dir="ltr">Español</option>
+      <option value="fr" data-dir="ltr">Français</option>
+      <option value="id" data-dir="ltr">Bahasa Indonesia</option>
+      <option value="it" data-dir="ltr">Italiano</option>
+      <option value="pl" data-dir="ltr">Polski</option>
+      <option value="pt" data-dir="ltr">Português (Brasil)</option>
+      <option value="tr" data-dir="ltr">Türkçe</option>
+      <option value="hi" data-dir="ltr">हिन्दी</option>
+      <option value="ja" data-dir="ltr">日本語</option>
+      <option value="ko" data-dir="ltr">한국어</option>
+    </select>
+  </div>
+</header>
+
+<main data-lang="en" class="on" lang="en" dir="ltr">
+<p class="intro">
+  Everything below is about <a href="./">Colored Sands of Egypt</a>, a calm
+  sand-sorting puzzle. If your question is not here, write to us — a person reads
+  every message.
+</p>
+
+<div class="note">
+  <strong>Undo and restart are free and unlimited</strong>, for everyone, forever.
+  They are not sold, they are not rationed, and there is no energy bar and no way
+  to lose. Hints and an extra vial come three at a time, come back for nothing
+  after a minute's wait or for an advertisement you choose to watch, or are yours
+  unlimited for one small payment. One small payment removes the advertising, or
+  you can earn the same thing by watching advertisements until it is paid for.
+  That is the whole of the money in this game, and nothing in it forces you to
+  pay.
+</div>
+
+<h2>Playing</h2>
+<dl>
+  <dt>How the sand pours</dt>
+  <dd>Sand settles only on sand of the same colour, and only where there is room
+      for it. Gather every pigment into a vessel of its own and the chamber is
+      done.</dd>
+
+  <dt>A vessel with a narrow neck</dt>
+  <dd>Takes one layer per pour, however much you tip into it.</dd>
+
+  <dt>A vessel behind a stone grille</dt>
+  <dd>Pours out, but nothing can be poured in.</dd>
+
+  <dt>I am stuck</dt>
+  <dd>The Hint button is in the toolbar at the bottom of a chamber: three free
+      ones, then another every minute you wait, or one for an advertisement you
+      choose to watch, or unlimited for a single payment. Undo is beside it, free,
+      and goes back as far as you like.</dd>
+
+  <dt>What every vessel does</dt>
+  <dd>The Guide, reached from the toolbar, lists every kind of vessel with a short
+      animation showing it working.</dd>
+
+  <dt>I cannot tell two colours apart</dt>
+  <dd>Turn on <em>Symbols</em> under Options. Every pigment gets its own
+      hieroglyph, stamped on each layer.</dd>
+</dl>
+
+<h2>Purchases and advertising</h2>
+<dl>
+  <dt>I paid, and the adverts came back</dt>
+  <dd>Options, then <em>Restore purchases</em>. It is the same purchase on every
+      device signed in to your store account, at no further cost.</dd>
+
+  <dt>Can I remove the advertising without paying?</dt>
+  <dd>Yes. Watching advertisements earns the same unlock, and a meter on the
+      screen after each one shows how far along you are. It stops for good when
+      you get there.</dd>
+
+  <dt>Changing my advertising consent</dt>
+  <dd>Options, then <em>Advertising privacy options</em>, where the law gives you
+      that right. Refusing does not lock anything.</dd>
+</dl>
+
+<h2>The app itself</h2>
+<dl>
+  <dt>Does it work without internet?</dt>
+  <dd>Entirely. The whole game is on the device and nothing waits on a
+      network.</dd>
+
+  <dt>Changing the language</dt>
+  <dd>Options, then <em>Language</em>. The game follows your device by default and
+      speaks twelve languages.</dd>
+
+  <dt>My progress is gone</dt>
+  <dd>Progress is stored on the device and nowhere else, so deleting the app or
+      moving to a new phone leaves it behind. Write to us with what happened and
+      how far you had got.</dd>
+</dl>
+
+<h2>Contact</h2>
+<p>
+  Anything at all — a bug, a chamber that felt unfair, a translation that reads
+  oddly — goes to
+  <a href="mailto:admin@majorcomputing.ca">admin@majorcomputing.ca</a>, and a
+  person reads it.
+</p>
+</main>
+
+<main data-lang="de" lang="de" dir="ltr">
+<p class="intro">
+  Alles Folgende betrifft <a href="./">Colored Sands of Egypt</a>, ein ruhiges
+  Sandsortier-Rätsel. Steht Ihre Frage nicht dabei, schreiben Sie uns — jede
+  Nachricht wird von einem Menschen gelesen.
+</p>
+
+<div class="note">
+  <strong>Rückgängig und Neu starten sind kostenlos und unbegrenzt</strong>, für
+  alle, für immer. Sie werden nicht verkauft und nicht rationiert, und es gibt
+  weder eine Energieleiste noch eine Möglichkeit zu verlieren. Hinweise und ein
+  zusätzliches Fläschchen kommen zu dritt, kommen nach einer Minute Wartezeit oder
+  für eine Anzeige, die Sie sich freiwillig ansehen, kostenlos zurück — oder
+  gehören Ihnen unbegrenzt für eine einzige kleine Zahlung. Eine einzige kleine
+  Zahlung entfernt die Werbung, oder Sie verdienen sich dasselbe, indem Sie
+  Anzeigen ansehen, bis sie bezahlt ist. Das ist das ganze Geld in diesem Spiel,
+  und nichts darin zwingt Sie zu zahlen.
+</div>
+
+<h2>Spielen</h2>
+<dl>
+  <dt>Wie der Sand fließt</dt>
+  <dd>Sand legt sich nur auf Sand derselben Farbe, und nur dort, wo Platz ist.
+      Sammeln Sie jedes Pigment in einem eigenen Gefäß, und die Kammer ist
+      gelöst.</dd>
+
+  <dt>Ein Gefäß mit engem Hals</dt>
+  <dd>Nimmt eine Schicht je Guss, wie viel Sie auch hineinkippen.</dd>
+
+  <dt>Ein Gefäß hinter einem Steingitter</dt>
+  <dd>Gibt Sand ab, aber es lässt sich nichts hineingießen.</dd>
+
+  <dt>Ich komme nicht weiter</dt>
+  <dd>Die Schaltfläche „Hinweis“ liegt in der Leiste am unteren Rand einer Kammer:
+      drei kostenlose, dann für jede gewartete Minute einer weiterer, oder einer
+      für eine Anzeige, die Sie sich freiwillig ansehen, oder unbegrenzt für eine
+      einmalige Zahlung. „Rückgängig“ steht daneben, kostenlos, und geht so weit
+      zurück, wie Sie wollen.</dd>
+
+  <dt>Was jedes Gefäß tut</dt>
+  <dd>Der Leitfaden in der Werkzeugleiste führt jede Art von Gefäß auf, mit einer
+      kurzen Animation, die es bei der Arbeit zeigt.</dd>
+
+  <dt>Ich kann zwei Farben nicht unterscheiden</dt>
+  <dd>Schalten Sie in den Optionen <em>Symbole</em> ein. Jedes Pigment erhält
+      seine eigene Hieroglyphe, auf jede Schicht geprägt.</dd>
+</dl>
+
+<h2>Käufe und Werbung</h2>
+<dl>
+  <dt>Ich habe bezahlt, und die Werbung ist zurück</dt>
+  <dd>Optionen, dann <em>Käufe wiederherstellen</em>. Es ist derselbe Kauf auf
+      jedem Gerät, das bei Ihrem Store-Konto angemeldet ist, ohne weitere
+      Kosten.</dd>
+
+  <dt>Kann ich die Werbung entfernen, ohne zu zahlen?</dt>
+  <dd>Ja. Anzeigen ansehen verdient dieselbe Freischaltung, und eine Anzeige auf
+      dem Bildschirm zeigt nach jeder, wie weit Sie sind. Am Ziel hört sie
+      endgültig auf.</dd>
+
+  <dt>Meine Werbe-Einwilligung ändern</dt>
+  <dd>Optionen, dann <em>Datenschutzoptionen für Werbung</em>, dort wo das Gesetz
+      Ihnen dieses Recht gibt. Ablehnen sperrt nichts.</dd>
+</dl>
+
+<h2>Die App selbst</h2>
+<dl>
+  <dt>Funktioniert sie ohne Internet?</dt>
+  <dd>Vollständig. Das ganze Spiel liegt auf dem Gerät, und nichts darin wartet
+      auf ein Netz.</dd>
+
+  <dt>Die Sprache wechseln</dt>
+  <dd>Optionen, dann <em>Sprache</em>. Standardmäßig folgt das Spiel Ihrem Gerät
+      und spricht zwölf Sprachen.</dd>
+
+  <dt>Mein Fortschritt ist weg</dt>
+  <dd>Der Fortschritt liegt auf dem Gerät und sonst nirgends; die App zu löschen
+      oder auf ein neues Telefon zu wechseln lässt ihn zurück. Schreiben Sie uns,
+      was passiert ist und wie weit Sie gekommen waren.</dd>
+</dl>
+
+<h2>Kontakt</h2>
+<p>
+  Alles überhaupt — ein Fehler, eine Kammer, die sich unfair anfühlte, eine
+  Übersetzung, die schief klingt — geht an
+  <a href="mailto:admin@majorcomputing.ca">admin@majorcomputing.ca</a>, und ein
+  Mensch liest es.
+</p>
+</main>
+
+<main data-lang="es" lang="es" dir="ltr">
+<p class="intro">
+  Todo lo que sigue es sobre <a href="./">Colored Sands of Egypt</a>, un sereno
+  rompecabezas de arena. Si su pregunta no está aquí, escríbanos: una persona lee
+  cada mensaje.
+</p>
+
+<div class="note">
+  <strong>Deshacer y reiniciar son gratuitos e ilimitados</strong>, para todo el
+  mundo, siempre. No se venden ni se racionan, y no hay barra de energía ni forma
+  de perder. Las pistas y un frasco extra vienen de tres en tres, vuelven gratis
+  tras un minuto de espera o por un anuncio que usted elija ver, o son suyos
+  ilimitados por un único pago pequeño. Un único pago pequeño retira la
+  publicidad, o puede conseguir lo mismo viendo anuncios hasta pagarla. Ese es
+  todo el dinero de este juego, y nada le obliga a pagar.
+</div>
+
+<h2>Jugar</h2>
+<dl>
+  <dt>Cómo se vierte la arena</dt>
+  <dd>La arena solo se posa sobre arena del mismo color, y solo donde queda sitio.
+      Reúna cada pigmento en un recipiente propio y la cámara está resuelta.</dd>
+
+  <dt>Un recipiente de cuello estrecho</dt>
+  <dd>Admite una sola capa por vertido, por mucho que incline sobre él.</dd>
+
+  <dt>Un recipiente tras una reja de piedra</dt>
+  <dd>Puede vaciarse, pero no se le puede verter nada.</dd>
+
+  <dt>Estoy atascado</dt>
+  <dd>El botón Pista está en la barra inferior de la cámara: tres gratis, luego
+      otra por cada minuto de espera, o una por un anuncio que usted elija ver, o
+      ilimitadas con un único pago. Deshacer está al lado, gratis, y retrocede
+      tanto como quiera.</dd>
+
+  <dt>Qué hace cada recipiente</dt>
+  <dd>La Guía, en la barra de herramientas, muestra cada tipo de recipiente con
+      una breve animación que lo enseña funcionando.</dd>
+
+  <dt>No distingo dos colores</dt>
+  <dd>Active <em>Símbolos</em> en Opciones. Cada pigmento recibe su propio
+      jeroglífico, marcado en cada capa.</dd>
+</dl>
+
+<h2>Compras y publicidad</h2>
+<dl>
+  <dt>Pagué y la publicidad ha vuelto</dt>
+  <dd>Opciones y luego <em>Restaurar compras</em>. Es la misma compra en todos los
+      dispositivos con su cuenta de la tienda, sin coste adicional.</dd>
+
+  <dt>¿Puedo quitar la publicidad sin pagar?</dt>
+  <dd>Sí. Ver anuncios gana el mismo desbloqueo, y un medidor en pantalla tras
+      cada uno indica cuánto le queda. Al llegar, se acaban para siempre.</dd>
+
+  <dt>Cambiar mi consentimiento publicitario</dt>
+  <dd>Opciones y luego <em>Opciones de privacidad publicitaria</em>, allí donde la
+      ley le da ese derecho. Rechazar no bloquea nada.</dd>
+</dl>
+
+<h2>La aplicación</h2>
+<dl>
+  <dt>¿Funciona sin internet?</dt>
+  <dd>Por completo. Todo el juego está en el dispositivo y nada espera a la
+      red.</dd>
+
+  <dt>Cambiar el idioma</dt>
+  <dd>Opciones y luego <em>Idioma</em>. El juego sigue a su dispositivo por
+      defecto y habla doce idiomas.</dd>
+
+  <dt>He perdido mi avance</dt>
+  <dd>El avance se guarda en el dispositivo y en ningún otro sitio, así que borrar
+      la aplicación o cambiar de teléfono lo deja atrás. Escríbanos contando qué
+      pasó y hasta dónde había llegado.</dd>
+</dl>
+
+<h2>Contacto</h2>
+<p>
+  Para cualquier cosa —un fallo, una cámara que le pareció injusta, una traducción
+  que suena rara— escriba a
+  <a href="mailto:admin@majorcomputing.ca">admin@majorcomputing.ca</a>: le
+  responderá una persona.
+</p>
+</main>
+
+<main data-lang="fr" lang="fr" dir="ltr">
+<p class="intro">
+  Tout ce qui suit concerne <a href="./">Colored Sands of Egypt</a>, un
+  casse-tête de tri de sable tout en calme. Si votre question n'y figure pas,
+  écrivez-nous : une personne lit chaque message.
+</p>
+
+<div class="note">
+  <strong>Annuler et recommencer sont gratuits et illimités</strong>, pour tout le
+  monde, pour toujours. Ils ne sont ni vendus ni rationnés, et il n'y a ni barre
+  d'énergie, ni manière de perdre. Les indices et une fiole en plus viennent par
+  trois, reviennent gratuitement après une minute d'attente ou pour une publicité
+  que vous choisissez de regarder, ou sont à vous en illimité pour un seul petit
+  paiement. Un seul petit paiement retire la publicité, ou vous pouvez obtenir la
+  même chose en regardant des annonces jusqu'à ce qu'elle soit payée. C'est tout
+  l'argent de ce jeu, et rien ne vous oblige à payer.
+</div>
+
+<h2>Jouer</h2>
+<dl>
+  <dt>Comment le sable se verse</dt>
+  <dd>Le sable ne se pose que sur du sable de la même couleur, et seulement là où
+      il reste de la place. Rassemblez chaque pigment dans un récipient qui lui
+      appartient et la chambre est terminée.</dd>
+
+  <dt>Un récipient à col étroit</dt>
+  <dd>Ne reçoit qu'une couche par versée, quelle que soit la quantité inclinée
+      vers lui.</dd>
+
+  <dt>Un récipient derrière une grille de pierre</dt>
+  <dd>Peut se vider, mais rien ne peut y être versé.</dd>
+
+  <dt>Je suis bloqué</dt>
+  <dd>Le bouton Indice se trouve dans la barre au bas d'une chambre : trois
+      gratuits, puis un de plus à chaque minute d'attente, ou un pour une
+      publicité que vous choisissez de regarder, ou en illimité pour un paiement
+      unique. Annuler est juste à côté, gratuit, et remonte aussi loin que vous
+      voulez.</dd>
+
+  <dt>Ce que fait chaque récipient</dt>
+  <dd>Le Guide, accessible depuis la barre d'outils, présente chaque sorte de
+      récipient avec une courte animation qui le montre à l'œuvre.</dd>
+
+  <dt>Je ne distingue pas deux couleurs</dt>
+  <dd>Activez <em>Symboles</em> dans les Options. Chaque pigment reçoit son propre
+      hiéroglyphe, marqué sur chaque couche.</dd>
+</dl>
+
+<h2>Achats et publicité</h2>
+<dl>
+  <dt>J'ai payé, et la publicité est revenue</dt>
+  <dd>Options, puis <em>Restaurer les achats</em>. C'est le même achat sur tous
+      les appareils connectés à votre compte, sans frais supplémentaires.</dd>
+
+  <dt>Puis-je retirer la publicité sans payer ?</dt>
+  <dd>Oui. Regarder des annonces vous fait gagner le même déblocage, et une jauge
+      affichée après chacune montre où vous en êtes. Elles s'arrêtent
+      définitivement une fois arrivé au bout.</dd>
+
+  <dt>Modifier mon consentement publicitaire</dt>
+  <dd>Options, puis <em>Options de confidentialité publicitaire</em>, là où la loi
+      vous en donne le droit. Refuser ne bloque rien.</dd>
+</dl>
+
+<h2>L'application</h2>
+<dl>
+  <dt>Est-ce que ça fonctionne sans Internet ?</dt>
+  <dd>Entièrement. Tout le jeu est sur l'appareil et rien n'y attend le
+      réseau.</dd>
+
+  <dt>Changer de langue</dt>
+  <dd>Options, puis <em>Langue</em>. Le jeu suit votre appareil par défaut et
+      parle douze langues.</dd>
+
+  <dt>Ma progression a disparu</dt>
+  <dd>La progression est conservée sur l'appareil et nulle part ailleurs :
+      supprimer l'application ou changer de téléphone la laisse derrière soi.
+      Écrivez-nous en indiquant ce qui s'est passé et jusqu'où vous étiez
+      arrivé.</dd>
+</dl>
+
+<h2>Nous joindre</h2>
+<p>
+  Pour tout — un bogue, une chambre qui vous a semblé injuste, une traduction qui
+  sonne mal — écrivez à
+  <a href="mailto:admin@majorcomputing.ca">admin@majorcomputing.ca</a> : une
+  personne vous lira.
+</p>
+</main>
+
+<main data-lang="id" lang="id" dir="ltr">
+<p class="intro">
+  Semua di bawah ini tentang <a href="./">Colored Sands of Egypt</a>, sebuah
+  teka-teki memilah pasir yang tenang. Kalau pertanyaan Anda tidak ada di sini,
+  kirim surel kepada kami — setiap pesan dibaca oleh manusia.
+</p>
+
+<div class="note">
+  <strong>Urungkan dan Mulai ulang gratis dan tanpa batas</strong>, untuk semua
+  orang, selamanya. Keduanya tidak dijual, tidak dijatah, tidak ada bilah energi,
+  dan tidak ada cara untuk kalah. Petunjuk dan satu botol tambahan datang tiga
+  sekaligus, kembali gratis setelah menunggu satu menit atau lewat satu iklan yang
+  Anda pilih untuk ditonton, atau menjadi milik Anda tanpa batas dengan satu
+  pembayaran kecil. Satu pembayaran kecil menghapus iklan, atau Anda bisa
+  mendapatkan hal yang sama dengan menonton iklan sampai terbayar. Itulah seluruh
+  uang di dalam gim ini, dan tidak ada apa pun di dalamnya yang memaksa Anda
+  membayar.
+</div>
+
+<h2>Bermain</h2>
+<dl>
+  <dt>Cara pasir dituang</dt>
+  <dd>Pasir hanya mengendap di atas pasir dengan warna yang sama, dan hanya di
+      tempat yang masih muat. Kumpulkan setiap pigmen ke dalam wadahnya sendiri
+      dan ruang itu selesai.</dd>
+
+  <dt>Wadah berleher sempit</dt>
+  <dd>Menerima satu lapis per tuangan, sebanyak apa pun yang Anda miringkan ke
+      dalamnya.</dd>
+
+  <dt>Wadah di balik jeruji batu</dt>
+  <dd>Isinya bisa keluar, tetapi tidak ada yang bisa dituang ke dalamnya.</dd>
+
+  <dt>Saya buntu</dt>
+  <dd>Tombol Petunjuk ada di bilah bawah setiap ruang: tiga gratis, lalu satu lagi
+      setiap satu menit menunggu, atau satu lewat iklan yang Anda pilih untuk
+      ditonton, atau tanpa batas dengan satu pembayaran. Urungkan ada di
+      sebelahnya, gratis, dan bisa mundur sejauh yang Anda mau.</dd>
+
+  <dt>Apa yang dilakukan tiap wadah</dt>
+  <dd>Panduan, dari bilah alat, memuat setiap jenis wadah dengan animasi pendek
+      yang memperlihatkannya bekerja.</dd>
+
+  <dt>Saya tidak bisa membedakan dua warna</dt>
+  <dd>Nyalakan <em>Simbol</em> di Opsi. Setiap pigmen mendapat hieroglifnya
+      sendiri, tercap pada tiap lapisan.</dd>
+</dl>
+
+<h2>Pembelian dan iklan</h2>
+<dl>
+  <dt>Saya sudah membayar, tapi iklannya kembali</dt>
+  <dd>Opsi, lalu <em>Pulihkan pembelian</em>. Ini pembelian yang sama di setiap
+      perangkat yang masuk ke akun toko Anda, tanpa biaya tambahan.</dd>
+
+  <dt>Bisakah saya menghapus iklan tanpa membayar?</dt>
+  <dd>Bisa. Menonton iklan menghasilkan pembuka kunci yang sama, dan sebuah
+      pengukur di layar setelah tiap iklan menunjukkan sudah sejauh mana. Setelah
+      sampai, iklan berhenti selamanya.</dd>
+
+  <dt>Mengubah persetujuan iklan saya</dt>
+  <dd>Opsi, lalu <em>Opsi privasi iklan</em>, di tempat hukum memberi Anda hak
+      itu. Menolak tidak mengunci apa pun.</dd>
+</dl>
+
+<h2>Aplikasinya sendiri</h2>
+<dl>
+  <dt>Apakah bisa jalan tanpa internet?</dt>
+  <dd>Sepenuhnya. Seluruh gim ada di perangkat dan tidak ada yang menunggu
+      jaringan.</dd>
+
+  <dt>Mengganti bahasa</dt>
+  <dd>Opsi, lalu <em>Bahasa</em>. Secara bawaan gim mengikuti perangkat Anda, dan
+      berbicara dalam dua belas bahasa.</dd>
+
+  <dt>Kemajuan saya hilang</dt>
+  <dd>Kemajuan disimpan di perangkat dan tidak di tempat lain, jadi menghapus
+      aplikasi atau pindah ke ponsel baru meninggalkannya. Kirim surel kepada kami
+      dengan cerita apa yang terjadi dan sudah sampai mana Anda.</dd>
+</dl>
+
+<h2>Kontak</h2>
+<p>
+  Apa pun — kutu program, ruang yang terasa tidak adil, terjemahan yang janggal —
+  kirim ke <a href="mailto:admin@majorcomputing.ca">admin@majorcomputing.ca</a>,
+  dan seorang manusia akan membacanya.
+</p>
+</main>
+
+<main data-lang="it" lang="it" dir="ltr">
+<p class="intro">
+  Quanto segue riguarda <a href="./">Colored Sands of Egypt</a>, un tranquillo
+  rompicapo di sabbia. Se la sua domanda non c'è, ci scriva: ogni messaggio viene
+  letto da una persona.
+</p>
+
+<div class="note">
+  <strong>Annulla e Ricomincia sono gratuiti e illimitati</strong>, per tutti, per
+  sempre. Non si vendono e non si razionano, e non c'è né una barra dell'energia
+  né un modo di perdere. I suggerimenti e una fiala in più arrivano a gruppi di
+  tre, tornano gratis dopo un minuto di attesa o per un annuncio che lei sceglie
+  di guardare, oppure sono suoi illimitati con un solo piccolo pagamento. Un solo
+  piccolo pagamento toglie la pubblicità, oppure può ottenere lo stesso guardando
+  annunci finché non è pagata. Questo è tutto il denaro di questo gioco, e nulla
+  la obbliga a pagare.
+</div>
+
+<h2>Giocare</h2>
+<dl>
+  <dt>Come si versa la sabbia</dt>
+  <dd>La sabbia si posa solo su sabbia dello stesso colore, e solo dove c'è posto.
+      Raccolga ogni pigmento in un recipiente tutto suo e la camera è
+      risolta.</dd>
+
+  <dt>Un recipiente dal collo stretto</dt>
+  <dd>Accetta un solo strato per versata, per quanta sabbia gli inclini
+      addosso.</dd>
+
+  <dt>Un recipiente dietro una grata di pietra</dt>
+  <dd>Si svuota, ma non vi si può versare nulla.</dd>
+
+  <dt>Sono bloccato</dt>
+  <dd>Il pulsante Suggerimento è nella barra in fondo alla camera: tre gratuiti,
+      poi uno in più per ogni minuto di attesa, oppure uno per un annuncio che
+      sceglie di guardare, oppure illimitati con un pagamento unico. Annulla è
+      accanto, gratuito, e torna indietro quanto vuole.</dd>
+
+  <dt>Che cosa fa ciascun recipiente</dt>
+  <dd>La Guida, raggiungibile dalla barra degli strumenti, elenca ogni tipo di
+      recipiente con una breve animazione che lo mostra all'opera.</dd>
+
+  <dt>Non distinguo due colori</dt>
+  <dd>Attivi <em>Simboli</em> nelle Opzioni. Ogni pigmento riceve il proprio
+      geroglifico, impresso su ciascuno strato.</dd>
+</dl>
+
+<h2>Acquisti e pubblicità</h2>
+<dl>
+  <dt>Ho pagato, e la pubblicità è tornata</dt>
+  <dd>Opzioni, poi <em>Ripristina acquisti</em>. È lo stesso acquisto su ogni
+      dispositivo collegato al suo account dello store, senza ulteriori costi.</dd>
+
+  <dt>Posso togliere la pubblicità senza pagare?</dt>
+  <dd>Sì. Guardare annunci guadagna lo stesso sblocco, e un indicatore a schermo
+      dopo ciascuno mostra a che punto è. Arrivati in fondo, finisce per
+      sempre.</dd>
+
+  <dt>Cambiare il mio consenso alla pubblicità</dt>
+  <dd>Opzioni, poi <em>Opzioni privacy della pubblicità</em>, dove la legge le dà
+      questo diritto. Rifiutare non blocca nulla.</dd>
+</dl>
+
+<h2>L'applicazione</h2>
+<dl>
+  <dt>Funziona senza internet?</dt>
+  <dd>Del tutto. Il gioco è interamente sul dispositivo e nulla attende la
+      rete.</dd>
+
+  <dt>Cambiare lingua</dt>
+  <dd>Opzioni, poi <em>Lingua</em>. Per impostazione predefinita il gioco segue il
+      suo dispositivo e parla dodici lingue.</dd>
+
+  <dt>I miei progressi sono spariti</dt>
+  <dd>I progressi restano sul dispositivo e da nessun'altra parte, quindi
+      disinstallare l'app o passare a un telefono nuovo li lascia indietro. Ci
+      scriva raccontando che cosa è successo e fin dove era arrivato.</dd>
+</dl>
+
+<h2>Contatti</h2>
+<p>
+  Qualunque cosa — un errore, una camera che le è sembrata ingiusta, una
+  traduzione che suona male — a
+  <a href="mailto:admin@majorcomputing.ca">admin@majorcomputing.ca</a>, e la legge
+  una persona.
+</p>
+</main>
+
+<main data-lang="pl" lang="pl" dir="ltr">
+<p class="intro">
+  Wszystko poniżej dotyczy gry <a href="./">Colored Sands of Egypt</a>, spokojnej
+  łamigłówki z sortowaniem piasku. Jeśli Twojego pytania tu nie ma, napisz do nas
+  — każdą wiadomość czyta człowiek.
+</p>
+
+<div class="note">
+  <strong>Cofnięcie ruchu i rozpoczęcie od nowa są bezpłatne i
+  nieograniczone</strong>, dla wszystkich, na zawsze. Nie są sprzedawane ani
+  racjonowane, nie ma paska energii i nie da się przegrać. Podpowiedzi i
+  dodatkowa fiolka przychodzą po trzy, wracają za darmo po minucie oczekiwania
+  albo za reklamę, którą zdecydujesz się obejrzeć, albo są Twoje bez
+  ograniczeń za jedną małą opłatą. Jedna mała opłata usuwa reklamy — albo możesz
+  zdobyć to samo, oglądając je, aż się opłacą. To całe pieniądze w tej grze i nic
+  w niej nie zmusza Cię do płacenia.
+</div>
+
+<h2>Gra</h2>
+<dl>
+  <dt>Jak przesypuje się piasek</dt>
+  <dd>Piasek osiada tylko na piasku w tym samym kolorze i tylko tam, gdzie jest
+      miejsce. Zbierz każdy pigment w osobnym naczyniu, a komora jest
+      rozwiązana.</dd>
+
+  <dt>Naczynie z wąską szyjką</dt>
+  <dd>Przyjmuje jedną warstwę na przesypanie, niezależnie od tego, ile w nie
+      przechylisz.</dd>
+
+  <dt>Naczynie za kamienną kratą</dt>
+  <dd>Można je opróżnić, ale niczego nie da się do niego wsypać.</dd>
+
+  <dt>Nie wiem, co dalej</dt>
+  <dd>Przycisk Podpowiedź jest na pasku na dole komory: trzy za darmo, potem
+      kolejna za każdą przeczekaną minutę albo jedna za reklamę, którą zdecydujesz
+      się obejrzeć, albo bez ograniczeń za jedną opłatą. Cofnięcie jest obok, za
+      darmo, i sięga tak daleko, jak zechcesz.</dd>
+
+  <dt>Co robi każde naczynie</dt>
+  <dd>Przewodnik, dostępny z paska narzędzi, wymienia każdy rodzaj naczynia wraz z
+      krótką animacją pokazującą je w działaniu.</dd>
+
+  <dt>Nie odróżniam dwóch kolorów</dt>
+  <dd>Włącz <em>Symbole</em> w Opcjach. Każdy pigment dostaje własny hieroglif,
+      odbity na każdej warstwie.</dd>
+</dl>
+
+<h2>Zakupy i reklamy</h2>
+<dl>
+  <dt>Reklamy wróciły po zakupie</dt>
+  <dd>Opcje, a następnie <em>Przywróć zakupy</em>. To ten sam zakup na każdym
+      urządzeniu zalogowanym na Twoje konto w sklepie, bez dodatkowych
+      kosztów.</dd>
+
+  <dt>Czy mogę usunąć reklamy bez płacenia?</dt>
+  <dd>Tak. Oglądanie reklam zdobywa to samo odblokowanie, a wskaźnik na ekranie po
+      każdej z nich pokazuje, jak daleko jesteś. Na końcu znikają na dobre.</dd>
+
+  <dt>Zmiana zgody na reklamy</dt>
+  <dd>Opcje, a następnie <em>Ustawienia prywatności reklam</em>, tam gdzie prawo
+      daje Ci to uprawnienie. Odmowa niczego nie blokuje.</dd>
+</dl>
+
+<h2>Sama aplikacja</h2>
+<dl>
+  <dt>Czy działa bez internetu?</dt>
+  <dd>W całości. Cała gra jest na urządzeniu i nic w niej nie czeka na sieć.</dd>
+
+  <dt>Zmiana języka</dt>
+  <dd>Opcje, a następnie <em>Język</em>. Domyślnie gra idzie za ustawieniem
+      urządzenia i mówi w dwunastu językach.</dd>
+
+  <dt>Zniknęły moje postępy</dt>
+  <dd>Postępy są zapisywane na urządzeniu i nigdzie indziej, więc usunięcie
+      aplikacji albo przesiadka na nowy telefon zostawia je za sobą. Napisz do
+      nas, co się stało i jak daleko udało Ci się dojść.</dd>
+</dl>
+
+<h2>Kontakt</h2>
+<p>
+  Cokolwiek — błąd, komora, która wydała się niesprawiedliwa, tłumaczenie, które
+  brzmi dziwnie — pisz na
+  <a href="mailto:admin@majorcomputing.ca">admin@majorcomputing.ca</a>, a przeczyta
+  to człowiek.
+</p>
+</main>
+
+<main data-lang="pt" lang="pt" dir="ltr">
+<p class="intro">
+  Tudo o que vem abaixo é sobre <a href="./">Colored Sands of Egypt</a>, um
+  quebra-cabeça calmo de separar areia. Se a sua pergunta não estiver aqui,
+  escreva para a gente: uma pessoa lê cada mensagem.
+</p>
+
+<div class="note">
+  <strong>Desfazer e Recomeçar são gratuitos e ilimitados</strong>, para todo
+  mundo, para sempre. Não são vendidos nem racionados, e não existe barra de
+  energia nem jeito de perder. As dicas e um frasco extra vêm de três em três,
+  voltam de graça depois de um minuto de espera ou por um anúncio que você
+  escolher assistir, ou são seus e ilimitados por um único pagamento pequeno. Um
+  único pagamento pequeno tira a publicidade, ou você pode conquistar a mesma
+  coisa assistindo a anúncios até que ela esteja paga. Esse é todo o dinheiro
+  deste jogo, e nada nele obriga você a pagar.
+</div>
+
+<h2>Jogar</h2>
+<dl>
+  <dt>Como a areia é despejada</dt>
+  <dd>A areia só assenta sobre areia da mesma cor, e só onde houver espaço. Junte
+      cada pigmento em um recipiente só dele e a câmara está resolvida.</dd>
+
+  <dt>Um recipiente de gargalo estreito</dt>
+  <dd>Aceita uma camada por despejo, por mais que você incline sobre ele.</dd>
+
+  <dt>Um recipiente atrás de uma grade de pedra</dt>
+  <dd>Esvazia, mas nada pode ser despejado dentro.</dd>
+
+  <dt>Estou travado</dt>
+  <dd>O botão Dica fica na barra na parte de baixo da câmara: três de graça,
+      depois mais uma a cada minuto de espera, ou uma por um anúncio que você
+      escolher assistir, ou ilimitadas com um pagamento único. Desfazer fica ao
+      lado, de graça, e volta o quanto você quiser.</dd>
+
+  <dt>O que cada recipiente faz</dt>
+  <dd>O Guia, na barra de ferramentas, lista cada tipo de recipiente com uma
+      pequena animação mostrando o funcionamento.</dd>
+
+  <dt>Não distingo duas cores</dt>
+  <dd>Ligue <em>Símbolos</em> nas Opções. Cada pigmento ganha o próprio
+      hieróglifo, marcado em cada camada.</dd>
+</dl>
+
+<h2>Compras e publicidade</h2>
+<dl>
+  <dt>Paguei, e a publicidade voltou</dt>
+  <dd>Opções e depois <em>Restaurar compras</em>. É a mesma compra em todos os
+      aparelhos conectados à sua conta da loja, sem custo adicional.</dd>
+
+  <dt>Dá para tirar a publicidade sem pagar?</dt>
+  <dd>Dá. Assistir a anúncios conquista o mesmo desbloqueio, e um medidor na tela
+      depois de cada um mostra o quanto falta. Ao chegar lá, eles param de
+      vez.</dd>
+
+  <dt>Mudar o meu consentimento de publicidade</dt>
+  <dd>Opções e depois <em>Opções de privacidade de publicidade</em>, onde a lei
+      lhe dá esse direito. Recusar não tranca nada.</dd>
+</dl>
+
+<h2>O aplicativo</h2>
+<dl>
+  <dt>Funciona sem internet?</dt>
+  <dd>Por completo. O jogo inteiro está no aparelho e nada nele espera pela
+      rede.</dd>
+
+  <dt>Trocar de idioma</dt>
+  <dd>Opções e depois <em>Idioma</em>. Por padrão o jogo segue o seu aparelho, e
+      fala doze idiomas.</dd>
+
+  <dt>Meu progresso sumiu</dt>
+  <dd>O progresso fica no aparelho e em nenhum outro lugar, então apagar o
+      aplicativo ou trocar de celular deixa tudo para trás. Escreva para a gente
+      contando o que aconteceu e até onde você tinha chegado.</dd>
+</dl>
+
+<h2>Contato</h2>
+<p>
+  Qualquer coisa — um erro, uma câmara que pareceu injusta, uma tradução que soa
+  estranha — vai para
+  <a href="mailto:admin@majorcomputing.ca">admin@majorcomputing.ca</a>, e uma
+  pessoa lê.
+</p>
+</main>
+
+<main data-lang="tr" lang="tr" dir="ltr">
+<p class="intro">
+  Aşağıdaki her şey, sakin bir kum ayırma bulmacası olan
+  <a href="./">Colored Sands of Egypt</a> hakkındadır. Sorunuz burada yoksa bize
+  yazın — her iletiyi bir insan okur.
+</p>
+
+<div class="note">
+  <strong>Geri alma ve yeniden başlatma ücretsiz ve sınırsızdır</strong>, herkes
+  için, her zaman. Satılmaz, kısıtlanmaz; enerji çubuğu yoktur ve kaybetmenin bir
+  yolu da yoktur. İpuçları ve ek bir şişe üçer üçer gelir; bir dakikalık
+  beklemenin ardından ya da izlemeyi seçtiğiniz bir reklam karşılığında bedelsiz
+  geri döner, ya da tek ve küçük bir ödemeyle sınırsız olarak sizin olur. Tek ve
+  küçük bir ödeme reklamları kaldırır; ya da aynı şeyi, reklamlar kendi parasını
+  çıkarana kadar izleyerek kazanabilirsiniz. Bu oyundaki paranın tamamı budur ve
+  içinde sizi ödemeye zorlayan hiçbir şey yoktur.
+</div>
+
+<h2>Oynamak</h2>
+<dl>
+  <dt>Kum nasıl dökülür</dt>
+  <dd>Kum yalnızca kendi rengindeki kumun üstüne ve yalnızca yer olan yere konar.
+      Her pigmenti kendine ait bir kaba toplayın; oda çözülmüş olur.</dd>
+
+  <dt>Dar boyunlu bir kap</dt>
+  <dd>Ne kadar dökerseniz dökün, her dökümde tek bir katman alır.</dd>
+
+  <dt>Taş kafesin ardındaki bir kap</dt>
+  <dd>İçindeki boşalır, ama içine hiçbir şey dökülemez.</dd>
+
+  <dt>Takıldım</dt>
+  <dd>İpucu düğmesi odanın alt çubuğundadır: üç tanesi ücretsiz, sonra
+      beklediğiniz her dakika için bir tane daha, ya da izlemeyi seçtiğiniz bir
+      reklam karşılığında bir tane, ya da tek bir ödemeyle sınırsız. Geri alma
+      hemen yanındadır, ücretsizdir ve istediğiniz kadar geriye gider.</dd>
+
+  <dt>Hangi kap ne yapar</dt>
+  <dd>Araç çubuğundan açılan Rehber, her kap türünü çalışırken gösteren kısa bir
+      canlandırmayla birlikte anlatır.</dd>
+
+  <dt>İki rengi ayırt edemiyorum</dt>
+  <dd>Seçenekler'den <em>Simgeler</em>i açın. Her pigment, her katmana basılan
+      kendi hiyeroglifini alır.</dd>
+</dl>
+
+<h2>Satın almalar ve reklamlar</h2>
+<dl>
+  <dt>Ödeme yaptım, reklamlar geri geldi</dt>
+  <dd>Seçenekler, sonra <em>Satın almaları geri yükle</em>. Mağaza hesabınızın
+      açık olduğu her cihazda aynı satın almadır, ek bir ücret olmadan.</dd>
+
+  <dt>Reklamları ödeme yapmadan kaldırabilir miyim?</dt>
+  <dd>Evet. Reklam izlemek aynı kilidi açar ve her reklamdan sonra ekrandaki bir
+      gösterge ne kadar yol aldığınızı söyler. Sona vardığınızda temelli
+      biterler.</dd>
+
+  <dt>Reklam onayımı değiştirmek</dt>
+  <dd>Seçenekler, sonra <em>Reklam gizlilik seçenekleri</em> — kanunun size bu
+      hakkı verdiği yerlerde. Reddetmek hiçbir şeyi kilitlemez.</dd>
+</dl>
+
+<h2>Uygulamanın kendisi</h2>
+<dl>
+  <dt>İnternet olmadan çalışır mı?</dt>
+  <dd>Tümüyle. Oyunun tamamı cihazdadır ve içinde ağı bekleyen hiçbir şey
+      yoktur.</dd>
+
+  <dt>Dili değiştirmek</dt>
+  <dd>Seçenekler, sonra <em>Dil</em>. Oyun varsayılan olarak cihazınızı izler ve
+      on iki dil konuşur.</dd>
+
+  <dt>İlerlemem kayboldu</dt>
+  <dd>İlerleme cihazda tutulur, başka hiçbir yerde; bu yüzden uygulamayı silmek ya
+      da yeni bir telefona geçmek onu geride bırakır. Ne olduğunu ve nereye kadar
+      gelmiş olduğunuzu yazın, bize ulaşın.</dd>
+</dl>
+
+<h2>İletişim</h2>
+<p>
+  Ne olursa olsun — bir hata, haksız gelen bir oda, kulağa yanlış gelen bir çeviri
+  — <a href="mailto:admin@majorcomputing.ca">admin@majorcomputing.ca</a> adresine
+  yazın; bir insan okuyacak.
+</p>
+</main>
+
+<main data-lang="hi" lang="hi" dir="ltr">
+<p class="intro">
+  नीचे दी गई हर बात <a href="./">Colored Sands of Egypt</a> के बारे में है — रेत छाँटने की
+  एक शांत पहेली। यदि आपका प्रश्न यहाँ नहीं है, तो हमें लिखें; हर संदेश एक व्यक्ति पढ़ता है।
+</p>
+
+<div class="note">
+  <strong>पूर्ववत करना और फिर से शुरू करना निःशुल्क और असीमित हैं</strong> — सबके लिए,
+  हमेशा। वे न बेचे जाते हैं, न सीमित किए जाते हैं; न कोई ऊर्जा-पट्टी है, न हारने का कोई
+  तरीका। संकेत और एक अतिरिक्त शीशी तीन-तीन के समूह में आते हैं; एक मिनट की प्रतीक्षा के
+  बाद या आपके द्वारा चुने गए एक विज्ञापन के बदले निःशुल्क लौट आते हैं, या एक छोटे-से
+  भुगतान से असीमित रूप से आपके हो जाते हैं। एक छोटा-सा भुगतान विज्ञापन हटा देता है, या
+  आप वही चीज़ तब तक विज्ञापन देखकर पा सकते हैं जब तक उसकी कीमत पूरी न हो जाए। इस गेम
+  में पैसे की पूरी कहानी इतनी ही है, और इसमें कुछ भी आपको भुगतान करने के लिए मजबूर नहीं
+  करता।
+</div>
+
+<h2>खेलना</h2>
+<dl>
+  <dt>रेत कैसे उँडेली जाती है</dt>
+  <dd>रेत केवल उसी रंग की रेत पर बैठती है, और केवल वहीं जहाँ जगह हो। हर रंगद्रव्य को उसके
+      अपने पात्र में इकट्ठा कर लें, और कक्ष पूरा हो गया।</dd>
+
+  <dt>सँकरी गर्दन वाला पात्र</dt>
+  <dd>आप कितना भी उँडेलें, यह हर बार केवल एक परत लेता है।</dd>
+
+  <dt>पत्थर की जाली के पीछे रखा पात्र</dt>
+  <dd>इसमें से रेत निकल सकती है, पर इसमें कुछ डाला नहीं जा सकता।</dd>
+
+  <dt>आगे क्या करें, समझ नहीं आ रहा</dt>
+  <dd>संकेत का बटन कक्ष के नीचे की पट्टी में है: तीन निःशुल्क, फिर हर एक मिनट की प्रतीक्षा
+      पर एक और, या आपके द्वारा चुने गए एक विज्ञापन के बदले एक, या एक ही भुगतान से
+      असीमित। पूर्ववत करना उसके बगल में है, निःशुल्क, और जितना पीछे चाहें उतना ले जाता
+      है।</dd>
+
+  <dt>हर पात्र क्या करता है</dt>
+  <dd>टूलबार से खुलने वाली मार्गदर्शिका हर तरह के पात्र को सूचीबद्ध करती है, और एक छोटे
+      एनिमेशन में उसे काम करते हुए दिखाती है।</dd>
+
+  <dt>मुझे दो रंग एक जैसे लगते हैं</dt>
+  <dd>विकल्प में <em>प्रतीक</em> चालू करें। हर रंगद्रव्य को उसका अपना चित्रलिपि-चिह्न मिलता
+      है, जो हर परत पर अंकित होता है।</dd>
+</dl>
+
+<h2>खरीदारी और विज्ञापन</h2>
+<dl>
+  <dt>मैंने भुगतान किया, फिर भी विज्ञापन लौट आए</dt>
+  <dd>विकल्प, फिर <em>खरीदारी पुनर्स्थापित करें</em>। यह आपके स्टोर खाते से जुड़े हर डिवाइस
+      पर वही खरीद है, बिना किसी अतिरिक्त शुल्क के।</dd>
+
+  <dt>क्या बिना भुगतान किए विज्ञापन हटाए जा सकते हैं?</dt>
+  <dd>हाँ। विज्ञापन देखने से वही अनलॉक अर्जित होता है, और हर विज्ञापन के बाद स्क्रीन पर एक
+      मीटर दिखाता है कि आप कहाँ तक पहुँचे हैं। वहाँ पहुँचते ही वे हमेशा के लिए बंद हो जाते
+      हैं।</dd>
+
+  <dt>अपनी विज्ञापन सहमति बदलना</dt>
+  <dd>विकल्प, फिर <em>विज्ञापन गोपनीयता विकल्प</em> — जहाँ कानून आपको यह अधिकार देता
+      है। मना करने से कुछ भी बंद नहीं होता।</dd>
+</dl>
+
+<h2>ऐप के बारे में</h2>
+<dl>
+  <dt>क्या यह बिना इंटरनेट के चलता है?</dt>
+  <dd>पूरी तरह। पूरा गेम डिवाइस पर है और इसमें कुछ भी नेटवर्क की प्रतीक्षा नहीं करता।</dd>
+
+  <dt>भाषा बदलना</dt>
+  <dd>विकल्प, फिर <em>भाषा</em>। गेम डिफ़ॉल्ट रूप से आपके डिवाइस का अनुसरण करता है और
+      बारह भाषाएँ बोलता है।</dd>
+
+  <dt>मेरी प्रगति गायब हो गई</dt>
+  <dd>प्रगति डिवाइस पर रखी जाती है और कहीं नहीं, इसलिए ऐप हटाने या नया फ़ोन लेने पर वह
+      पीछे छूट जाती है। हमें लिखें कि क्या हुआ और आप कहाँ तक पहुँचे थे।</dd>
+</dl>
+
+<h2>संपर्क</h2>
+<p>
+  कुछ भी हो — कोई गड़बड़ी, कोई कक्ष जो अनुचित लगा, कोई अनुवाद जो अटपटा लगा —
+  <a href="mailto:admin@majorcomputing.ca">admin@majorcomputing.ca</a> पर लिखें, और उसे
+  एक व्यक्ति पढ़ेगा।
+</p>
+</main>
+
+<main data-lang="ja" lang="ja" dir="ltr">
+<p class="intro">
+  以下はすべて、静かな砂の仕分けパズル
+  <a href="./">Colored Sands of Egypt</a> についての説明です。お探しの答えが
+  見つからないときは、ご連絡ください。いただいたメッセージは人が読みます。
+</p>
+
+<div class="note">
+  <strong>「元に戻す」と「やり直す」は無料・無制限です。</strong>すべての方に、
+  ずっと。売り物にも、回数制限の対象にもなりません。体力ゲージもなければ、負ける
+  仕組みもありません。ヒントと追加の小瓶は3つずつ手に入り、1分待つか、ご自身で選んで
+  広告を見れば無料で戻り、あるいは一度の少額のお支払いで無制限になります。一度の少額の
+  お支払いで広告は消え、同じことを、代金に達するまで広告を見て手に入れることもできます。
+  このゲームのお金の話はこれですべてで、支払いを強いるものは何一つありません。
+</div>
+
+<h2>遊びかた</h2>
+<dl>
+  <dt>砂の注ぎかた</dt>
+  <dd>砂は同じ色の砂の上にだけ、しかも余地のある場所にだけ積もります。すべての顔料を
+      それぞれ専用の器にまとめれば、その室は完了です。</dd>
+
+  <dt>首の細い器</dt>
+  <dd>どれだけ傾けても、一度の注ぎで受け取るのは一層だけです。</dd>
+
+  <dt>石の格子の奥にある器</dt>
+  <dd>中身は出せますが、何も注ぎ入れられません。</dd>
+
+  <dt>行き詰まったとき</dt>
+  <dd>ヒントのボタンは室の下部のバーにあります。無料が3つ、その後は1分待つごとに
+      もう1つ、あるいはご自身で選んで広告を見れば1つ、あるいは一度のお支払いで
+      無制限になります。「元に戻す」はその隣にあり、無料で、好きなだけさかのぼれます。</dd>
+
+  <dt>それぞれの器のはたらき</dt>
+  <dd>ツールバーから開ける「手引き」に、器の種類ごとの説明と、動きを見せる短い
+      アニメーションが載っています。</dd>
+
+  <dt>二つの色が見分けられない</dt>
+  <dd>オプションで<em>記号</em>をオンにしてください。顔料ごとに専用のヒエログリフが
+      付き、層のひとつひとつに刻まれます。</dd>
+</dl>
+
+<h2>購入と広告</h2>
+<dl>
+  <dt>支払ったのに広告が戻ってきた</dt>
+  <dd>オプションから<em>購入の復元</em>を選んでください。ストアのアカウントで
+      サインインしているすべての端末で同じ購入が有効になり、追加の費用はかかりません。</dd>
+
+  <dt>支払わずに広告を消せますか</dt>
+  <dd>できます。広告を見ることで同じアンロックが得られ、広告のあとに表示される
+      メーターが、あとどれくらいかを示します。到達すれば、広告は完全に終わります。</dd>
+
+  <dt>広告の同意を変更したい</dt>
+  <dd>オプションから<em>広告のプライバシー設定</em>へ。法律でその権利が与えられている
+      地域で表示されます。拒否しても、何も閉ざされません。</dd>
+</dl>
+
+<h2>アプリについて</h2>
+<dl>
+  <dt>インターネットなしでも動きますか</dt>
+  <dd>完全に動きます。ゲームはすべて端末上にあり、通信を待つ処理はありません。</dd>
+
+  <dt>言語を変える</dt>
+  <dd>オプションから<em>言語</em>へ。既定では端末の設定に従い、12の言語に対応して
+      います。</dd>
+
+  <dt>進行状況が消えた</dt>
+  <dd>進行状況は端末にだけ保存されるため、アプリを削除したり新しい端末に移ったりすると
+      残りません。何が起きたか、どこまで進んでいたかを添えてご連絡ください。</dd>
+</dl>
+
+<h2>お問い合わせ</h2>
+<p>
+  どんなことでも（不具合、理不尽に感じた室、不自然に思えた訳文など）
+  <a href="mailto:admin@majorcomputing.ca">admin@majorcomputing.ca</a> までお送り
+  ください。人が読みます。
+</p>
+</main>
+
+<main data-lang="ko" lang="ko" dir="ltr">
+<p class="intro">
+  아래 내용은 모두 조용한 모래 정리 퍼즐
+  <a href="./">Colored Sands of Egypt</a>에 관한 것입니다. 찾으시는 답이 없다면 저희에게
+  적어 보내 주세요. 모든 메시지는 사람이 읽습니다.
+</p>
+
+<div class="note">
+  <strong>되돌리기와 다시 시작하기는 무료이고 무제한입니다.</strong> 모두에게, 언제나
+  그렇습니다. 팔지 않고, 아껴 쓰게 하지도 않습니다. 기력 게이지도 없고, 지는 방법도
+  없습니다. 힌트와 여분의 병은 세 개씩 주어지며, 1분을 기다리거나 직접 고른 광고를 보면
+  무료로 돌아오고, 한 번의 소액 결제로 무제한이 됩니다. 한 번의 소액 결제로 광고가
+  사라지고, 값이 채워질 때까지 광고를 보아 같은 결과를 얻을 수도 있습니다. 이 게임의
+  돈 이야기는 이것이 전부이며, 결제를 강요하는 것은 아무것도 없습니다.
+</div>
+
+<h2>플레이</h2>
+<dl>
+  <dt>모래가 쏟아지는 방식</dt>
+  <dd>모래는 같은 색 모래 위에만, 그리고 자리가 남은 곳에만 쌓입니다. 모든 안료를 각각
+      제 그릇에 모으면 그 방은 끝납니다.</dd>
+
+  <dt>목이 좁은 그릇</dt>
+  <dd>아무리 많이 기울여도 한 번에 한 층만 받습니다.</dd>
+
+  <dt>돌 격자 뒤의 그릇</dt>
+  <dd>안의 모래는 나올 수 있지만, 아무것도 부어 넣을 수 없습니다.</dd>
+
+  <dt>막혔을 때</dt>
+  <dd>힌트 버튼은 방 아래쪽 막대에 있습니다. 무료 세 개, 그다음에는 1분을 기다릴
+      때마다 하나씩 더, 또는 직접 고른 광고를 보면 하나, 또는 한 번의 결제로 무제한이
+      됩니다. 되돌리기는 그 옆에 있고, 무료이며, 원하는 만큼 거슬러 올라갑니다.</dd>
+
+  <dt>그릇마다 하는 일</dt>
+  <dd>도구 막대에서 열리는 안내서에 그릇의 종류마다 설명과, 작동을 보여 주는 짧은
+      애니메이션이 있습니다.</dd>
+
+  <dt>두 색이 구별되지 않습니다</dt>
+  <dd>옵션에서 <em>기호</em>를 켜 주세요. 안료마다 고유한 상형문자가 붙어 층마다
+      새겨집니다.</dd>
+</dl>
+
+<h2>구매와 광고</h2>
+<dl>
+  <dt>결제했는데 광고가 다시 나옵니다</dt>
+  <dd>옵션에서 <em>구매 복원</em>을 눌러 주세요. 스토어 계정으로 로그인한 모든 기기에서
+      같은 구매가 적용되며, 추가 비용은 없습니다.</dd>
+
+  <dt>결제하지 않고 광고를 없앨 수 있나요</dt>
+  <dd>있습니다. 광고를 보면 같은 잠금 해제를 얻게 되고, 광고가 끝날 때마다 화면의
+      계기가 얼마나 왔는지 알려 줍니다. 다다르면 광고는 영영 멈춥니다.</dd>
+
+  <dt>광고 동의를 바꾸고 싶습니다</dt>
+  <dd>옵션에서 <em>광고 개인정보 설정</em>으로 가세요. 법이 그 권리를 주는 지역에서
+      나타납니다. 거부해도 잠기는 것은 없습니다.</dd>
+</dl>
+
+<h2>앱 자체</h2>
+<dl>
+  <dt>인터넷 없이도 되나요</dt>
+  <dd>완전히 됩니다. 게임 전체가 기기 안에 있고, 통신을 기다리는 부분은 없습니다.</dd>
+
+  <dt>언어 바꾸기</dt>
+  <dd>옵션에서 <em>언어</em>로 가세요. 기본값은 기기 설정을 따르며, 열두 개 언어를
+      지원합니다.</dd>
+
+  <dt>진행 상황이 사라졌습니다</dt>
+  <dd>진행 상황은 기기에만 저장되므로, 앱을 지우거나 새 휴대전화로 옮기면 남지 않습니다.
+      어떤 일이 있었는지, 어디까지 진행했는지 적어 보내 주세요.</dd>
+</dl>
+
+<h2>연락처</h2>
+<p>
+  무엇이든 — 오류, 불공평하게 느껴진 방, 어색하게 읽히는 번역 —
+  <a href="mailto:admin@majorcomputing.ca">admin@majorcomputing.ca</a>로 보내 주시면
+  사람이 읽습니다.
+</p>
+</main>
+
+<footer>
+  <p>© 2026 Major Computing · <span data-lang="en" class="on"><a href="./">The game</a> · <a href="privacy.html">Privacy Policy</a></span><span data-lang="de"><a href="./">Das Spiel</a> · <a href="privacy.html">Datenschutz</a></span><span data-lang="es"><a href="./">El juego</a> · <a href="privacy.html">Privacidad</a></span><span data-lang="fr"><a href="./">Le jeu</a> · <a href="privacy.html">Confidentialité</a></span><span data-lang="id"><a href="./">Gimnya</a> · <a href="privacy.html">Privasi</a></span><span data-lang="it"><a href="./">Il gioco</a> · <a href="privacy.html">Privacy</a></span><span data-lang="pl"><a href="./">Gra</a> · <a href="privacy.html">Prywatność</a></span><span data-lang="pt"><a href="./">O jogo</a> · <a href="privacy.html">Privacidade</a></span><span data-lang="tr"><a href="./">Oyun</a> · <a href="privacy.html">Gizlilik</a></span><span data-lang="hi"><a href="./">खेल</a> · <a href="privacy.html">गोपनीयता</a></span><span data-lang="ja"><a href="./">ゲームについて</a> · <a href="privacy.html">プライバシー</a></span><span data-lang="ko"><a href="./">게임 소개</a> · <a href="privacy.html">개인정보</a></span> ·
+     <a href="mailto:admin@majorcomputing.ca">admin@majorcomputing.ca</a></p>
+</footer>
+
+<script>
+  // The chooser, the remembered choice, and the browser's own language, in that
+  // order of authority. Everything is already in the document, so switching is
+  // a class change and never a request.
+  (function () {
+    var picker = document.getElementById('lang');
+    var codes = Array.prototype.map.call(picker.options, function (o) {
+      return o.value;
+    });
+
+    function choose(code) {
+      if (codes.indexOf(code) < 0) return;
+      var all = document.querySelectorAll('[data-lang]');
+      for (var i = 0; i < all.length; i++) {
+        all[i].classList.toggle('on', all[i].getAttribute('data-lang') === code);
+      }
+      picker.value = code;
+      document.documentElement.lang = code;
+      document.documentElement.dir = picker.options[picker.selectedIndex]
+        .getAttribute('data-dir') || 'ltr';
+      try { localStorage.setItem('csoe-lang', code); } catch (e) {}
+    }
+
+    picker.addEventListener('change', function () { choose(picker.value); });
+
+    var saved = null;
+    try { saved = localStorage.getItem('csoe-lang'); } catch (e) {}
+    var wanted = saved;
+    if (!wanted) {
+      var tags = navigator.languages || [navigator.language || 'en'];
+      for (var t = 0; t < tags.length && !wanted; t++) {
+        var tag = String(tags[t]).toLowerCase();
+        // Longest match first, so a future 'pt-BR' beats a plain 'pt'.
+        for (var c = 0; c < codes.length; c++) {
+          if (tag === codes[c].toLowerCase()) { wanted = codes[c]; break; }
+        }
+        if (wanted) break;
+        for (var c2 = 0; c2 < codes.length; c2++) {
+          if (tag.split('-')[0] === codes[c2].split('-')[0]) {
+            wanted = codes[c2];
+            break;
+          }
+        }
+      }
+    }
+    if (wanted && wanted !== 'en') choose(wanted);
+  }());
+</script>
+
+</body>
+</html>

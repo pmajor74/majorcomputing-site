@@ -3,8 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Privacy Policy &middot; Colored Sands of Egypt</title>
+<title>Privacy Policy · Colored Sands of Egypt</title>
 <meta name="description" content="What Colored Sands of Egypt does and does not collect.">
+<link rel="icon" href="img/icon.png" type="image/png">
 <style>
   :root {
     --ink: #2b241c; --dim: #6a5f52; --rule: #ddd2c0;
@@ -18,31 +19,36 @@
   }
   * { box-sizing: border-box; }
   body {
-    margin: 0 auto; padding: 40px 22px 80px; max-width: 44rem;
+    margin: 0 auto; padding: 36px 22px 80px; max-width: 44rem;
     background: var(--ground); color: var(--ink);
     font: 17px/1.7 Georgia, "Iowan Old Style", "Times New Roman", serif;
   }
   header { border-bottom: 1px solid var(--rule); padding-bottom: 18px; }
   h1 { font-size: 28px; margin: 0 0 6px; letter-spacing: .01em; }
+  h1 a { color: inherit; text-decoration: none; }
+  h1 a:hover { color: var(--gold); }
   h2 {
     font-size: 19px; margin: 34px 0 8px; color: var(--gold);
     font-family: system-ui, sans-serif; letter-spacing: .01em;
   }
   .sub { color: var(--dim); margin: 0; font-size: 15px; }
-  .langs {
-    display: flex; gap: 8px; margin: 16px 0 0;
-    font-family: system-ui, sans-serif; font-size: 14px;
+  .intro { color: var(--dim); }
+  .picker {
+    margin: 16px 0 0; font-family: system-ui, sans-serif; font-size: 14px;
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
   }
-  .langs button {
-    font: inherit; cursor: pointer; padding: 5px 12px; border-radius: 999px;
-    border: 1px solid var(--rule); background: transparent; color: var(--dim);
+  .picker label { color: var(--dim); }
+  .picker select {
+    font: inherit; font-size: 15px; padding: 7px 12px; border-radius: 8px;
+    border: 1px solid var(--rule); background: var(--panel); color: var(--ink);
+    max-width: 100%;
   }
-  .langs button[aria-pressed="true"] {
-    background: var(--gold); border-color: var(--gold); color: var(--ground);
-  }
-  .langs button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .picker select:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
   ul { padding-left: 1.15em; }
   li { margin: 6px 0; }
+  dl { margin: 0; }
+  dt { font-weight: bold; margin-top: 18px; }
+  dd { margin: 4px 0 0; color: var(--dim); }
   .note {
     background: var(--panel); border: 1px solid var(--rule); border-radius: 10px;
     padding: 14px 18px; margin: 22px 0; font-size: 16px;
@@ -52,6 +58,7 @@
     margin-top: 46px; padding-top: 18px; border-top: 1px solid var(--rule);
     color: var(--dim); font-size: 14px; font-family: system-ui, sans-serif;
   }
+  footer p { margin: 0; }
   [data-lang] { display: none; }
   [data-lang].on { display: block; }
   span[data-lang].on { display: inline; }
@@ -60,25 +67,35 @@
 <body>
 
 <header>
-  <h1>Colored Sands of Egypt</h1>
-  <p class="sub"><span data-lang="en" class="on">Privacy Policy</span><span data-lang="fr">Politique de confidentialit&eacute;</span><span data-lang="es">Pol&iacute;tica de privacidad</span> &middot; <span id="updated">30 August 2026</span></p>
-  <div class="langs" role="group" aria-label="Language">
-    <button type="button" data-set="en" aria-pressed="true">English</button>
-    <button type="button" data-set="fr" aria-pressed="false">Fran&ccedil;ais</button>
-    <button type="button" data-set="es" aria-pressed="false">Espa&ntilde;ol</button>
+  <h1><a href="./">Colored Sands of Egypt</a></h1>
+  <p class="sub"><span data-lang="en" class="on">Privacy Policy</span><span data-lang="de">Datenschutzerklärung</span><span data-lang="es">Política de privacidad</span><span data-lang="fr">Politique de confidentialité</span><span data-lang="id">Kebijakan Privasi</span><span data-lang="it">Informativa sulla privacy</span><span data-lang="pl">Polityka prywatności</span><span data-lang="pt">Política de Privacidade</span><span data-lang="tr">Gizlilik Politikası</span><span data-lang="hi">गोपनीयता नीति</span><span data-lang="ja">プライバシーポリシー</span><span data-lang="ko">개인정보 처리방침</span> · <span data-lang="en" class="on">Updated 8 September 2026</span><span data-lang="de">Stand 8. September 2026</span><span data-lang="es">Actualizada 8 de septiembre de 2026</span><span data-lang="fr">Mise à jour 8 septembre 2026</span><span data-lang="id">Diperbarui 8 September 2026</span><span data-lang="it">Aggiornata 8 settembre 2026</span><span data-lang="pl">Aktualizacja 8 września 2026</span><span data-lang="pt">Atualizada em 8 de setembro de 2026</span><span data-lang="tr">Güncellendi 8 Eylül 2026</span><span data-lang="hi">अद्यतन 8 सितंबर 2026</span><span data-lang="ja">更新日 2026年9月8日</span><span data-lang="ko">갱신일 2026년 9월 8일</span></p>
+  <div class="picker">
+    <label for="lang"><span data-lang="en" class="on">Language</span><span data-lang="de">Sprache</span><span data-lang="es">Idioma</span><span data-lang="fr">Langue</span><span data-lang="id">Bahasa</span><span data-lang="it">Lingua</span><span data-lang="pl">Język</span><span data-lang="pt">Idioma</span><span data-lang="tr">Dil</span><span data-lang="hi">भाषा</span><span data-lang="ja">言語</span><span data-lang="ko">언어</span></label>
+    <select id="lang">
+      <option value="en" data-dir="ltr">English</option>
+      <option value="de" data-dir="ltr">Deutsch</option>
+      <option value="es" data-dir="ltr">Español</option>
+      <option value="fr" data-dir="ltr">Français</option>
+      <option value="id" data-dir="ltr">Bahasa Indonesia</option>
+      <option value="it" data-dir="ltr">Italiano</option>
+      <option value="pl" data-dir="ltr">Polski</option>
+      <option value="pt" data-dir="ltr">Português (Brasil)</option>
+      <option value="tr" data-dir="ltr">Türkçe</option>
+      <option value="hi" data-dir="ltr">हिन्दी</option>
+      <option value="ja" data-dir="ltr">日本語</option>
+      <option value="ko" data-dir="ltr">한국어</option>
+    </select>
   </div>
 </header>
 
-<!-- ------------------------------- English ------------------------------- -->
-<main data-lang="en" class="on">
-
+<main data-lang="en" class="on" lang="en" dir="ltr">
 <div class="note">
-  <strong>The short version.</strong> The game collects nothing about you. It
-  has no accounts, no sign-in and no server: everything it remembers is stored
-  on your own device. The only component that can send anything anywhere is
-  advertising, which stops for good once it is removed &mdash; with one
-  small purchase, or by watching your way to it &mdash; and which asks for
-  your consent first wherever the law requires it.
+  <strong>The short version.</strong> The game collects nothing about you. It has
+  no accounts, no sign-in and no server: everything it remembers is stored on your
+  own device. The only component that can send anything anywhere is advertising,
+  which stops for good once it is removed — with one small purchase, or by
+  watching your way to it — and which asks for your consent first wherever the law
+  requires it.
 </div>
 
 <h2>Who this is from</h2>
@@ -90,307 +107,1422 @@
 
 <h2>What the game stores, and where</h2>
 <p>
-  Your progress through the chambers, your best results, your settings &mdash;
-  sound, music, vibration, colour-blind symbols &mdash; and whether you have
-  removed advertising are all kept in the app's own storage <em>on your
+  Your progress through the chambers, your best results, your settings — sound,
+  music, vibration, language, colour-blind symbols — and whether you have bought
+  either of the two unlocks are all kept in the app's own storage <em>on your
   device</em>. None of it is sent to us. We never see it, and we could not
   retrieve it if we wanted to. Deleting the app deletes all of it.
 </p>
 <p>
-  The game is fully playable with no network connection, and nothing in it
-  waits on one.
+  The game is fully playable with no network connection, and nothing in it waits
+  on one.
 </p>
 
 <h2>Advertising</h2>
 <p>
-  The game can show occasional full-screen advertisements between puzzles,
-  supplied by Google AdMob. It never interrupts a puzzle in progress, and it is
-  never attached to undo or restart &mdash; those are free and unlimited for
-  everyone, always. Separately, when a hint or the extra vial has run out, you
-  may choose to watch an advert for one instead of waiting a minute; that is
-  your choice each time, and the wait is always there.
+  The game can show occasional full-screen advertisements between chambers,
+  supplied by Google AdMob. It never interrupts a puzzle in progress, it never
+  appears in the first eighteen chambers, and it is never attached to undo or
+  restart — those are free and unlimited for everyone, always. Separately, when a
+  hint or the extra vial has run out, you may choose to watch an advertisement for
+  one instead of waiting a minute; that is your choice each time, and the wait is
+  always there beside it.
 </p>
 <p>
-  When advertising is switched on, Google's Mobile Ads SDK operates inside the
-  app and may collect information of its own, typically including a device
-  advertising identifier, coarse location inferred from your IP address, and
-  basic usage signals, in order to select and measure adverts. That collection
-  is Google's, governed by
+  When advertising is switched on, Google's Mobile Ads SDK operates inside the app
+  and may collect information of its own, typically including a device advertising
+  identifier, coarse location inferred from your IP address, and basic usage
+  signals, in order to select, cap and measure advertisements. That collection is
+  Google's, governed by
   <a href="https://policies.google.com/technologies/partner-sites">Google's own
   privacy terms</a>; we receive none of it beyond aggregate counts of how many
-  adverts were shown.
+  advertisements were shown.
 </p>
 <p>
-  The app does not ask for permission to track you across other companies' apps
-  and websites, and it carries no code to do so.
+  Advertisements in this game are requested as <strong>non-personalised</strong>,
+  which means they are selected from the context rather than from a profile of
+  you. The app does not ask for permission to track you across other companies'
+  apps and websites, and it carries no code to do so.
 </p>
 <p>
-  You can remove advertising permanently, either with a single small purchase
-  or by choosing to watch adverts until the same amount has been earned. There
+  You can remove advertising permanently, either with a single small purchase or
+  by choosing to watch advertisements until the same amount has been earned. There
   is no subscription, and nothing recurring.
+</p>
+
+<h2>Your choices about advertising</h2>
+<p>
+  Where the law requires it — in the European Economic Area, the United Kingdom
+  and Switzerland — the game asks for your consent before any advertising code
+  loads, using Google's own consent form. You can change that answer at any time
+  from <em>Options</em>, under <em>Advertising privacy options</em>.
+</p>
+<p>
+  If you refuse consent, the game does not lock you out and does not demand
+  payment. Nothing is taken away. In an advertisement's place you will occasionally
+  see a card from us explaining that advertising is what pays for the game, and
+  offering the two ways out: change your answer, or buy the game's advert-free
+  unlock. The card can be dismissed, and the thousand chambers stay open either
+  way.
+</p>
+<p>
+  Your device also has its own controls, which the game obeys: on Android, "Delete
+  advertising ID" and the advertising settings in the system settings; on iPhone
+  and iPad, "Allow Apps to Request to Track" under Privacy &amp; Security.
 </p>
 
 <h2>Purchases</h2>
 <p>
-  Purchases are handled entirely by the App Store or Google Play. We never see
-  your card, your billing address or your account. The app is told only whether
-  the one product has been bought, and it stores that answer on your device.
+  There are two purchases in the game — removing advertising, and unlimited hints
+  and extra vials — and each is a single payment, once, forever. They are handled
+  entirely by the App Store or Google Play. We never see your card, your billing
+  address or your account. The app is told only whether each product has been
+  bought, and it stores that answer on your device.
 </p>
 
 <h2>Children</h2>
 <p>
-  The game is suitable for all ages and is not directed at children in
-  particular. We do not knowingly collect personal information from anyone, of
-  any age, because we do not collect personal information at all.
+  The game is suitable for all ages and is not directed at children in particular.
+  We do not knowingly collect personal information from anyone, of any age, because
+  we do not collect personal information at all.
 </p>
 
 <h2>Your rights</h2>
 <p>
-  Rights to access, correct or erase personal data apply to data a company
+  Rights to access, correct, export or erase personal data apply to data a company
   holds. We hold none. If you want the game to forget everything it knows about
-  your play, delete the app; that is the whole of it.
+  your play, delete the app; that is the whole of it. For the advertising data
+  described above, which is Google's rather than ours, Google's own privacy terms
+  and the controls named in this page are the way to reach it.
 </p>
 
 <h2>Changes to this policy</h2>
 <p>
   If the game ever begins collecting something, this page will say so before it
-  does, and the date at the top will change. There is no version of this
-  document that quietly grows.
+  does, and the date at the top will change. There is no version of this document
+  that quietly grows.
 </p>
-
 </main>
 
-<!-- ------------------------------- Français ------------------------------ -->
-<main data-lang="fr">
-
+<main data-lang="de" lang="de" dir="ltr">
 <div class="note">
-  <strong>En bref.</strong> Le jeu ne recueille rien &agrave; votre sujet. Il
-  n'a ni compte, ni connexion, ni serveur&nbsp;: tout ce qu'il retient est
-  conserv&eacute; sur votre propre appareil. Le seul composant capable
-  d'envoyer quoi que ce soit est la publicit&eacute;, qui dispara&icirc;t pour
-  de bon une fois retir&eacute;e &mdash; par un seul petit achat, ou en
-  regardant des publicit&eacute;s jusqu'&agrave; l'avoir gagn&eacute; &mdash;
-  et qui demande d'abord votre consentement partout o&ugrave; la loi l'exige.
+  <strong>Kurz gefasst.</strong> Das Spiel erhebt nichts über Sie. Es hat keine
+  Konten, keine Anmeldung und keinen Server: Alles, was es sich merkt, liegt auf
+  Ihrem eigenen Gerät. Der einzige Bestandteil, der überhaupt etwas irgendwohin
+  senden kann, ist die Werbung — und die verschwindet endgültig, sobald sie
+  entfernt wird, durch einen einzigen kleinen Kauf oder indem Sie sie sich
+  ansehen, bis sie bezahlt ist. Überall dort, wo das Gesetz es verlangt, wird
+  vorher um Ihre Einwilligung gebeten.
 </div>
 
-<h2>Qui publie ce jeu</h2>
+<h2>Wer dieses Spiel herausgibt</h2>
 <p>
-  Colored Sands of Egypt est publi&eacute; par Major Computing, en
-  Colombie-Britannique, au Canada. Pour toute question&nbsp;:
+  Colored Sands of Egypt wird von Major Computing in British Columbia, Kanada,
+  herausgegeben. Fragen zu dieser Seite gehen an
   <a href="mailto:admin@majorcomputing.ca">admin@majorcomputing.ca</a>.
 </p>
 
-<h2>Ce que le jeu conserve, et o&ugrave;</h2>
+<h2>Was das Spiel speichert, und wo</h2>
 <p>
-  Votre progression dans les chambres, vos meilleurs r&eacute;sultats, vos
-  r&eacute;glages &mdash; sons, musique, vibration, symboles pour le daltonisme
-  &mdash; et le fait d'avoir retir&eacute; ou non la publicit&eacute; sont
-  conserv&eacute;s dans l'espace de stockage de l'application, <em>sur votre
-  appareil</em>. Rien de tout cela ne nous est transmis. Nous ne le voyons
-  jamais et ne pourrions pas le r&eacute;cup&eacute;rer. Supprimer
-  l'application supprime l'ensemble.
+  Ihr Fortschritt durch die Kammern, Ihre besten Ergebnisse, Ihre Einstellungen —
+  Ton, Musik, Vibration, Sprache, Symbole für Farbfehlsichtigkeit — und ob Sie
+  eine der beiden Freischaltungen gekauft haben, liegen im eigenen Speicher der
+  App, <em>auf Ihrem Gerät</em>. Nichts davon wird an uns gesendet. Wir sehen es
+  nie und könnten es auch nicht abrufen, wenn wir wollten. Wird die App gelöscht,
+  ist alles davon weg.
 </p>
 <p>
-  Le jeu est enti&egrave;rement jouable sans connexion r&eacute;seau, et rien
-  n'y attend une connexion.
-</p>
-
-<h2>Publicit&eacute;</h2>
-<p>
-  Le jeu peut afficher de temps &agrave; autre une publicit&eacute; plein
-  &eacute;cran entre deux casse-t&ecirc;tes, fournie par Google AdMob. Elle
-  n'interrompt jamais un casse-t&ecirc;te en cours et n'est jamais li&eacute;e
-  &agrave; l'annulation ni au red&eacute;marrage&nbsp;: ceux-ci sont gratuits et
-  illimit&eacute;s pour tout le monde, toujours. &Agrave; part cela, quand un
-  indice ou la fiole en plus est &eacute;puis&eacute;, vous pouvez choisir de
-  regarder une publicit&eacute; pour en obtenir un au lieu d'attendre une
-  minute&nbsp;: c'est votre choix &agrave; chaque fois, et l'attente est
-  toujours l&agrave;.
-</p>
-<p>
-  Lorsque la publicit&eacute; est activ&eacute;e, le SDK Google Mobile Ads
-  fonctionne dans l'application et peut recueillir ses propres informations,
-  g&eacute;n&eacute;ralement un identifiant publicitaire d'appareil, une
-  localisation approximative d&eacute;duite de votre adresse IP et des signaux
-  d'utilisation de base, afin de choisir et de mesurer les annonces. Cette
-  collecte est celle de Google et rel&egrave;ve des
-  <a href="https://policies.google.com/technologies/partner-sites">conditions de
-  confidentialit&eacute; de Google</a>&nbsp;; nous n'en recevons rien, hormis le
-  nombre total d'annonces affich&eacute;es.
-</p>
-<p>
-  L'application ne demande pas l'autorisation de vous suivre dans les
-  applications et sites d'autres soci&eacute;t&eacute;s, et ne contient aucun
-  code permettant de le faire.
-</p>
-<p>
-  Vous pouvez retirer la publicit&eacute; d&eacute;finitivement, soit par un
-  seul petit achat, soit en choisissant de regarder des annonces jusqu'&agrave;
-  ce que le m&ecirc;me montant ait &eacute;t&eacute; gagn&eacute;. Il n'y a ni
-  abonnement ni pr&eacute;l&egrave;vement r&eacute;current.
+  Das Spiel ist ohne Netzverbindung vollständig spielbar, und nichts darin wartet
+  auf eine.
 </p>
 
-<h2>Achats</h2>
+<h2>Werbung</h2>
 <p>
-  Les achats sont enti&egrave;rement g&eacute;r&eacute;s par l'App Store ou
-  Google Play. Nous ne voyons jamais votre carte, votre adresse de facturation
-  ni votre compte. L'application apprend seulement si l'unique produit a
-  &eacute;t&eacute; achet&eacute;, et conserve cette r&eacute;ponse sur votre
-  appareil.
+  Das Spiel kann zwischen zwei Kammern gelegentlich eine bildschirmfüllende
+  Anzeige von Google AdMob einblenden. Sie unterbricht nie ein laufendes Rätsel,
+  erscheint nie in den ersten achtzehn Kammern und hängt nie an „Rückgängig“ oder
+  „Neu starten“ — beides ist für alle kostenlos und unbegrenzt, immer. Davon
+  getrennt: Wenn ein Hinweis oder das zusätzliche Fläschchen aufgebraucht ist,
+  können Sie sich für eine Anzeige entscheiden, statt eine Minute zu warten. Diese
+  Wahl liegt jedes Mal bei Ihnen, und das Warten steht immer daneben.
+</p>
+<p>
+  Bei eingeschalteter Werbung arbeitet das Google Mobile Ads SDK in der App und
+  kann eigene Daten erheben, üblicherweise eine Werbe-ID des Geräts, einen groben
+  Standort aus Ihrer IP-Adresse und einfache Nutzungssignale, um Anzeigen
+  auszuwählen, zu begrenzen und zu messen. Diese Erhebung ist die von Google und
+  richtet sich nach
+  <a href="https://policies.google.com/technologies/partner-sites">Googles eigenen
+  Datenschutzbestimmungen</a>; wir erhalten davon nichts außer der Gesamtzahl der
+  ausgelieferten Anzeigen.
+</p>
+<p>
+  Die Anzeigen in diesem Spiel werden als <strong>nicht personalisiert</strong>
+  angefordert, also aus dem Zusammenhang gewählt und nicht aus einem Profil über
+  Sie. Die App bittet nicht um die Erlaubnis, Sie über Apps und Websites anderer
+  Unternehmen hinweg zu verfolgen, und enthält auch keinen Code dafür.
+</p>
+<p>
+  Sie können die Werbung dauerhaft entfernen, entweder mit einem einzigen kleinen
+  Kauf oder indem Sie sich Anzeigen ansehen, bis derselbe Betrag zusammengekommen
+  ist. Es gibt kein Abonnement und nichts Wiederkehrendes.
 </p>
 
-<h2>Enfants</h2>
+<h2>Ihre Wahl bei der Werbung</h2>
 <p>
-  Le jeu convient &agrave; tous les &acirc;ges et ne s'adresse pas
-  particuli&egrave;rement aux enfants. Nous ne recueillons sciemment aucune
-  donn&eacute;e personnelle de qui que ce soit, &agrave; tout &acirc;ge, parce
-  que nous n'en recueillons aucune.
+  Wo das Gesetz es verlangt — im Europäischen Wirtschaftsraum, im Vereinigten
+  Königreich und in der Schweiz — fragt das Spiel Ihre Einwilligung ab, bevor
+  irgendein Werbecode geladen wird, über Googles eigenes Einwilligungsformular.
+  Diese Antwort können Sie jederzeit unter <em>Optionen</em> bei
+  <em>Datenschutzoptionen für Werbung</em> ändern.
+</p>
+<p>
+  Wenn Sie ablehnen, sperrt das Spiel Sie nicht aus und verlangt kein Geld. Es
+  wird Ihnen nichts weggenommen. An der Stelle einer Anzeige sehen Sie gelegentlich
+  eine Karte von uns, die erklärt, dass Werbung dieses Spiel bezahlt, und die
+  beiden Wege nennt: Ihre Antwort ändern oder die werbefreie Freischaltung kaufen.
+  Die Karte lässt sich wegwischen, und die tausend Kammern bleiben in jedem Fall
+  offen.
+</p>
+<p>
+  Auch Ihr Gerät hat eigene Einstellungen, an die sich das Spiel hält: unter
+  Android „Werbe-ID löschen“ und die Werbeeinstellungen des Systems; auf iPhone
+  und iPad „Apps erlauben, Tracking anzufordern“ unter Datenschutz &amp;
+  Sicherheit.
 </p>
 
-<h2>Vos droits</h2>
+<h2>Käufe</h2>
 <p>
-  Les droits d'acc&egrave;s, de rectification et d'effacement portent sur les
-  donn&eacute;es qu'une entreprise d&eacute;tient. Nous n'en d&eacute;tenons
-  aucune. Si vous souhaitez que le jeu oublie tout de vos parties, supprimez
-  l'application&nbsp;; c'est tout.
+  Es gibt zwei Käufe im Spiel — Werbung entfernen sowie unbegrenzte Hinweise und
+  Zusatzfläschchen — und jeder ist eine einmalige Zahlung, ein Mal, für immer.
+  Abgewickelt werden sie vollständig vom App Store oder von Google Play. Wir sehen
+  nie Ihre Karte, Ihre Rechnungsanschrift oder Ihr Konto. Der App wird nur
+  mitgeteilt, ob das jeweilige Produkt gekauft wurde, und sie speichert diese
+  Antwort auf Ihrem Gerät.
 </p>
 
-<h2>Modifications de cette politique</h2>
+<h2>Kinder</h2>
 <p>
-  Si le jeu devait un jour commencer &agrave; recueillir quelque chose, cette
-  page le dirait avant que cela n'arrive, et la date en haut changerait. Il
-  n'existe pas de version de ce document qui s'&eacute;toffe en silence.
+  Das Spiel ist für jedes Alter geeignet und richtet sich nicht besonders an
+  Kinder. Wir erheben wissentlich von niemandem personenbezogene Daten, in keinem
+  Alter, weil wir überhaupt keine personenbezogenen Daten erheben.
 </p>
 
+<h2>Ihre Rechte</h2>
+<p>
+  Rechte auf Auskunft, Berichtigung, Übertragung und Löschung beziehen sich auf
+  Daten, die ein Unternehmen hält. Wir halten keine. Wenn das Spiel alles
+  vergessen soll, was es über Ihr Spielen weiß, löschen Sie die App; mehr ist es
+  nicht. Für die oben beschriebenen Werbedaten, die Google gehören und nicht uns,
+  sind Googles Datenschutzbestimmungen und die auf dieser Seite genannten
+  Einstellungen der Weg dorthin.
+</p>
+
+<h2>Änderungen dieser Erklärung</h2>
+<p>
+  Sollte das Spiel jemals anfangen, etwas zu erheben, wird es hier stehen, bevor
+  es geschieht, und das Datum oben wird sich ändern. Es gibt keine Fassung dieses
+  Dokuments, die still und leise wächst.
+</p>
 </main>
 
-<!-- ------------------------------- Español ------------------------------- -->
-<main data-lang="es">
-
+<main data-lang="es" lang="es" dir="ltr">
 <div class="note">
   <strong>En resumen.</strong> El juego no recopila nada sobre usted. No tiene
-  cuentas, ni inicio de sesi&oacute;n, ni servidor: todo lo que recuerda se
-  guarda en su propio dispositivo. El &uacute;nico componente capaz de enviar
-  algo a alguna parte es la publicidad, que desaparece para siempre en cuanto
-  se elimina &mdash; con una &uacute;nica compra peque&ntilde;a, o viendo
-  anuncios hasta ganarla &mdash; y que pide su consentimiento antes all&iacute;
-  donde la ley lo exige.
+  cuentas, ni inicio de sesión, ni servidor: todo lo que recuerda se guarda en su
+  propio dispositivo. El único componente capaz de enviar algo a alguna parte es
+  la publicidad, que desaparece para siempre en cuanto se retira —con una única
+  compra pequeña, o viendo anuncios hasta ganarla— y que pide antes su
+  consentimiento allí donde la ley lo exige.
 </div>
 
-<h2>Qui&eacute;n publica este juego</h2>
+<h2>Quién publica este juego</h2>
 <p>
-  Colored Sands of Egypt est&aacute; publicado por Major Computing, en Columbia
-  Brit&aacute;nica, Canad&aacute;. Para cualquier pregunta:
+  Colored Sands of Egypt lo publica Major Computing, en Columbia Británica,
+  Canadá. Cualquier duda sobre esta página puede dirigirse a
   <a href="mailto:admin@majorcomputing.ca">admin@majorcomputing.ca</a>.
 </p>
 
-<h2>Qu&eacute; guarda el juego, y d&oacute;nde</h2>
+<h2>Qué guarda el juego, y dónde</h2>
 <p>
-  Su avance por las c&aacute;maras, sus mejores resultados, sus ajustes
-  &mdash;sonido, m&uacute;sica, vibraci&oacute;n, s&iacute;mbolos para
-  daltonismo&mdash; y si ha retirado o no la publicidad se guardan en el
-  almacenamiento de la propia aplicaci&oacute;n, <em>en su dispositivo</em>.
-  Nada de ello se nos env&iacute;a. Nunca lo vemos y no podr&iacute;amos
-  recuperarlo. Al borrar la aplicaci&oacute;n se borra todo.
+  Su avance por las cámaras, sus mejores resultados, sus ajustes —sonido, música,
+  vibración, idioma, símbolos para el daltonismo— y si ha comprado o no cada uno
+  de los dos desbloqueos se guardan en el almacenamiento de la propia aplicación,
+  <em>en su dispositivo</em>. Nada de ello se nos envía. Nunca lo vemos, y no
+  podríamos recuperarlo aunque quisiéramos. Borrar la aplicación lo borra todo.
 </p>
 <p>
-  El juego se puede jugar por completo sin conexi&oacute;n de red, y nada en
-  &eacute;l espera a una.
+  El juego es completamente jugable sin conexión, y nada en él espera a la red.
 </p>
 
 <h2>Publicidad</h2>
 <p>
-  El juego puede mostrar de vez en cuando un anuncio a pantalla completa entre
-  un rompecabezas y otro, suministrado por Google AdMob. Nunca interrumpe un
-  rompecabezas en curso, y nunca est&aacute; ligado a deshacer ni a reiniciar:
-  esos son gratuitos e ilimitados para todo el mundo, siempre. Aparte, cuando
-  una pista o el frasco extra se han agotado, puede elegir ver un anuncio para
-  obtener uno en lugar de esperar un minuto: es su elecci&oacute;n cada vez, y
-  la espera siempre est&aacute; ah&iacute;.
+  El juego puede mostrar de vez en cuando un anuncio a pantalla completa entre dos
+  cámaras, servido por Google AdMob. Nunca interrumpe un rompecabezas en curso,
+  nunca aparece en las primeras dieciocho cámaras y nunca está atado a Deshacer ni
+  a Reiniciar: esas dos son gratuitas e ilimitadas para todo el mundo, siempre.
+  Aparte de eso, cuando se agota una pista o el frasco extra, puede elegir ver un
+  anuncio para conseguir otro en lugar de esperar un minuto; esa elección es suya
+  cada vez, y la espera sigue estando ahí al lado.
 </p>
 <p>
-  Cuando la publicidad est&aacute; activada, el SDK de Google Mobile Ads
-  funciona dentro de la aplicaci&oacute;n y puede recopilar informaci&oacute;n
-  propia, normalmente un identificador publicitario del dispositivo, una
-  ubicaci&oacute;n aproximada deducida de su direcci&oacute;n IP y se&ntilde;ales
-  b&aacute;sicas de uso, para elegir y medir los anuncios. Esa
-  recopilaci&oacute;n es de Google y se rige por las
-  <a href="https://policies.google.com/technologies/partner-sites">condiciones
-  de privacidad de Google</a>; nosotros no recibimos nada de ella, salvo el
+  Cuando la publicidad está activa, el SDK de Google Mobile Ads funciona dentro de
+  la aplicación y puede recopilar información propia, normalmente un identificador
+  publicitario del dispositivo, una ubicación aproximada deducida de su dirección
+  IP y señales básicas de uso, para seleccionar, limitar y medir los anuncios. Esa
+  recopilación es de Google y se rige por
+  <a href="https://policies.google.com/technologies/partner-sites">las condiciones
+  de privacidad de Google</a>; nosotros no recibimos nada de ella más allá del
   recuento total de anuncios mostrados.
 </p>
 <p>
-  La aplicaci&oacute;n no pide permiso para seguirle por aplicaciones y sitios
-  de otras empresas, y no incluye c&oacute;digo alguno para hacerlo.
+  Los anuncios de este juego se solicitan como <strong>no personalizados</strong>,
+  es decir, elegidos a partir del contexto y no de un perfil suyo. La aplicación
+  no pide permiso para seguirle por aplicaciones y sitios web de otras empresas, y
+  no lleva código alguno para hacerlo.
 </p>
 <p>
-  Puede retirar la publicidad de forma permanente, con una &uacute;nica compra
-  peque&ntilde;a o eligiendo ver anuncios hasta haber ganado esa misma
-  cantidad. No hay suscripci&oacute;n ni ning&uacute;n cobro recurrente.
+  Puede retirar la publicidad de forma permanente, con una única compra pequeña o
+  eligiendo ver anuncios hasta alcanzar esa misma cantidad. No hay suscripción ni
+  nada recurrente.
+</p>
+
+<h2>Sus opciones sobre la publicidad</h2>
+<p>
+  Allí donde la ley lo exige —en el Espacio Económico Europeo, el Reino Unido y
+  Suiza— el juego pide su consentimiento antes de cargar cualquier código
+  publicitario, mediante el formulario de consentimiento de Google. Puede cambiar
+  esa respuesta cuando quiera en <em>Opciones</em>, en
+  <em>Opciones de privacidad publicitaria</em>.
+</p>
+<p>
+  Si lo rechaza, el juego no le cierra ninguna puerta ni le exige pagar. No se le
+  quita nada. En el lugar de un anuncio verá de vez en cuando una tarjeta nuestra
+  que explica que la publicidad es lo que paga el juego y ofrece las dos salidas:
+  cambiar su respuesta, o comprar el desbloqueo sin anuncios. La tarjeta se puede
+  descartar, y las mil cámaras siguen abiertas en cualquier caso.
+</p>
+<p>
+  Su dispositivo también tiene sus propios controles, que el juego respeta: en
+  Android, «Eliminar ID de publicidad» y los ajustes de anuncios del sistema; en
+  iPhone y iPad, «Permitir que las apps soliciten rastrearte» en Privacidad y
+  seguridad.
 </p>
 
 <h2>Compras</h2>
 <p>
-  Las compras las gestionan por completo App Store o Google Play. Nunca vemos
-  su tarjeta, su direcci&oacute;n de facturaci&oacute;n ni su cuenta. A la
-  aplicaci&oacute;n solo se le comunica si el &uacute;nico producto ha sido
-  comprado, y guarda esa respuesta en su dispositivo.
+  El juego tiene dos compras —retirar la publicidad, y pistas y frascos extra
+  ilimitados— y cada una es un pago único, una sola vez, para siempre. Las
+  gestionan íntegramente App Store o Google Play. Nunca vemos su tarjeta, su
+  dirección de facturación ni su cuenta. A la aplicación solo se le dice si cada
+  producto se ha comprado, y guarda esa respuesta en su dispositivo.
 </p>
 
 <h2>Menores</h2>
 <p>
-  El juego es apto para todas las edades y no se dirige especialmente a
-  menores. No recopilamos a sabiendas informaci&oacute;n personal de nadie, de
-  ninguna edad, porque no recopilamos informaci&oacute;n personal en absoluto.
+  El juego es apto para todas las edades y no está dirigido especialmente a
+  menores. No recopilamos a sabiendas información personal de nadie, de ninguna
+  edad, porque no recopilamos información personal en absoluto.
 </p>
 
 <h2>Sus derechos</h2>
 <p>
-  Los derechos de acceso, rectificaci&oacute;n y supresi&oacute;n se refieren a
-  los datos que una empresa conserva. Nosotros no conservamos ninguno. Si desea
-  que el juego olvide todo lo que sabe de sus partidas, borre la
-  aplicaci&oacute;n; eso es todo.
+  Los derechos de acceso, rectificación, portabilidad y supresión se refieren a
+  datos que una empresa conserva. Nosotros no conservamos ninguno. Si quiere que
+  el juego olvide todo lo que sabe de sus partidas, borre la aplicación; eso es
+  todo. Para los datos publicitarios descritos arriba, que son de Google y no
+  nuestros, las condiciones de privacidad de Google y los ajustes mencionados en
+  esta página son el camino.
 </p>
 
-<h2>Cambios en esta pol&iacute;tica</h2>
+<h2>Cambios en esta política</h2>
 <p>
-  Si alg&uacute;n d&iacute;a el juego empezara a recopilar algo, esta
-  p&aacute;gina lo dir&iacute;a antes de que ocurriera, y cambiar&iacute;a la
-  fecha de arriba. No existe una versi&oacute;n de este documento que crezca en
-  silencio.
+  Si el juego empezara alguna vez a recopilar algo, esta página lo dirá antes de
+  que ocurra, y la fecha de arriba cambiará. No existe una versión de este
+  documento que crezca en silencio.
+</p>
+</main>
+
+<main data-lang="fr" lang="fr" dir="ltr">
+<div class="note">
+  <strong>En bref.</strong> Le jeu ne recueille rien à votre sujet. Il n'a ni
+  compte, ni connexion, ni serveur : tout ce qu'il retient est conservé sur votre
+  propre appareil. Le seul composant capable d'envoyer quoi que ce soit est la
+  publicité, qui disparaît pour de bon une fois retirée — par un seul petit achat,
+  ou en regardant des publicités jusqu'à l'avoir gagnée — et qui demande d'abord
+  votre consentement partout où la loi l'exige.
+</div>
+
+<h2>Qui publie ce jeu</h2>
+<p>
+  Colored Sands of Egypt est publié par Major Computing, en Colombie-Britannique,
+  au Canada. Pour toute question au sujet de cette page :
+  <a href="mailto:admin@majorcomputing.ca">admin@majorcomputing.ca</a>.
 </p>
 
+<h2>Ce que le jeu conserve, et où</h2>
+<p>
+  Votre progression dans les chambres, vos meilleurs résultats, vos réglages —
+  sons, musique, vibration, langue, symboles pour le daltonisme — et le fait
+  d'avoir acheté ou non l'un des deux déblocages sont conservés dans l'espace de
+  stockage de l'application, <em>sur votre appareil</em>. Rien de tout cela ne
+  nous est transmis. Nous ne le voyons jamais et ne pourrions pas le récupérer.
+  Supprimer l'application supprime l'ensemble.
+</p>
+<p>
+  Le jeu est entièrement jouable sans connexion réseau, et rien n'y attend une
+  connexion.
+</p>
+
+<h2>Publicité</h2>
+<p>
+  Le jeu peut afficher de temps à autre une publicité plein écran entre deux
+  chambres, fournie par Google AdMob. Elle n'interrompt jamais une énigme en
+  cours, n'apparaît jamais dans les dix-huit premières chambres et n'est jamais
+  liée à Annuler ni à Recommencer — ces deux commandes sont gratuites et
+  illimitées pour tout le monde, toujours. Par ailleurs, lorsqu'un indice ou la
+  fiole supplémentaire est épuisé, vous pouvez choisir de regarder une publicité
+  pour en obtenir un plutôt que d'attendre une minute ; ce choix vous appartient
+  à chaque fois, et l'attente reste toujours proposée à côté.
+</p>
+<p>
+  Lorsque la publicité est active, le SDK Google Mobile Ads fonctionne dans
+  l'application et peut recueillir des informations qui lui sont propres,
+  généralement un identifiant publicitaire de l'appareil, une localisation
+  approximative déduite de votre adresse IP et des signaux d'utilisation de base,
+  afin de sélectionner, limiter et mesurer les annonces. Cette collecte est celle
+  de Google, régie par
+  <a href="https://policies.google.com/technologies/partner-sites">les conditions
+  de confidentialité de Google</a> ; nous n'en recevons rien, hormis le nombre
+  total d'annonces affichées.
+</p>
+<p>
+  Les annonces de ce jeu sont demandées comme <strong>non personnalisées</strong>,
+  c'est-à-dire choisies à partir du contexte et non d'un profil vous concernant.
+  L'application ne demande pas l'autorisation de vous suivre dans les applications
+  et les sites d'autres entreprises, et ne contient aucun code permettant de le
+  faire.
+</p>
+<p>
+  Vous pouvez retirer la publicité définitivement, soit par un seul petit achat,
+  soit en choisissant de regarder des annonces jusqu'à ce que le même montant soit
+  atteint. Il n'y a ni abonnement ni prélèvement récurrent.
+</p>
+
+<h2>Vos choix concernant la publicité</h2>
+<p>
+  Là où la loi l'exige — dans l'Espace économique européen, au Royaume-Uni et en
+  Suisse — le jeu demande votre consentement avant tout chargement de code
+  publicitaire, au moyen du formulaire de consentement de Google. Vous pouvez
+  modifier cette réponse à tout moment dans <em>Options</em>, sous
+  <em>Options de confidentialité publicitaire</em>.
+</p>
+<p>
+  Si vous refusez, le jeu ne vous bloque pas et n'exige aucun paiement. Rien ne
+  vous est retiré. À la place d'une annonce, une carte de notre part vous
+  expliquera de temps à autre que la publicité est ce qui finance le jeu, et vous
+  proposera les deux issues possibles : modifier votre réponse, ou acheter le
+  déblocage sans publicité. Cette carte peut être écartée, et les mille chambres
+  restent ouvertes dans tous les cas.
+</p>
+<p>
+  Votre appareil dispose aussi de ses propres réglages, que le jeu respecte : sur
+  Android, « Supprimer l'identifiant publicitaire » et les réglages publicitaires
+  du système ; sur iPhone et iPad, « Autoriser les apps à demander de vous
+  suivre » dans Confidentialité et sécurité.
+</p>
+
+<h2>Achats</h2>
+<p>
+  Le jeu propose deux achats — le retrait de la publicité, et les indices et
+  fioles supplémentaires en illimité — chacun étant un paiement unique, une seule
+  fois, pour toujours. Ils sont entièrement gérés par l'App Store ou Google Play.
+  Nous ne voyons jamais votre carte, votre adresse de facturation ni votre compte.
+  L'application apprend seulement si chaque produit a été acheté, et conserve
+  cette réponse sur votre appareil.
+</p>
+
+<h2>Enfants</h2>
+<p>
+  Le jeu convient à tous les âges et ne s'adresse pas particulièrement aux
+  enfants. Nous ne recueillons sciemment aucune donnée personnelle de qui que ce
+  soit, à tout âge, puisque nous n'en recueillons aucune.
+</p>
+
+<h2>Vos droits</h2>
+<p>
+  Les droits d'accès, de rectification, de portabilité et d'effacement portent sur
+  les données détenues par une entreprise. Nous n'en détenons aucune. Si vous
+  souhaitez que le jeu oublie tout ce qu'il sait de vos parties, supprimez
+  l'application ; c'est tout. Pour les données publicitaires décrites ci-dessus,
+  qui appartiennent à Google et non à nous, les conditions de confidentialité de
+  Google et les réglages nommés dans cette page sont la voie à suivre.
+</p>
+
+<h2>Modifications de cette politique</h2>
+<p>
+  Si le jeu se met un jour à recueillir quelque chose, cette page le dira avant
+  que cela n'arrive, et la date en haut changera. Il n'existe pas de version de ce
+  document qui s'étoffe en silence.
+</p>
+</main>
+
+<main data-lang="id" lang="id" dir="ltr">
+<div class="note">
+  <strong>Ringkasnya.</strong> Gim ini tidak mengumpulkan apa pun tentang Anda.
+  Tidak ada akun, tidak ada proses masuk, dan tidak ada server: semua yang
+  diingatnya disimpan di perangkat Anda sendiri. Satu-satunya komponen yang bisa
+  mengirim apa pun ke mana pun adalah iklan — dan iklan berhenti selamanya begitu
+  dihapus, lewat satu pembelian kecil atau dengan menonton iklan sampai
+  terbayar. Di mana pun hukum mewajibkannya, persetujuan Anda diminta lebih dulu.
+</div>
+
+<h2>Siapa yang menerbitkan gim ini</h2>
+<p>
+  Colored Sands of Egypt diterbitkan oleh Major Computing, di British Columbia,
+  Kanada. Pertanyaan tentang apa pun di halaman ini dapat dikirim ke
+  <a href="mailto:admin@majorcomputing.ca">admin@majorcomputing.ca</a>.
+</p>
+
+<h2>Apa yang disimpan gim ini, dan di mana</h2>
+<p>
+  Kemajuan Anda melewati ruang-ruang, hasil terbaik Anda, pengaturan Anda — suara,
+  musik, getaran, bahasa, simbol untuk buta warna — serta apakah Anda sudah membeli
+  masing-masing dari dua pembuka kunci itu, semuanya disimpan di penyimpanan
+  aplikasi sendiri, <em>di perangkat Anda</em>. Tidak satu pun dikirim kepada kami.
+  Kami tidak pernah melihatnya dan tidak bisa mengambilnya sekalipun kami mau.
+  Menghapus aplikasi menghapus semuanya.
+</p>
+<p>
+  Gim ini bisa dimainkan sepenuhnya tanpa koneksi jaringan, dan tidak ada bagian di
+  dalamnya yang menunggu jaringan.
+</p>
+
+<h2>Iklan</h2>
+<p>
+  Gim ini sesekali dapat menampilkan iklan layar penuh di antara dua ruang, dari
+  Google AdMob. Iklan tidak pernah memotong teka-teki yang sedang berjalan, tidak
+  pernah muncul pada delapan belas ruang pertama, dan tidak pernah dikaitkan
+  dengan Urungkan atau Mulai ulang — keduanya gratis dan tanpa batas untuk semua
+  orang, selamanya. Terpisah dari itu, ketika petunjuk atau botol tambahan habis,
+  Anda boleh memilih menonton satu iklan untuk mendapat satu lagi alih-alih
+  menunggu satu menit; pilihan itu milik Anda setiap kali, dan pilihan menunggu
+  selalu ada di sebelahnya.
+</p>
+<p>
+  Ketika iklan aktif, Google Mobile Ads SDK berjalan di dalam aplikasi dan dapat
+  mengumpulkan informasinya sendiri, biasanya berupa pengenal iklan perangkat,
+  lokasi kasar yang disimpulkan dari alamat IP Anda, dan sinyal penggunaan dasar,
+  untuk memilih, membatasi, dan mengukur iklan. Pengumpulan itu milik Google dan
+  diatur oleh
+  <a href="https://policies.google.com/technologies/partner-sites">ketentuan
+  privasi Google sendiri</a>; kami tidak menerima apa pun darinya selain jumlah
+  total iklan yang ditayangkan.
+</p>
+<p>
+  Iklan dalam gim ini diminta sebagai <strong>tidak dipersonalisasi</strong>,
+  artinya dipilih berdasarkan konteks dan bukan berdasarkan profil tentang Anda.
+  Aplikasi tidak meminta izin untuk melacak Anda di aplikasi dan situs perusahaan
+  lain, dan tidak memuat kode apa pun untuk melakukannya.
+</p>
+<p>
+  Anda dapat menghapus iklan secara permanen, baik dengan satu pembelian kecil
+  maupun dengan memilih menonton iklan sampai jumlah yang sama terkumpul. Tidak
+  ada langganan dan tidak ada yang berulang.
+</p>
+
+<h2>Pilihan Anda soal iklan</h2>
+<p>
+  Di tempat yang diwajibkan hukum — di Wilayah Ekonomi Eropa, Britania Raya, dan
+  Swiss — gim ini meminta persetujuan Anda sebelum kode iklan apa pun dimuat,
+  memakai formulir persetujuan milik Google. Anda dapat mengubah jawaban itu kapan
+  saja melalui <em>Opsi</em>, pada <em>Opsi privasi iklan</em>.
+</p>
+<p>
+  Jika Anda menolak, gim tidak mengunci Anda dan tidak menuntut pembayaran. Tidak
+  ada yang diambil. Sebagai ganti iklan, sesekali akan muncul kartu dari kami yang
+  menjelaskan bahwa iklanlah yang membiayai gim ini, dan menyebut dua jalan
+  keluarnya: ubah jawaban Anda, atau beli pembuka kunci tanpa iklan. Kartu itu
+  bisa ditutup, dan seribu ruang tetap terbuka apa pun pilihan Anda.
+</p>
+<p>
+  Perangkat Anda juga punya kendalinya sendiri, yang dipatuhi gim ini: di Android,
+  "Hapus ID iklan" dan pengaturan iklan di setelan sistem; di iPhone dan iPad,
+  "Izinkan Aplikasi Meminta untuk Melacak" pada Privasi &amp; Keamanan.
+</p>
+
+<h2>Pembelian</h2>
+<p>
+  Ada dua pembelian di dalam gim — menghapus iklan, serta petunjuk dan botol
+  tambahan tanpa batas — dan masing-masing adalah satu kali bayar, sekali,
+  selamanya. Keduanya ditangani sepenuhnya oleh App Store atau Google Play. Kami
+  tidak pernah melihat kartu, alamat penagihan, atau akun Anda. Aplikasi hanya
+  diberi tahu apakah tiap produk sudah dibeli, dan menyimpan jawaban itu di
+  perangkat Anda.
+</p>
+
+<h2>Anak-anak</h2>
+<p>
+  Gim ini cocok untuk segala usia dan tidak ditujukan khusus untuk anak-anak. Kami
+  tidak dengan sengaja mengumpulkan data pribadi dari siapa pun, pada usia berapa
+  pun, karena kami sama sekali tidak mengumpulkan data pribadi.
+</p>
+
+<h2>Hak Anda</h2>
+<p>
+  Hak untuk mengakses, memperbaiki, memindahkan, dan menghapus data pribadi
+  berlaku atas data yang dipegang sebuah perusahaan. Kami tidak memegang apa pun.
+  Jika Anda ingin gim ini melupakan segalanya tentang permainan Anda, hapus
+  aplikasinya; hanya itu. Untuk data iklan yang dijelaskan di atas, yang milik
+  Google dan bukan milik kami, ketentuan privasi Google dan pengaturan yang
+  disebut di halaman ini adalah jalannya.
+</p>
+
+<h2>Perubahan kebijakan ini</h2>
+<p>
+  Jika suatu saat gim ini mulai mengumpulkan sesuatu, halaman ini akan mengatakannya
+  sebelum itu terjadi, dan tanggal di bagian atas akan berubah. Tidak ada versi
+  dokumen ini yang bertambah diam-diam.
+</p>
+</main>
+
+<main data-lang="it" lang="it" dir="ltr">
+<div class="note">
+  <strong>In breve.</strong> Il gioco non raccoglie nulla su di lei. Non ha
+  account, né accesso, né server: tutto ciò che ricorda resta sul suo dispositivo.
+  L'unico componente in grado di inviare qualcosa da qualche parte è la
+  pubblicità, che sparisce per sempre una volta rimossa — con un solo piccolo
+  acquisto, oppure guardando annunci finché non se la sarà guadagnata — e che
+  chiede prima il suo consenso ovunque la legge lo imponga.
+</div>
+
+<h2>Chi pubblica questo gioco</h2>
+<p>
+  Colored Sands of Egypt è pubblicato da Major Computing, nella Columbia
+  Britannica, in Canada. Per qualsiasi domanda su questa pagina:
+  <a href="mailto:admin@majorcomputing.ca">admin@majorcomputing.ca</a>.
+</p>
+
+<h2>Che cosa conserva il gioco, e dove</h2>
+<p>
+  I suoi progressi tra le camere, i suoi risultati migliori, le sue impostazioni —
+  suoni, musica, vibrazione, lingua, simboli per il daltonismo — e se ha
+  acquistato o meno ciascuno dei due sblocchi restano nell'archivio
+  dell'applicazione stessa, <em>sul suo dispositivo</em>. Nulla di tutto questo ci
+  viene inviato. Non lo vediamo mai e non potremmo recuperarlo nemmeno volendo.
+  Disinstallare l'app cancella tutto.
+</p>
+<p>
+  Il gioco è interamente giocabile senza connessione, e nulla al suo interno
+  attende la rete.
+</p>
+
+<h2>Pubblicità</h2>
+<p>
+  Il gioco può mostrare di tanto in tanto un annuncio a schermo intero tra una
+  camera e l'altra, fornito da Google AdMob. Non interrompe mai un rompicapo in
+  corso, non compare mai nelle prime diciotto camere e non è mai legato ad Annulla
+  o a Ricomincia: quelle due sono gratuite e illimitate per tutti, sempre. A
+  parte questo, quando un suggerimento o la fiala in più si esaurisce, può
+  scegliere di guardare un annuncio per averne uno invece di attendere un minuto;
+  è una sua scelta ogni volta, e l'attesa resta sempre lì accanto.
+</p>
+<p>
+  Quando la pubblicità è attiva, l'SDK Google Mobile Ads funziona dentro
+  l'applicazione e può raccogliere informazioni proprie, di norma un
+  identificatore pubblicitario del dispositivo, una posizione approssimativa
+  dedotta dal suo indirizzo IP e segnali d'uso di base, per selezionare, limitare
+  e misurare gli annunci. Quella raccolta è di Google ed è regolata dalle
+  <a href="https://policies.google.com/technologies/partner-sites">condizioni sulla
+  privacy di Google</a>; noi non ne riceviamo nulla, oltre al conteggio
+  complessivo degli annunci mostrati.
+</p>
+<p>
+  Gli annunci di questo gioco sono richiesti come
+  <strong>non personalizzati</strong>, cioè scelti in base al contesto e non a un
+  profilo su di lei. L'app non chiede il permesso di tracciarla tra applicazioni e
+  siti di altre aziende, e non contiene alcun codice per farlo.
+</p>
+<p>
+  Può rimuovere la pubblicità in modo definitivo, con un solo piccolo acquisto
+  oppure scegliendo di guardare annunci finché non si raggiunge la stessa cifra.
+  Non c'è alcun abbonamento né alcun rinnovo.
+</p>
+
+<h2>Le sue scelte sulla pubblicità</h2>
+<p>
+  Dove la legge lo impone — nello Spazio economico europeo, nel Regno Unito e in
+  Svizzera — il gioco chiede il suo consenso prima che venga caricato qualsiasi
+  codice pubblicitario, usando il modulo di consenso di Google. Può cambiare
+  quella risposta in qualsiasi momento da <em>Opzioni</em>, alla voce
+  <em>Opzioni privacy della pubblicità</em>.
+</p>
+<p>
+  Se rifiuta, il gioco non le chiude nulla e non pretende un pagamento. Non le
+  viene tolto niente. Al posto di un annuncio vedrà ogni tanto una scheda nostra
+  che spiega che è la pubblicità a pagare il gioco e indica le due vie d'uscita:
+  cambiare risposta, oppure acquistare lo sblocco senza pubblicità. La scheda si
+  può chiudere, e le mille camere restano aperte in ogni caso.
+</p>
+<p>
+  Anche il suo dispositivo ha i propri comandi, che il gioco rispetta: su Android,
+  «Elimina ID pubblicità» e le impostazioni sugli annunci di sistema; su iPhone e
+  iPad, «Consenti alle app di richiedere il tracciamento» in Privacy e sicurezza.
+</p>
+
+<h2>Acquisti</h2>
+<p>
+  Nel gioco ci sono due acquisti — rimuovere la pubblicità, e suggerimenti e fiale
+  in più illimitati — e ciascuno è un pagamento unico, una volta sola, per sempre.
+  Sono gestiti interamente da App Store o Google Play. Non vediamo mai la sua
+  carta, il suo indirizzo di fatturazione o il suo account. All'app viene detto
+  soltanto se ciascun prodotto è stato acquistato, e conserva quella risposta sul
+  suo dispositivo.
+</p>
+
+<h2>Minori</h2>
+<p>
+  Il gioco è adatto a tutte le età e non è rivolto in particolare ai bambini. Non
+  raccogliamo consapevolmente dati personali di nessuno, di qualunque età, perché
+  non raccogliamo dati personali affatto.
+</p>
+
+<h2>I suoi diritti</h2>
+<p>
+  I diritti di accesso, rettifica, portabilità e cancellazione riguardano i dati
+  che un'azienda detiene. Noi non ne deteniamo alcuno. Se vuole che il gioco
+  dimentichi tutto ciò che sa delle sue partite, disinstalli l'app; è tutto qui.
+  Per i dati pubblicitari descritti sopra, che sono di Google e non nostri, le
+  condizioni sulla privacy di Google e le impostazioni citate in questa pagina
+  sono la strada da seguire.
+</p>
+
+<h2>Modifiche a questa informativa</h2>
+<p>
+  Se il gioco dovesse un giorno iniziare a raccogliere qualcosa, questa pagina lo
+  dirà prima che accada, e la data in alto cambierà. Non esiste una versione di
+  questo documento che cresce in silenzio.
+</p>
+</main>
+
+<main data-lang="pl" lang="pl" dir="ltr">
+<div class="note">
+  <strong>W skrócie.</strong> Gra nie zbiera o Tobie niczego. Nie ma kont, nie ma
+  logowania i nie ma serwera: wszystko, co pamięta, zostaje na Twoim własnym
+  urządzeniu. Jedynym elementem, który w ogóle może cokolwiek gdziekolwiek
+  wysłać, są reklamy — a te znikają na dobre, gdy zostaną usunięte: za jedną małą
+  opłatę albo przez oglądanie ich, aż same się opłacą. Wszędzie tam, gdzie wymaga
+  tego prawo, gra najpierw pyta o Twoją zgodę.
+</div>
+
+<h2>Kto wydaje tę grę</h2>
+<p>
+  Colored Sands of Egypt wydaje Major Computing z Kolumbii Brytyjskiej w Kanadzie.
+  Pytania o cokolwiek na tej stronie można kierować na adres
+  <a href="mailto:admin@majorcomputing.ca">admin@majorcomputing.ca</a>.
+</p>
+
+<h2>Co gra przechowuje i gdzie</h2>
+<p>
+  Twoje postępy w komorach, najlepsze wyniki, ustawienia — dźwięk, muzyka,
+  wibracje, język, symbole dla osób z zaburzeniami widzenia barw — oraz to, czy
+  kupiono którekolwiek z dwóch odblokowań, są przechowywane w pamięci samej
+  aplikacji, <em>na Twoim urządzeniu</em>. Nic z tego nie jest do nas wysyłane.
+  Nigdy tego nie widzimy i nie moglibyśmy tego odzyskać, nawet gdybyśmy chcieli.
+  Usunięcie aplikacji usuwa całość.
+</p>
+<p>
+  W grę można grać w pełni bez połączenia z siecią i nic w niej na sieć nie czeka.
+</p>
+
+<h2>Reklamy</h2>
+<p>
+  Gra może od czasu do czasu wyświetlić między komorami pełnoekranową reklamę
+  dostarczaną przez Google AdMob. Nigdy nie przerywa trwającej łamigłówki, nigdy
+  nie pojawia się w pierwszych osiemnastu komorach i nigdy nie jest powiązana z
+  cofnięciem ruchu ani z rozpoczęciem od nowa — te dwie rzeczy są bezpłatne i
+  nieograniczone dla wszystkich, zawsze. Osobno: gdy skończy się podpowiedź albo
+  dodatkowa fiolka, możesz obejrzeć reklamę, by dostać kolejną, zamiast czekać
+  minutę. Ten wybór należy do Ciebie za każdym razem, a czekanie zawsze stoi
+  obok.
+</p>
+<p>
+  Przy włączonych reklamach w aplikacji działa Google Mobile Ads SDK, który może
+  zbierać własne dane: zwykle identyfikator reklamowy urządzenia, przybliżoną
+  lokalizację wywnioskowaną z adresu IP oraz podstawowe sygnały o korzystaniu z
+  aplikacji, aby dobierać, ograniczać i mierzyć reklamy. To zbieranie należy do
+  Google i podlega
+  <a href="https://policies.google.com/technologies/partner-sites">warunkom
+  prywatności Google</a>; do nas nie trafia z tego nic poza łączną liczbą
+  wyświetlonych reklam.
+</p>
+<p>
+  Reklamy w tej grze są zamawiane jako
+  <strong>niespersonalizowane</strong>, czyli dobierane na podstawie kontekstu, a
+  nie profilu na Twój temat. Aplikacja nie prosi o zgodę na śledzenie Cię w
+  aplikacjach i witrynach innych firm i nie zawiera kodu, który by to robił.
+</p>
+<p>
+  Reklamy możesz usunąć na stałe: albo jedną małą opłatą, albo oglądając je, aż
+  uzbiera się ta sama kwota. Nie ma subskrypcji ani niczego cyklicznego.
+</p>
+
+<h2>Twoje wybory dotyczące reklam</h2>
+<p>
+  Tam, gdzie wymaga tego prawo — w Europejskim Obszarze Gospodarczym, w Wielkiej
+  Brytanii i w Szwajcarii — gra prosi o zgodę, zanim wczyta jakikolwiek kod
+  reklamowy, korzystając z formularza zgody Google. Odpowiedź możesz zmienić w
+  dowolnej chwili w <em>Opcjach</em>, w pozycji
+  <em>Ustawienia prywatności reklam</em>.
+</p>
+<p>
+  Odmowa niczego nie blokuje i nie oznacza żądania zapłaty. Nic Ci nie zostaje
+  odebrane. W miejscu reklamy zobaczysz czasem naszą kartę z wyjaśnieniem, że to
+  reklamy opłacają tę grę, i ze wskazaniem dwóch wyjść: zmień odpowiedź albo kup
+  odblokowanie bez reklam. Kartę można zamknąć, a tysiąc komór i tak pozostaje
+  otwarte.
+</p>
+<p>
+  Twoje urządzenie ma też własne ustawienia, których gra przestrzega: w Androidzie
+  „Usuń identyfikator wyświetlania reklam” oraz systemowe ustawienia reklam; na
+  iPhonie i iPadzie „Zezwalaj aplikacjom na prośby o śledzenie” w sekcji Prywatność
+  i ochrona.
+</p>
+
+<h2>Zakupy</h2>
+<p>
+  W grze są dwa zakupy — usunięcie reklam oraz nieograniczone podpowiedzi i
+  dodatkowe fiolki — i każdy z nich to jedna płatność, raz, na zawsze. Obsługuje
+  je w całości App Store albo Google Play. Nigdy nie widzimy Twojej karty, adresu
+  rozliczeniowego ani konta. Aplikacja dowiaduje się tylko, czy dany produkt
+  został kupiony, i zapisuje tę odpowiedź na Twoim urządzeniu.
+</p>
+
+<h2>Dzieci</h2>
+<p>
+  Gra jest odpowiednia dla każdego wieku i nie jest kierowana szczególnie do
+  dzieci. Świadomie nie zbieramy danych osobowych od nikogo, w żadnym wieku,
+  ponieważ nie zbieramy danych osobowych w ogóle.
+</p>
+
+<h2>Twoje prawa</h2>
+<p>
+  Prawa dostępu, sprostowania, przeniesienia i usunięcia dotyczą danych, które
+  posiada firma. My nie posiadamy żadnych. Jeśli chcesz, żeby gra zapomniała
+  wszystko, co wie o Twojej rozgrywce, usuń aplikację; to wszystko. W sprawie
+  opisanych wyżej danych reklamowych, które należą do Google, a nie do nas, drogą
+  są warunki prywatności Google i ustawienia wymienione na tej stronie.
+</p>
+
+<h2>Zmiany tej polityki</h2>
+<p>
+  Jeśli gra kiedykolwiek zacznie cokolwiek zbierać, ta strona powie o tym, zanim
+  to nastąpi, a data u góry się zmieni. Nie istnieje wersja tego dokumentu, która
+  po cichu się rozrasta.
+</p>
+</main>
+
+<main data-lang="pt" lang="pt" dir="ltr">
+<div class="note">
+  <strong>Em resumo.</strong> O jogo não coleta nada sobre você. Não tem contas,
+  nem login, nem servidor: tudo o que ele lembra fica no seu próprio aparelho. O
+  único componente capaz de enviar qualquer coisa para algum lugar é a
+  publicidade, que some de vez assim que é removida — com uma única compra
+  pequena, ou assistindo a anúncios até conquistá-la — e que pede o seu
+  consentimento antes, onde quer que a lei exija.
+</div>
+
+<h2>Quem publica este jogo</h2>
+<p>
+  Colored Sands of Egypt é publicado pela Major Computing, na Colúmbia Britânica,
+  Canadá. Dúvidas sobre qualquer ponto desta página podem ir para
+  <a href="mailto:admin@majorcomputing.ca">admin@majorcomputing.ca</a>.
+</p>
+
+<h2>O que o jogo guarda, e onde</h2>
+<p>
+  O seu progresso pelas câmaras, os seus melhores resultados, as suas
+  configurações — som, música, vibração, idioma, símbolos para daltonismo — e se
+  você comprou ou não cada um dos dois desbloqueios ficam no armazenamento do
+  próprio aplicativo, <em>no seu aparelho</em>. Nada disso é enviado para nós.
+  Nunca vemos, e não conseguiríamos recuperar mesmo que quiséssemos. Apagar o
+  aplicativo apaga tudo.
+</p>
+<p>
+  O jogo é totalmente jogável sem conexão, e nada nele espera pela rede.
+</p>
+
+<h2>Publicidade</h2>
+<p>
+  O jogo pode exibir de vez em quando um anúncio em tela cheia entre uma câmara e
+  outra, fornecido pelo Google AdMob. Ele nunca interrompe um quebra-cabeça em
+  andamento, nunca aparece nas primeiras dezoito câmaras e nunca está preso a
+  Desfazer nem a Recomeçar — esses dois são gratuitos e ilimitados para todo
+  mundo, sempre. À parte disso, quando uma dica ou o frasco extra acaba, você pode
+  escolher assistir a um anúncio para ganhar um em vez de esperar um minuto; essa
+  escolha é sua a cada vez, e a espera continua sempre ali ao lado.
+</p>
+<p>
+  Com a publicidade ligada, o SDK do Google Mobile Ads funciona dentro do
+  aplicativo e pode coletar informações próprias, normalmente um identificador de
+  publicidade do aparelho, uma localização aproximada deduzida do seu endereço IP
+  e sinais básicos de uso, para escolher, limitar e medir os anúncios. Essa coleta
+  é do Google, regida pelos
+  <a href="https://policies.google.com/technologies/partner-sites">termos de
+  privacidade do próprio Google</a>; nós não recebemos nada dela além da contagem
+  total de anúncios exibidos.
+</p>
+<p>
+  Os anúncios deste jogo são solicitados como
+  <strong>não personalizados</strong>, ou seja, escolhidos pelo contexto e não por
+  um perfil sobre você. O aplicativo não pede permissão para rastrear você em
+  aplicativos e sites de outras empresas, e não carrega nenhum código para isso.
+</p>
+<p>
+  Você pode remover a publicidade em definitivo, seja com uma única compra
+  pequena, seja escolhendo assistir a anúncios até que o mesmo valor tenha sido
+  alcançado. Não há assinatura e nada recorrente.
+</p>
+
+<h2>Suas escolhas sobre a publicidade</h2>
+<p>
+  Onde a lei exige — no Espaço Econômico Europeu, no Reino Unido e na Suíça — o
+  jogo pede o seu consentimento antes de carregar qualquer código de publicidade,
+  usando o formulário de consentimento do próprio Google. Você pode mudar essa
+  resposta quando quiser em <em>Opções</em>, em
+  <em>Opções de privacidade de publicidade</em>.
+</p>
+<p>
+  Se recusar, o jogo não tranca nada e não exige pagamento. Nada é tirado de você.
+  No lugar de um anúncio, de vez em quando aparecerá um cartão nosso explicando
+  que a publicidade é o que paga o jogo, e apontando as duas saídas: mudar a sua
+  resposta, ou comprar o desbloqueio sem anúncios. O cartão pode ser dispensado, e
+  as mil câmaras continuam abertas de qualquer forma.
+</p>
+<p>
+  O seu aparelho também tem os próprios controles, que o jogo respeita: no
+  Android, "Excluir ID de publicidade" e as configurações de anúncios do sistema;
+  no iPhone e no iPad, "Permitir que os apps solicitem rastreamento", em
+  Privacidade e Segurança.
+</p>
+
+<h2>Compras</h2>
+<p>
+  Há duas compras no jogo — remover a publicidade, e dicas e frascos extras
+  ilimitados — e cada uma é um pagamento único, uma vez só, para sempre. São
+  tratadas inteiramente pela App Store ou pelo Google Play. Nunca vemos o seu
+  cartão, o seu endereço de cobrança ou a sua conta. Ao aplicativo é dito apenas
+  se cada produto foi comprado, e ele guarda essa resposta no seu aparelho.
+</p>
+
+<h2>Crianças</h2>
+<p>
+  O jogo é adequado para todas as idades e não é dirigido especialmente a
+  crianças. Não coletamos conscientemente dados pessoais de ninguém, de nenhuma
+  idade, porque não coletamos dados pessoais de forma alguma.
+</p>
+
+<h2>Seus direitos</h2>
+<p>
+  Direitos de acesso, correção, portabilidade e exclusão dizem respeito a dados
+  que uma empresa mantém. Nós não mantemos nenhum. Se quiser que o jogo esqueça
+  tudo o que sabe sobre as suas partidas, apague o aplicativo; é só isso. Para os
+  dados de publicidade descritos acima, que são do Google e não nossos, os termos
+  de privacidade do Google e as configurações citadas nesta página são o caminho.
+</p>
+
+<h2>Mudanças nesta política</h2>
+<p>
+  Se o jogo algum dia começar a coletar alguma coisa, esta página dirá isso antes
+  que aconteça, e a data no topo vai mudar. Não existe uma versão deste documento
+  que cresce em silêncio.
+</p>
+</main>
+
+<main data-lang="tr" lang="tr" dir="ltr">
+<div class="note">
+  <strong>Kısaca.</strong> Oyun sizinle ilgili hiçbir şey toplamaz. Hesabı, girişi
+  ve sunucusu yoktur: hatırladığı her şey kendi cihazınızda durur. Herhangi bir
+  yere bir şey gönderebilecek tek bileşen reklamlardır; onlar da kaldırıldığı anda
+  temelli biter — tek ve küçük bir satın almayla ya da hakkı çıkana kadar reklam
+  izleyerek. Kanunun gerektirdiği her yerde önce sizin onayınız istenir.
+</div>
+
+<h2>Bu oyunu kim yayımlıyor</h2>
+<p>
+  Colored Sands of Egypt, Kanada'nın British Columbia eyaletindeki Major Computing
+  tarafından yayımlanmaktadır. Bu sayfadaki her konuda sorularınızı
+  <a href="mailto:admin@majorcomputing.ca">admin@majorcomputing.ca</a> adresine
+  yazabilirsiniz.
+</p>
+
+<h2>Oyun neyi, nerede saklıyor</h2>
+<p>
+  Odalardaki ilerlemeniz, en iyi sonuçlarınız, ayarlarınız — ses, müzik, titreşim,
+  dil, renk körlüğü için simgeler — ve iki kilit açmadan hangilerini satın aldığınız
+  bilgisi uygulamanın kendi deposunda, <em>sizin cihazınızda</em> tutulur. Bunların
+  hiçbiri bize gönderilmez. Onları hiç görmeyiz ve istesek de geri getiremeyiz.
+  Uygulamayı silmek hepsini siler.
+</p>
+<p>
+  Oyun ağ bağlantısı olmadan da eksiksiz oynanır ve içinde ağı bekleyen hiçbir şey
+  yoktur.
+</p>
+
+<h2>Reklamlar</h2>
+<p>
+  Oyun, odalar arasında ara sıra Google AdMob'un sağladığı tam ekran bir reklam
+  gösterebilir. Devam eden bir bulmacayı asla bölmez, ilk on sekiz odada hiç
+  görünmez ve geri alma ya da yeniden başlatmaya asla bağlanmaz — bu ikisi herkes
+  için, her zaman ücretsiz ve sınırsızdır. Bundan ayrı olarak, bir ipucu ya da ek
+  şişe tükendiğinde bir dakika beklemek yerine bir reklam izlemeyi seçebilirsiniz;
+  bu seçim her seferinde sizindir ve bekleme seçeneği her zaman yanında durur.
+</p>
+<p>
+  Reklamlar açıkken uygulamanın içinde Google Mobile Ads SDK çalışır ve reklamları
+  seçmek, sınırlamak ve ölçmek için kendi bilgilerini toplayabilir: genellikle bir
+  cihaz reklam kimliği, IP adresinizden çıkarılan kaba bir konum ve temel kullanım
+  sinyalleri. Bu toplama Google'a aittir ve
+  <a href="https://policies.google.com/technologies/partner-sites">Google'ın kendi
+  gizlilik koşullarına</a> tabidir; gösterilen reklamların toplam sayısı dışında
+  bize bunlardan hiçbir şey ulaşmaz.
+</p>
+<p>
+  Bu oyundaki reklamlar <strong>kişiselleştirilmemiş</strong> olarak istenir; yani
+  sizinle ilgili bir profile göre değil, bağlama göre seçilirler. Uygulama, başka
+  şirketlerin uygulama ve sitelerinde sizi izlemek için izin istemez ve bunu
+  yapacak hiçbir kod taşımaz.
+</p>
+<p>
+  Reklamları kalıcı olarak kaldırabilirsiniz: ya tek ve küçük bir satın almayla ya
+  da aynı tutar birikene kadar reklam izlemeyi seçerek. Abonelik ve yinelenen
+  hiçbir ödeme yoktur.
+</p>
+
+<h2>Reklamlarla ilgili seçimleriniz</h2>
+<p>
+  Kanunun gerektirdiği yerlerde — Avrupa Ekonomik Alanı, Birleşik Krallık ve
+  İsviçre'de — oyun, herhangi bir reklam kodu yüklenmeden önce Google'ın kendi
+  onay formuyla izninizi ister. Bu yanıtı istediğiniz zaman <em>Seçenekler</em>
+  içindeki <em>Reklam gizlilik seçenekleri</em>nden değiştirebilirsiniz.
+</p>
+<p>
+  Reddederseniz oyun sizi dışarıda bırakmaz ve ödeme talep etmez. Elinizden hiçbir
+  şey alınmaz. Bir reklamın yerine zaman zaman bizden bir kart görürsünüz: oyunun
+  parasını reklamların ödediğini anlatır ve iki kapıyı gösterir — yanıtınızı
+  değiştirin ya da reklamsız kilidi satın alın. Kart kapatılabilir ve bin oda her
+  hâlükârda açık kalır.
+</p>
+<p>
+  Cihazınızın da oyunun uyduğu kendi denetimleri vardır: Android'de "Reklam
+  kimliğini sil" ve sistem reklam ayarları; iPhone ve iPad'de Gizlilik ve
+  Güvenlik altındaki "Uygulamaların İzlemeyi İstemesine İzin Ver".
+</p>
+
+<h2>Satın almalar</h2>
+<p>
+  Oyunda iki satın alma vardır — reklamları kaldırmak ve sınırsız ipucu ile ek şişe
+  — ve her biri tek seferlik, bir kerelik, kalıcı bir ödemedir. Tümüyle App Store
+  ya da Google Play tarafından yürütülür. Kartınızı, fatura adresinizi ya da
+  hesabınızı asla görmeyiz. Uygulamaya yalnızca her ürünün satın alınıp
+  alınmadığı söylenir ve bu yanıtı cihazınızda saklar.
+</p>
+
+<h2>Çocuklar</h2>
+<p>
+  Oyun her yaşa uygundur ve özellikle çocuklara yönelik değildir. Hiç kimseden,
+  hiçbir yaşta, bilerek kişisel veri toplamayız; çünkü hiç kişisel veri toplamıyoruz.
+</p>
+
+<h2>Haklarınız</h2>
+<p>
+  Erişim, düzeltme, taşınabilirlik ve silme hakları bir şirketin elindeki verilere
+  ilişkindir. Bizim elimizde hiç yok. Oyunun oynayışınıza dair bildiği her şeyi
+  unutmasını istiyorsanız uygulamayı silin; hepsi bu. Yukarıda anlatılan ve bize
+  değil Google'a ait olan reklam verileri için, Google'ın gizlilik koşulları ve bu
+  sayfada adı geçen ayarlar izlenecek yoldur.
+</p>
+
+<h2>Bu politikadaki değişiklikler</h2>
+<p>
+  Oyun bir gün bir şey toplamaya başlarsa, bu sayfa bunu olmadan önce söyleyecek ve
+  yukarıdaki tarih değişecektir. Bu belgenin sessizce büyüyen bir sürümü yoktur.
+</p>
+</main>
+
+<main data-lang="hi" lang="hi" dir="ltr">
+<div class="note">
+  <strong>संक्षेप में।</strong> यह गेम आपके बारे में कुछ भी एकत्र नहीं करता। इसमें कोई खाता
+  नहीं, कोई साइन-इन नहीं और कोई सर्वर नहीं है: यह जो कुछ याद रखता है, वह आपके अपने
+  डिवाइस पर ही रहता है। कहीं भी कुछ भेज सकने वाला एकमात्र हिस्सा विज्ञापन है, और
+  हटा दिए जाने पर वह हमेशा के लिए बंद हो जाता है — एक छोटी-सी खरीद से, या तब तक
+  विज्ञापन देखकर जब तक उसकी कीमत पूरी न हो जाए। जहाँ भी कानून माँगता है, वहाँ पहले
+  आपकी सहमति ली जाती है।
+</div>
+
+<h2>यह गेम कौन प्रकाशित करता है</h2>
+<p>
+  Colored Sands of Egypt को कनाडा के ब्रिटिश कोलंबिया से Major Computing प्रकाशित करता
+  है। इस पृष्ठ पर किसी भी बात के बारे में प्रश्न
+  <a href="mailto:admin@majorcomputing.ca">admin@majorcomputing.ca</a> पर भेजे जा सकते
+  हैं।
+</p>
+
+<h2>गेम क्या रखता है, और कहाँ</h2>
+<p>
+  कक्षों में आपकी प्रगति, आपके सर्वश्रेष्ठ परिणाम, आपकी सेटिंग्स — ध्वनि, संगीत, कंपन, भाषा,
+  वर्णांधता के लिए प्रतीक — और दोनों अनलॉक में से आपने कौन-सा खरीदा है, यह सब ऐप के अपने
+  भंडारण में, <em>आपके डिवाइस पर</em> रहता है। इनमें से कुछ भी हमें नहीं भेजा जाता। हम इसे
+  कभी नहीं देखते, और चाहें तो भी इसे प्राप्त नहीं कर सकते। ऐप हटाने पर यह सब हट जाता है।
+</p>
+<p>
+  गेम बिना किसी नेटवर्क कनेक्शन के पूरी तरह खेला जा सकता है, और इसमें कुछ भी नेटवर्क की
+  प्रतीक्षा नहीं करता।
+</p>
+
+<h2>विज्ञापन</h2>
+<p>
+  गेम कभी-कभी दो कक्षों के बीच Google AdMob द्वारा दिया गया पूर्ण-स्क्रीन विज्ञापन दिखा
+  सकता है। यह चल रही पहेली को कभी बीच में नहीं रोकता, पहले अठारह कक्षों में कभी नहीं आता,
+  और पूर्ववत करने या फिर से शुरू करने से कभी नहीं जुड़ा होता — वे दोनों सबके लिए, हमेशा,
+  निःशुल्क और असीमित हैं। इससे अलग, जब कोई संकेत या अतिरिक्त शीशी समाप्त हो जाए, तो आप
+  एक मिनट प्रतीक्षा करने के बजाय एक विज्ञापन देखना चुन सकते हैं; यह चुनाव हर बार आपका
+  होता है, और प्रतीक्षा का विकल्प हमेशा उसके साथ रहता है।
+</p>
+<p>
+  जब विज्ञापन चालू हों, तो Google Mobile Ads SDK ऐप के भीतर चलता है और विज्ञापनों को
+  चुनने, सीमित करने और मापने के लिए अपनी जानकारी एकत्र कर सकता है — आमतौर पर एक डिवाइस
+  विज्ञापन पहचानकर्ता, आपके आईपी पते से अनुमानित मोटा स्थान, और उपयोग के बुनियादी संकेत।
+  वह संग्रह Google का है और
+  <a href="https://policies.google.com/technologies/partner-sites">Google की अपनी
+  गोपनीयता शर्तों</a> के अधीन है; दिखाए गए विज्ञापनों की कुल गिनती के अलावा उसमें से कुछ भी
+  हम तक नहीं पहुँचता।
+</p>
+<p>
+  इस गेम के विज्ञापन <strong>गैर-वैयक्तिकृत</strong> रूप में माँगे जाते हैं, यानी वे आपके
+  प्रोफ़ाइल से नहीं, संदर्भ से चुने जाते हैं। ऐप दूसरी कंपनियों के ऐप्स और वेबसाइटों पर आपको
+  ट्रैक करने की अनुमति नहीं माँगता, और ऐसा करने के लिए उसमें कोई कोड भी नहीं है।
+</p>
+<p>
+  आप विज्ञापन स्थायी रूप से हटा सकते हैं — या तो एक छोटी-सी खरीद से, या तब तक विज्ञापन
+  देखकर जब तक उतनी ही राशि पूरी न हो जाए। कोई सदस्यता नहीं है और कुछ भी बार-बार नहीं
+  लिया जाता।
+</p>
+
+<h2>विज्ञापन के बारे में आपके विकल्प</h2>
+<p>
+  जहाँ कानून माँगता है — यूरोपीय आर्थिक क्षेत्र, यूनाइटेड किंगडम और स्विट्ज़रलैंड में — वहाँ गेम
+  कोई भी विज्ञापन कोड लोड होने से पहले Google के अपने सहमति फ़ॉर्म से आपकी सहमति माँगता
+  है। आप वह उत्तर कभी भी <em>विकल्प</em> में
+  <em>विज्ञापन गोपनीयता विकल्प</em> से बदल सकते हैं।
+</p>
+<p>
+  यदि आप मना करते हैं, तो गेम आपको बाहर नहीं करता और भुगतान की माँग नहीं करता। आपसे कुछ
+  भी नहीं छीना जाता। विज्ञापन की जगह कभी-कभी हमारा एक कार्ड दिखेगा जो बताता है कि इस गेम
+  का खर्च विज्ञापन ही उठाते हैं, और दो रास्ते बताता है: अपना उत्तर बदलें, या विज्ञापन-मुक्त
+  अनलॉक खरीदें। कार्ड हटाया जा सकता है, और हजार कक्ष दोनों ही स्थितियों में खुले रहते हैं।
+</p>
+<p>
+  आपके डिवाइस के अपने नियंत्रण भी हैं, जिनका गेम पालन करता है: Android पर "विज्ञापन आईडी
+  हटाएँ" और सिस्टम की विज्ञापन सेटिंग्स; iPhone और iPad पर गोपनीयता और सुरक्षा के अंतर्गत
+  "ऐप्स को ट्रैक करने का अनुरोध करने दें"।
+</p>
+
+<h2>खरीदारी</h2>
+<p>
+  गेम में दो खरीदारियाँ हैं — विज्ञापन हटाना, और असीमित संकेत तथा अतिरिक्त शीशियाँ — और हर
+  एक एक ही बार का भुगतान है, एक बार, हमेशा के लिए। इन्हें पूरी तरह App Store या Google
+  Play संभालता है। हम आपका कार्ड, आपका बिलिंग पता या आपका खाता कभी नहीं देखते। ऐप को
+  केवल यह बताया जाता है कि प्रत्येक उत्पाद खरीदा गया है या नहीं, और वह यह उत्तर आपके
+  डिवाइस पर रखता है।
+</p>
+
+<h2>बच्चे</h2>
+<p>
+  यह गेम सभी आयु के लिए उपयुक्त है और विशेष रूप से बच्चों के लिए नहीं बनाया गया है। हम
+  किसी से भी, किसी भी आयु में, जानबूझकर व्यक्तिगत जानकारी एकत्र नहीं करते, क्योंकि हम
+  व्यक्तिगत जानकारी बिल्कुल भी एकत्र नहीं करते।
+</p>
+
+<h2>आपके अधिकार</h2>
+<p>
+  पहुँच, सुधार, स्थानांतरण और मिटाने के अधिकार उस डेटा पर लागू होते हैं जो कोई कंपनी रखती
+  है। हम कोई नहीं रखते। यदि आप चाहते हैं कि गेम आपके खेल के बारे में सब कुछ भूल जाए, तो ऐप
+  हटा दें; बस इतना ही। ऊपर बताए गए विज्ञापन डेटा के लिए, जो हमारा नहीं बल्कि Google का
+  है, Google की अपनी गोपनीयता शर्तें और इस पृष्ठ पर बताई गई सेटिंग्स ही रास्ता हैं।
+</p>
+
+<h2>इस नीति में बदलाव</h2>
+<p>
+  यदि गेम कभी कुछ एकत्र करना शुरू करता है, तो यह पृष्ठ ऐसा होने से पहले बता देगा, और ऊपर
+  की तारीख बदल जाएगी। इस दस्तावेज़ का ऐसा कोई संस्करण नहीं है जो चुपचाप बढ़ता रहे।
+</p>
+</main>
+
+<main data-lang="ja" lang="ja" dir="ltr">
+<div class="note">
+  <strong>要点。</strong>このゲームはお客様に関する情報を一切収集しません。アカウントも
+  サインインもサーバーもなく、記憶する内容はすべてお客様ご自身の端末に保存されます。
+  どこかへ何かを送りうる唯一の部分は広告だけで、その広告も、一度の少額のご購入か、
+  代金に達するまで広告をご覧いただくことで、完全に終了します。法律で求められる地域では、
+  その前に必ず同意をおうかがいします。
+</div>
+
+<h2>発行元</h2>
+<p>
+  Colored Sands of Egypt は、カナダ・ブリティッシュコロンビア州の Major Computing が
+  発行しています。本ページに関するお問い合わせは
+  <a href="mailto:admin@majorcomputing.ca">admin@majorcomputing.ca</a> までお願いします。
+</p>
+
+<h2>ゲームが保存するもの、その保存先</h2>
+<p>
+  各室の進行状況、最良の結果、設定（効果音、音楽、振動、言語、色覚補助の記号）、および
+  二つのアンロックをそれぞれ購入済みかどうかは、すべてアプリ自身の保存領域、つまり
+  <em>お客様の端末上</em>に保存されます。そのいずれも当方へは送信されません。当方が
+  それを見ることはなく、望んだとしても取得できません。アプリを削除すれば、そのすべてが
+  消えます。
+</p>
+<p>
+  本ゲームはネットワーク接続がなくても完全に遊べ、通信を待つ処理はどこにもありません。
+</p>
+
+<h2>広告について</h2>
+<p>
+  本ゲームは、室と室のあいだに Google AdMob による全画面広告を時折表示することが
+  あります。進行中のパズルを中断することは決してなく、最初の18室には一切現れず、
+  「元に戻す」や「やり直す」に結び付けられることもありません。この二つは、すべての方に、
+  常に無料・無制限です。これとは別に、ヒントや追加の小瓶を使い切ったときは、1分待つ
+  代わりに広告を見て一つ得ることを選べます。この選択は毎回お客様のもので、待つという
+  選択肢は常にその隣にあります。
+</p>
+<p>
+  広告が有効な場合、Google Mobile Ads SDK がアプリ内で動作し、広告の選定・表示回数の
+  制御・効果測定のために独自の情報を収集することがあります。一般的には、端末の広告
+  識別子、IP アドレスから推定される大まかな位置、基本的な利用シグナルです。この収集は
+  Google によるもので、
+  <a href="https://policies.google.com/technologies/partner-sites">Google 自身の
+  プライバシー条項</a>に従います。当方が受け取るのは、表示された広告の総数だけです。
+</p>
+<p>
+  本ゲームの広告は<strong>パーソナライズされていない広告</strong>として要求されます。
+  つまり、お客様のプロファイルではなく、文脈にもとづいて選ばれます。本アプリは、他社の
+  アプリやウェブサイトを横断してお客様を追跡する許可を求めることはなく、そのための
+  コードも一切含んでいません。
+</p>
+<p>
+  広告は恒久的に取り除けます。一度の少額のご購入か、同額に達するまで広告をご覧いただく
+  かのどちらかです。定期購入も、繰り返しの支払いもありません。
+</p>
+
+<h2>広告に関するお客様の選択</h2>
+<p>
+  法律で求められる地域（欧州経済領域、英国、スイス）では、広告のコードが読み込まれる
+  前に、Google 自身の同意フォームで同意をおうかがいします。その回答は、
+  <em>オプション</em>の<em>広告のプライバシー設定</em>からいつでも変更できます。
+</p>
+<p>
+  同意されない場合でも、ゲームが締め出されることはなく、支払いを求められることも
+  ありません。何かが取り上げられることもありません。広告の代わりに、当方からのカードが
+  ときどき表示され、このゲームの費用は広告でまかなわれていることと、二つの道筋、
+  すなわち回答を変更するか、広告非表示のアンロックを購入するか、をお知らせします。
+  カードは閉じられ、千の室はいずれの場合も開いたままです。
+</p>
+<p>
+  お客様の端末自体にも設定があり、ゲームはそれに従います。Android では「広告 ID を
+  削除」およびシステムの広告設定、iPhone と iPad では「プライバシーとセキュリティ」の
+  「Appからの追跡リクエストを許可」です。
+</p>
+
+<h2>購入について</h2>
+<p>
+  本ゲームの購入は二つ、広告の削除と、ヒントおよび追加の小瓶の無制限化です。いずれも
+  一度きりの支払いで、買い切り、永続です。決済はすべて App Store または Google Play が
+  処理します。当方がお客様のカード、請求先住所、アカウントを見ることは一切ありません。
+  アプリに伝えられるのは各製品を購入済みかどうかだけで、その答えを端末上に保存します。
+</p>
+
+<h2>お子様について</h2>
+<p>
+  本ゲームは全年齢に適しており、特に子どもを対象としたものではありません。当方は年齢を
+  問わず、いかなる方からも故意に個人情報を収集しません。そもそも個人情報を一切収集して
+  いないからです。
+</p>
+
+<h2>お客様の権利</h2>
+<p>
+  アクセス、訂正、データポータビリティ、削除の権利は、企業が保有するデータに対して
+  はたらきます。当方は何も保有していません。プレイに関することをゲームにすべて忘れさせ
+  たい場合は、アプリを削除してください。それがすべてです。上記の広告データは当方では
+  なく Google のものですので、Google のプライバシー条項と本ページに記載の設定が、その
+  ための手段になります。
+</p>
+
+<h2>本ポリシーの変更</h2>
+<p>
+  もし本ゲームが何かを収集し始めることがあれば、そうなる前に本ページに記載し、上部の
+  日付を変更します。この文書には、静かに膨らんでいく版は存在しません。
+</p>
+</main>
+
+<main data-lang="ko" lang="ko" dir="ltr">
+<div class="note">
+  <strong>요약.</strong> 이 게임은 이용자에 관한 어떤 정보도 수집하지 않습니다. 계정도,
+  로그인도, 서버도 없습니다. 게임이 기억하는 모든 것은 이용자 본인의 기기에만 저장됩니다.
+  무언가를 어딘가로 보낼 수 있는 유일한 구성 요소는 광고이며, 그 광고도 제거되는 순간
+  영원히 사라집니다. 한 번의 소액 결제로도, 값이 채워질 때까지 광고를 보는 것으로도
+  됩니다. 법이 요구하는 곳에서는 그 전에 먼저 동의를 여쭙습니다.
+</div>
+
+<h2>이 게임을 만든 곳</h2>
+<p>
+  Colored Sands of Egypt는 캐나다 브리티시컬럼비아주의 Major Computing이 배급합니다.
+  이 문서에 관한 문의는
+  <a href="mailto:admin@majorcomputing.ca">admin@majorcomputing.ca</a>로 보내 주세요.
+</p>
+
+<h2>게임이 무엇을, 어디에 저장하는가</h2>
+<p>
+  각 방의 진행 상황, 최고 기록, 설정(소리, 음악, 진동, 언어, 색각 이상을 위한 기호),
+  그리고 두 가지 잠금 해제를 각각 구매했는지 여부는 모두 앱 자체의 저장 공간, 곧
+  <em>이용자의 기기</em>에 보관됩니다. 그중 무엇도 저희에게 전송되지 않습니다. 저희는
+  그것을 결코 보지 못하며, 원한다 해도 가져올 수 없습니다. 앱을 삭제하면 전부
+  사라집니다.
+</p>
+<p>
+  이 게임은 네트워크 연결 없이도 온전히 즐길 수 있으며, 통신을 기다리는 부분은 어디에도
+  없습니다.
+</p>
+
+<h2>광고</h2>
+<p>
+  게임은 방과 방 사이에 Google AdMob이 제공하는 전면 광고를 이따금 보여 줄 수 있습니다.
+  진행 중인 퍼즐을 중단시키는 일은 결코 없고, 처음 열여덟 개 방에서는 전혀 나타나지
+  않으며, 되돌리기나 다시 시작하기에 붙는 일도 결코 없습니다. 그 둘은 모두에게, 언제나
+  무료이고 무제한입니다. 이와 별개로, 힌트나 여분의 병을 다 썼을 때는 1분을 기다리는
+  대신 광고를 보고 하나를 받는 쪽을 고를 수 있습니다. 그 선택은 매번 이용자의 것이며,
+  기다리는 쪽은 언제나 그 옆에 함께 놓입니다.
+</p>
+<p>
+  광고가 켜져 있으면 Google Mobile Ads SDK가 앱 안에서 동작하며, 광고를 고르고,
+  노출을 제한하고, 성과를 측정하기 위해 자체 정보를 수집할 수 있습니다. 일반적으로
+  기기 광고 식별자, IP 주소에서 추정한 대략적인 위치, 기본적인 사용 신호입니다. 그
+  수집은 Google의 것이며
+  <a href="https://policies.google.com/technologies/partner-sites">Google 자체의
+  개인정보 약관</a>을 따릅니다. 저희가 받는 것은 노출된 광고의 총 횟수뿐입니다.
+</p>
+<p>
+  이 게임의 광고는 <strong>맞춤형이 아닌 광고</strong>로 요청됩니다. 즉 이용자에 대한
+  프로필이 아니라 맥락을 바탕으로 선택됩니다. 앱은 다른 회사의 앱과 웹사이트에서
+  이용자를 추적할 권한을 요청하지 않으며, 그렇게 할 코드도 담고 있지 않습니다.
+</p>
+<p>
+  광고는 영구히 없앨 수 있습니다. 한 번의 소액 결제로도, 같은 금액이 채워질 때까지
+  광고를 보는 쪽을 골라도 됩니다. 구독도, 반복 결제도 없습니다.
+</p>
+
+<h2>광고에 관한 이용자의 선택</h2>
+<p>
+  법이 요구하는 곳에서는 — 유럽 경제 지역, 영국, 스위스 — 광고 코드가 불러와지기 전에
+  Google 자체의 동의 양식으로 동의를 여쭙습니다. 그 답변은 <em>옵션</em>의
+  <em>광고 개인정보 설정</em>에서 언제든지 바꿀 수 있습니다.
+</p>
+<p>
+  동의하지 않아도 게임이 이용자를 막지 않으며, 결제를 요구하지도 않습니다. 무엇도
+  빼앗기지 않습니다. 광고가 놓일 자리에 저희가 만든 카드가 이따금 나타나, 이 게임의
+  비용을 광고가 치르고 있다는 사실과 두 갈래 길 — 답변을 바꾸거나, 광고 없는 잠금
+  해제를 구매하거나 — 을 알려 드립니다. 카드는 닫을 수 있고, 천 개의 방은 어느 쪽이든
+  그대로 열려 있습니다.
+</p>
+<p>
+  이용자의 기기에도 자체 설정이 있으며 게임은 그것을 따릅니다. Android에서는 "광고 ID
+  삭제"와 시스템 광고 설정, iPhone과 iPad에서는 개인정보 보호 및 보안의 "앱이 추적을
+  요청하도록 허용"입니다.
+</p>
+
+<h2>구매</h2>
+<p>
+  게임 안의 구매는 두 가지 — 광고 제거, 그리고 무제한 힌트와 여분의 병 — 이며 각각
+  한 번의 결제로, 한 번만, 영구히 적용됩니다. 결제는 전부 App Store 또는 Google
+  Play가 처리합니다. 저희는 이용자의 카드, 청구 주소, 계정을 결코 보지 않습니다. 앱은
+  각 상품이 구매되었는지 여부만 전달받아 그 답을 기기에 저장합니다.
+</p>
+
+<h2>어린이</h2>
+<p>
+  이 게임은 모든 연령에 적합하며 어린이를 특별히 겨냥하지 않습니다. 저희는 어떤
+  연령의 누구에게서도 개인정보를 고의로 수집하지 않습니다. 애초에 개인정보를 전혀
+  수집하지 않기 때문입니다.
+</p>
+
+<h2>이용자의 권리</h2>
+<p>
+  열람, 정정, 이동, 삭제에 대한 권리는 회사가 보유한 데이터에 적용됩니다. 저희는 아무
+  것도 보유하지 않습니다. 게임이 이용자의 플레이에 관해 아는 모든 것을 잊게 하려면 앱을
+  삭제하면 됩니다. 그것이 전부입니다. 위에서 설명한 광고 데이터는 저희가 아니라
+  Google의 것이므로, Google의 개인정보 약관과 이 문서에 적힌 설정이 그에 이르는
+  길입니다.
+</p>
+
+<h2>이 방침의 변경</h2>
+<p>
+  게임이 언젠가 무언가를 수집하기 시작한다면, 그렇게 되기 전에 이 문서가 먼저 밝히고
+  위쪽의 날짜가 바뀝니다. 조용히 불어나는 판본은 존재하지 않습니다.
+</p>
 </main>
 
 <footer>
-  <p>&copy; 2026 Major Computing &middot;
-     <a href="./">Support</a> &middot;
+  <p>© 2026 Major Computing · <span data-lang="en" class="on"><a href="./">The game</a> · <a href="support.html">Support</a></span><span data-lang="de"><a href="./">Das Spiel</a> · <a href="support.html">Hilfe</a></span><span data-lang="es"><a href="./">El juego</a> · <a href="support.html">Asistencia</a></span><span data-lang="fr"><a href="./">Le jeu</a> · <a href="support.html">Assistance</a></span><span data-lang="id"><a href="./">Gimnya</a> · <a href="support.html">Bantuan</a></span><span data-lang="it"><a href="./">Il gioco</a> · <a href="support.html">Assistenza</a></span><span data-lang="pl"><a href="./">Gra</a> · <a href="support.html">Pomoc</a></span><span data-lang="pt"><a href="./">O jogo</a> · <a href="support.html">Suporte</a></span><span data-lang="tr"><a href="./">Oyun</a> · <a href="support.html">Destek</a></span><span data-lang="hi"><a href="./">खेल</a> · <a href="support.html">सहायता</a></span><span data-lang="ja"><a href="./">ゲームについて</a> · <a href="support.html">サポート</a></span><span data-lang="ko"><a href="./">게임 소개</a> · <a href="support.html">고객 지원</a></span> ·
      <a href="mailto:admin@majorcomputing.ca">admin@majorcomputing.ca</a></p>
 </footer>
 
 <script>
-  // Three languages in one document rather than three URLs, because the store
-  // listing gets one Privacy Policy URL and it has to serve every market the
-  // game sells into.
-  var buttons = document.querySelectorAll('.langs button');
-  function choose(lang) {
-    document.querySelectorAll('[data-lang]').forEach(function (el) {
-      el.classList.toggle('on', el.getAttribute('data-lang') === lang);
+  // The chooser, the remembered choice, and the browser's own language, in that
+  // order of authority. Everything is already in the document, so switching is
+  // a class change and never a request.
+  (function () {
+    var picker = document.getElementById('lang');
+    var codes = Array.prototype.map.call(picker.options, function (o) {
+      return o.value;
     });
-    buttons.forEach(function (b) {
-      b.setAttribute('aria-pressed', String(b.dataset.set === lang));
-    });
-    document.documentElement.lang = lang;
-    try { localStorage.setItem('csoe-lang', lang); } catch (e) {}
-  }
-  buttons.forEach(function (b) {
-    b.addEventListener('click', function () { choose(b.dataset.set); });
-  });
 
-  var saved = null;
-  try { saved = localStorage.getItem('csoe-lang'); } catch (e) {}
-  var wanted = saved || (navigator.language || 'en').slice(0, 2).toLowerCase();
-  if (wanted === 'fr' || wanted === 'es') choose(wanted);
+    function choose(code) {
+      if (codes.indexOf(code) < 0) return;
+      var all = document.querySelectorAll('[data-lang]');
+      for (var i = 0; i < all.length; i++) {
+        all[i].classList.toggle('on', all[i].getAttribute('data-lang') === code);
+      }
+      picker.value = code;
+      document.documentElement.lang = code;
+      document.documentElement.dir = picker.options[picker.selectedIndex]
+        .getAttribute('data-dir') || 'ltr';
+      try { localStorage.setItem('csoe-lang', code); } catch (e) {}
+    }
+
+    picker.addEventListener('change', function () { choose(picker.value); });
+
+    var saved = null;
+    try { saved = localStorage.getItem('csoe-lang'); } catch (e) {}
+    var wanted = saved;
+    if (!wanted) {
+      var tags = navigator.languages || [navigator.language || 'en'];
+      for (var t = 0; t < tags.length && !wanted; t++) {
+        var tag = String(tags[t]).toLowerCase();
+        // Longest match first, so a future 'pt-BR' beats a plain 'pt'.
+        for (var c = 0; c < codes.length; c++) {
+          if (tag === codes[c].toLowerCase()) { wanted = codes[c]; break; }
+        }
+        if (wanted) break;
+        for (var c2 = 0; c2 < codes.length; c2++) {
+          if (tag.split('-')[0] === codes[c2].split('-')[0]) {
+            wanted = codes[c2];
+            break;
+          }
+        }
+      }
+    }
+    if (wanted && wanted !== 'en') choose(wanted);
+  }());
 </script>
 
 </body>

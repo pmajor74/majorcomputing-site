@@ -3,278 +3,563 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Colored Sands of Egypt &middot; Support</title>
-<meta name="description" content="Help and contact for Colored Sands of Egypt, a calm sand-sorting puzzle.">
+<title>Colored Sands of Egypt</title>
+<meta name="description" content="A calm sand-sorting puzzle. A thousand chambers in ten chapters, undo and restart free forever, no lives and no timers. Coming to iPhone and Android.">
+<link rel="icon" href="img/icon.png" type="image/png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Colored Sands of Egypt">
+<meta property="og:description" content="A calm sand-sorting puzzle. Undo and restart free forever. No lives, no timers, nothing to lose.">
+<meta property="og:image" content="https://sands.majorcomputing.ca/img/banner.jpg">
+<meta property="og:url" content="https://sands.majorcomputing.ca/">
+<meta name="twitter:card" content="summary_large_image">
 <style>
+  /* ------------------------------------------------------------------ *
+   * The page is the game's own colours: a night sky over warm sandstone,
+   * gold leaf for anything that speaks. Everything is inline and nothing
+   * is fetched from anywhere else, which is the rule these pages have
+   * kept since the first one -- a privacy policy that loads a font from
+   * a third party is a privacy policy arguing with itself.
+   * ------------------------------------------------------------------ */
   :root {
-    --ink: #2b241c; --dim: #6a5f52; --rule: #ddd2c0;
-    --ground: #f6f1e7; --panel: #fffcf6; --gold: #8a6a1f;
+    --night:  #0b0910;
+    --deep:   #14101a;
+    --panel:  #1a1410;
+    --stone:  #241a12;
+    --rule:   #3a2b1e;
+    --ink:    #ece2cd;
+    --dim:    #a3947c;
+    --gold:   #d9b14a;
+    --gilt:   #f3d479;
+    --shadow: #a07c24;
+    --ember:  #c4622a;
+    --serif:  Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
+    --sans:   ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --ink: #e9dfcb; --dim: #a89b86; --rule: #372d22;
-      --ground: #0f0c0a; --panel: #171310; --gold: #d9b14a;
-    }
-  }
+
   * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
   body {
-    margin: 0 auto; padding: 40px 22px 80px; max-width: 44rem;
-    background: var(--ground); color: var(--ink);
-    font: 17px/1.7 Georgia, "Iowan Old Style", "Times New Roman", serif;
+    margin: 0;
+    background: var(--night);
+    color: var(--ink);
+    font: 17px/1.65 var(--sans);
+    -webkit-font-smoothing: antialiased;
   }
-  header { border-bottom: 1px solid var(--rule); padding-bottom: 18px; }
-  h1 { font-size: 30px; margin: 0 0 6px; letter-spacing: .01em; }
+
+  img { max-width: 100%; display: block; }
+
+  a { color: var(--gold); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { color: var(--gilt); }
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--gilt); outline-offset: 3px; border-radius: 3px;
+  }
+
+  .wrap { width: min(64rem, 100% - 44px); margin-inline: auto; }
+  .read { width: min(44rem, 100% - 44px); margin-inline: auto; }
+
+  section { padding: 64px 0; }
+  section + section { border-top: 1px solid var(--rule); }
+
+  h1, h2, h3 { font-family: var(--serif); font-weight: normal; letter-spacing: .01em; }
   h2 {
-    font-size: 19px; margin: 34px 0 8px; color: var(--gold);
-    font-family: system-ui, sans-serif;
+    font-size: clamp(26px, 4.2vw, 34px); margin: 0 0 6px; color: var(--gilt);
   }
-  .sub { color: var(--dim); margin: 0; font-size: 16px; font-style: italic; }
-  .langs {
-    display: flex; gap: 8px; margin: 16px 0 0;
-    font-family: system-ui, sans-serif; font-size: 14px;
+  h3 { font-size: 19px; margin: 0 0 4px; color: var(--gold); }
+  .lede { color: var(--dim); margin: 0 0 30px; font-size: 17px; max-width: 40rem; }
+  p { margin: 0 0 16px; }
+  p:last-child { margin-bottom: 0; }
+
+  /* ---------------------------- the top ---------------------------- */
+
+  .sky {
+    background:
+      radial-gradient(120% 88% at 50% 108%, rgba(196, 98, 42, .40) 0%, rgba(196, 98, 42, 0) 62%),
+      linear-gradient(180deg, #07060d 0%, #120d16 42%, #1e1414 78%, #2a1a12 100%);
+    border-bottom: 1px solid var(--rule);
   }
-  .langs button {
-    font: inherit; cursor: pointer; padding: 5px 12px; border-radius: 999px;
-    border: 1px solid var(--rule); background: transparent; color: var(--dim);
+
+  nav {
+    display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+    padding: 18px 0; font-size: 14px;
   }
-  .langs button[aria-pressed="true"] {
-    background: var(--gold); border-color: var(--gold); color: var(--ground);
+  nav .mark {
+    font-family: var(--serif); font-size: 16px; color: var(--gilt);
+    letter-spacing: .06em; margin-right: auto; text-decoration: none;
   }
-  .langs button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  nav a:not(.mark) { color: var(--dim); text-decoration: none; }
+  nav a:not(.mark):hover { color: var(--gilt); }
+
+  .hero {
+    padding: 30px 0 70px; display: grid; gap: 34px;
+    /* `minmax(0, 1fr)`, not the implicit `auto` column a bare `display: grid`
+       gives you. An `auto` track is sized to its *max-content* and does not
+       shrink below it, so the 1024-pixel banner and a paragraph with a
+       32rem max-width made the column a thousand pixels wide inside a
+       four-hundred-pixel header, and the whole page scrolled sideways on a
+       phone. Caught by measuring the laid-out page rather than looking at
+       it: the column was 1022 in a container of 441. */
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center; text-align: center;
+  }
+  .hero > * { max-width: 100%; }
+  .hero img.icon {
+    width: 104px; height: 104px; border-radius: 22px;
+    box-shadow: 0 10px 40px rgba(0,0,0,.6), 0 0 0 1px rgba(217,177,74,.28);
+  }
+  .hero h1 {
+    margin: 0; font-size: clamp(34px, 8vw, 62px); line-height: 1.05;
+    color: var(--gilt);
+    text-shadow: 0 2px 0 var(--shadow), 0 14px 44px rgba(217,177,74,.18);
+  }
+  .hero h1 .small { display: block; font-size: .58em; color: var(--gold); letter-spacing: .08em; }
+  .tag {
+    font-family: var(--serif); font-size: clamp(18px, 2.6vw, 22px);
+    margin: 14px auto 0; max-width: min(32rem, 100%);
+  }
+  .under { color: var(--dim); margin: 12px auto 0; max-width: min(34rem, 100%); }
+
+  .badges { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+  .badge {
+    display: inline-flex; flex-direction: column; align-items: flex-start;
+    padding: 10px 20px; border-radius: 10px;
+    border: 1px solid var(--rule); background: rgba(26,20,16,.7);
+    font-size: 15px; line-height: 1.25; color: var(--ink);
+  }
+  .badge small { color: var(--dim); font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; }
+
+  .banner {
+    width: 100%; border-radius: 12px; border: 1px solid var(--rule);
+    image-rendering: pixelated;
+  }
+
+  /* ------------------------- the promise --------------------------- */
+
   .promise {
-    background: var(--panel); border: 1px solid var(--rule); border-radius: 10px;
-    padding: 16px 20px; margin: 24px 0;
+    background: linear-gradient(180deg, rgba(217,177,74,.07), rgba(217,177,74,.02));
+    border: 1px solid rgba(217,177,74,.34); border-radius: 14px;
+    padding: 26px 28px;
   }
+  .promise h2 { margin-top: 0; }
+  /* `minmax(0, 1fr)` everywhere a grid holds text, for the reason spelled
+     out on `.hero`: a plain `1fr` has an automatic minimum and will not go
+     below its content's minimum width. */
+  .ledger { display: grid; gap: 22px; margin-top: 26px; }
+  @media (min-width: 720px) {
+    .ledger { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+  .ledger h3 { font-family: var(--sans); font-size: 12.5px; letter-spacing: .12em;
+               text-transform: uppercase; color: var(--dim); margin-bottom: 10px; }
+  .ledger ul { margin: 0; padding-left: 1.1em; }
+  .ledger li { margin: 7px 0; }
+  .ledger li b { color: var(--gilt); font-weight: normal; }
+  .price { color: var(--gilt); white-space: nowrap; }
+
+  /* -------------------------- the grid ----------------------------- */
+
+  .cards { display: grid; gap: 18px; }
+  @media (min-width: 620px) {
+    .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (min-width: 940px) {
+    .cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+  .card {
+    background: var(--panel); border: 1px solid var(--rule); border-radius: 12px;
+    padding: 18px 20px;
+  }
+  .card p { color: var(--dim); font-size: 15.5px; margin: 0; }
+
+  /* ------------------------- the pictures -------------------------- */
+
+  .shots {
+    display: flex; gap: 18px; overflow-x: auto; padding: 4px 0 20px;
+    scroll-snap-type: x mandatory;
+  }
+  .shots figure { margin: 0; flex: 0 0 auto; width: 232px; scroll-snap-align: center; }
+  .shots img {
+    width: 232px; border-radius: 14px; border: 1px solid var(--rule);
+    image-rendering: pixelated;
+    box-shadow: 0 12px 32px rgba(0,0,0,.5);
+  }
+  .shots figcaption { color: var(--dim); font-size: 14px; margin-top: 10px; }
+
+  /* ------------------------- the pigments -------------------------- */
+
+  .pigments { display: flex; flex-wrap: wrap; gap: 10px; margin: 0; padding: 0; list-style: none; }
+  .pigments li {
+    display: flex; align-items: center; gap: 9px;
+    border: 1px solid var(--rule); border-radius: 999px;
+    padding: 5px 14px 5px 6px; font-size: 14px; background: var(--panel);
+  }
+  .swatch {
+    width: 20px; height: 20px; border-radius: 50%;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,.45);
+  }
+
+  /* ------------------------- the languages ------------------------- */
+
+  .langs { display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 0; padding: 0; list-style: none;
+           color: var(--dim); font-size: 15.5px; }
+  .langs li b { color: var(--ink); font-weight: normal; }
+
+  /* ---------------------------- the help --------------------------- */
+
   dl { margin: 0; }
-  dt { font-weight: bold; margin-top: 18px; }
-  dd { margin: 4px 0 0; color: var(--dim); }
-  a { color: var(--gold); }
+  dt { color: var(--gilt); font-family: var(--serif); font-size: 18px; margin-top: 22px; }
+  dd { margin: 5px 0 0; color: var(--dim); }
+
+  /* --------------------------- the footer -------------------------- */
+
   footer {
-    margin-top: 46px; padding-top: 18px; border-top: 1px solid var(--rule);
-    color: var(--dim); font-size: 14px; font-family: system-ui, sans-serif;
+    border-top: 1px solid var(--rule); background: #070609;
+    padding: 34px 0 46px; color: var(--dim); font-size: 14.5px;
   }
-  [data-lang] { display: none; }
-  [data-lang].on { display: block; }
-  span[data-lang].on { display: inline; }
+  footer .row { display: flex; gap: 10px 22px; flex-wrap: wrap; align-items: baseline; }
+  footer .row p { margin: 0; }
+  footer a { color: var(--gold); }
 </style>
 </head>
 <body>
 
-<header>
-  <h1>Colored Sands of Egypt</h1>
-  <p class="sub"><span data-lang="en" class="on">A calm sand-sorting puzzle.</span><span data-lang="fr">Un casse-t&ecirc;te de tri de sable, tout en calme.</span><span data-lang="es">Un sereno rompecabezas de arena.</span></p>
-  <div class="langs" role="group" aria-label="Language">
-    <button type="button" data-set="en" aria-pressed="true">English</button>
-    <button type="button" data-set="fr" aria-pressed="false">Fran&ccedil;ais</button>
-    <button type="button" data-set="es" aria-pressed="false">Espa&ntilde;ol</button>
+<div class="sky">
+  <div class="wrap">
+    <nav>
+      <a class="mark" href="#top">COLORED SANDS OF EGYPT</a>
+      <a href="#play">The game</a>
+      <a href="#fair">Fair play</a>
+      <a href="#screens">Screens</a>
+      <a href="#help">Help</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
   </div>
-</header>
 
-<!-- ------------------------------- English ------------------------------- -->
-<main data-lang="en" class="on">
-
-<p>
-  Each chamber hands you vessels of layered coloured sand. Pour one into
-  another until every pigment is gathered into a vessel of its own. Sand only
-  pours onto sand of the same colour, and only where there is room for it.
-</p>
-
-<div class="promise">
-  <strong>Undo and restart are free and unlimited</strong>, for everyone,
-  forever. They are not sold, they are not rationed, and there is no energy
-  bar and no way to lose. Hints and an extra vial come three at a time, come
-  back for nothing after a minute's wait or for an advert you choose to
-  watch, or are yours unlimited for one small payment. One small payment
-  removes the advertising, or you can earn the same thing by watching adverts
-  until it is paid for. That is the whole of the money in this game, and
-  nothing in it forces you to pay.
+  <header class="wrap hero" id="top">
+    <img class="icon" src="img/icon.png" width="256" height="256"
+         alt="The game's icon: a vial of layered coloured sand.">
+    <div>
+      <h1>Colored Sands<span class="small">of Egypt</span></h1>
+      <p class="tag">Pour the sands of Egypt until every pigment rests in a vessel of its own.</p>
+      <p class="under">A thousand chambers in ten chapters. No lives, no energy, no timers,
+        no move limits, and no way to lose. Undo and restart are free and unlimited, for
+        everyone, forever.</p>
+    </div>
+    <div class="badges">
+      <span class="badge"><small>Coming soon</small>App&nbsp;Store</span>
+      <span class="badge"><small>Coming soon</small>Google&nbsp;Play</span>
+    </div>
+    <picture>
+      <source srcset="img/banner.webp" type="image/webp">
+      <img class="banner" src="img/banner.jpg" width="1024" height="500"
+           alt="Five glass vessels holding layered bands of blue, green and orange sand, each layer stamped with a hieroglyph.">
+    </picture>
+  </header>
 </div>
 
-<h2>Help</h2>
-<dl>
-  <dt>A vessel with a narrow neck</dt>
-  <dd>Takes one layer per pour, however much you tip into it.</dd>
+<!-- ---------------------------- the rule ---------------------------- -->
 
-  <dt>A vessel behind a stone grille</dt>
-  <dd>Pours out, but nothing can be poured in.</dd>
+<section id="play">
+  <div class="read">
+    <h2>One rule, a thousand rooms</h2>
+    <p class="lede">Sand settles only on sand of the same colour, and only where there is
+      room for it. That is the whole of it.</p>
+    <p>
+      Every chamber hands you vessels of layered coloured sand, jumbled. Tip one into
+      another and the top band pours across, as much of it as will fit. Gather every
+      pigment into a vessel of its own and the chamber is done: the glass breaks, the
+      colours rise in a turning column of dust, and the stone door opens on the next room.
+    </p>
+    <p>
+      The first hundred chambers teach twelve ideas, one at a time, with no tutorial cards
+      and nothing to read. The nine hundred after them mix those ideas, ten chapters deep,
+      through the Shifting Antechamber, the Painted Corridor, the Hall of Pigments, the
+      Sealed Vault, the Chamber of the Two Truths, the Sealed Door, the Serpent Passage,
+      the Weighing Hall, the Lake of Fire, and the House of Gold.
+    </p>
+  </div>
+</section>
 
-  <dt>I am stuck</dt>
-  <dd>The Hint button is in the toolbar at the bottom of a chamber: three
-      free ones, then another every minute you wait, for an advert you choose
-      to watch, or unlimited once. Undo is beside it, free, and goes back as
-      far as you like.</dd>
+<!-- ---------------------------- the money --------------------------- -->
 
-  <dt>I cannot tell two colours apart</dt>
-  <dd>Turn on <em>Symbols</em> under Options. Every pigment gets its own
-      hieroglyph.</dd>
+<section id="fair">
+  <div class="wrap">
+    <div class="promise">
+      <h2>The fair one</h2>
+      <p class="lede">This game exists because sorting puzzles stopped being fair. You pay
+        twelve dollars to remove the adverts and they still charge you for the undo button.</p>
+      <p>
+        So here is all of it, in one place, before you install anything. There are two
+        purchases in this game, each of them once and forever, and beside every one of them
+        there is a free way to the same thing. Nothing here is rationed to make you pay,
+        and nothing is sold twice.
+      </p>
 
-  <dt>I paid, and the adverts came back</dt>
-  <dd>Options &rarr; <em>Restore purchases</em>. It is the same purchase on
-      every device signed in to your store account, at no further cost.</dd>
+      <div class="ledger">
+        <div>
+          <h3>Free, always</h3>
+          <ul>
+            <li><b>Undo.</b> As far back as you like, as often as you like.</li>
+            <li><b>Restart.</b> The same.</li>
+            <li><b>All thousand chambers.</b> No pack is held back.</li>
+            <li><b>The whole game offline.</b> No account, no sign-in, no server.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Bought once, or earned</h3>
+          <ul>
+            <li><b>Remove the adverts, <span class="price">$2.99</span>.</b> Or watch
+              adverts until they have paid for themselves, and they stop for good. A meter
+              on the screen shows how far along you are.</li>
+            <li><b>Unlimited hints and the extra vial, <span class="price">$1.29</span>.</b>
+              Both aids, one payment.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Never sold</h3>
+          <ul>
+            <li>No coins, gems or any other currency</li>
+            <li>No subscription and no battle pass</li>
+            <li>No lives, no energy, no waiting to play</li>
+            <li>No offer at the moment you fail, because there is no failing</li>
+          </ul>
+        </div>
+      </div>
 
-  <dt>Does it work without internet?</dt>
-  <dd>Entirely. The whole game is on the device and nothing waits on a network.</dd>
-</dl>
+      <p style="margin-top:26px">
+        Hints and the extra vial come three at a time. When the last one is spent, one comes
+        back for nothing after a minute, or at once for an advert you choose to watch, or
+        you can buy them unlimited. The screen says all three, every time, and the waiting
+        one is never hidden.
+      </p>
+      <p>
+        Adverts appear between chambers only, never over a puzzle, and never in the first
+        eighteen chambers.
+      </p>
+    </div>
+  </div>
+</section>
 
-<h2>Contact</h2>
-<p>
-  Anything at all &mdash; a bug, a chamber that felt unfair, a translation that
-  reads oddly &mdash; goes to
-  <a href="mailto:admin@majorcomputing.ca">admin@majorcomputing.ca</a>, and a
-  person reads it.
-</p>
+<!-- ------------------------- the mechanics -------------------------- -->
 
-</main>
+<section id="mechanics">
+  <div class="wrap">
+    <h2>Twelve challenges, one to a chamber</h2>
+    <p class="lede">Each is a puzzle of its own. It arrives on a chamber that teaches it,
+      is practised, and then joins the mix for good.</p>
+    <div class="cards">
+      <div class="card"><h3>The narrow neck</h3>
+        <p>An amphora that takes one layer per pour, however much you tip into it.</p></div>
+      <div class="card"><h3>The one-way jar</h3>
+        <p>A stone grille over the mouth. Sand runs out of it; nothing goes in.</p></div>
+      <div class="card"><h3>The wax seal</h3>
+        <p>Sealed until its pigment is gathered somewhere else on the board. What it was
+          hiding is then yours to deal with.</p></div>
+      <div class="card"><h3>The tar jar</h3>
+        <p>Lined with pitch. It lets go of one layer at a time, and no more.</p></div>
+      <div class="card"><h3>Mixed depths</h3>
+        <p>Vessels of different heights on one board, so room is no longer the same
+          everywhere.</p></div>
+      <div class="card"><h3>Silted sand</h3>
+        <p>Buried under Nile silt. You cannot see what is under it until you move it.</p></div>
+      <div class="card"><h3>The clepsydra</h3>
+        <p>A water clock. It pours from the bottom, so the layer you get is the one you
+          have been ignoring.</p></div>
+      <div class="card"><h3>The count seal</h3>
+        <p>Opens on a number, not a colour. Gather enough and the wax lifts.</p></div>
+      <div class="card"><h3>The cartouche</h3>
+        <p>A named order of layers. Build the name exactly and the seal breaks.</p></div>
+      <div class="card"><h3>The Mirror</h3>
+        <p>The board is two halves. Every pour you make in one is made again in the other,
+          if it is legal there.</p></div>
+      <div class="card"><h3>The lodestone</h3>
+        <p>A charged gate that pulls the iron-red out of a compound pigment, splitting
+          purple back into carnelian and lapis. It is only awake while its coil is full,
+          so you decide when it fires.</p></div>
+      <div class="card"><h3>The kiln</h3>
+        <p>Fires two pigments into a third. Malachite and natron become Egyptian blue,
+          the way they actually did.</p></div>
+    </div>
+  </div>
+</section>
 
-<!-- ------------------------------- Français ------------------------------ -->
-<main data-lang="fr">
+<!-- --------------------------- the screens -------------------------- -->
 
-<p>
-  Chaque chambre vous confie des r&eacute;cipients de sable color&eacute; en
-  couches. Versez-les l'un dans l'autre jusqu'&agrave; ce que chaque pigment
-  soit rassembl&eacute; dans un r&eacute;cipient qui lui appartient. Le sable ne
-  se verse que sur du sable de la m&ecirc;me couleur, et seulement l&agrave;
-  o&ugrave; il reste de la place.
-</p>
+<section id="screens">
+  <div class="wrap">
+    <h2>Screens</h2>
+    <p class="lede">Cinematic pixel art, drawn for this game. Ninety rooms, lit by torches,
+      braziers and shafts of daylight.</p>
+    <div class="shots">
+      <figure>
+        <picture><source srcset="img/shot-board.webp" type="image/webp">
+          <img src="img/shot-board.jpg" width="540" height="960"
+               alt="A chamber: five vessels of layered sand against a sandstone wall, braziers burning below."></picture>
+        <figcaption>A chamber, and the toolbar that never charges you for undo.</figcaption>
+      </figure>
+      <figure>
+        <picture><source srcset="img/shot-chambers.webp" type="image/webp">
+          <img src="img/shot-chambers.jpg" width="540" height="960"
+               alt="The map of the dig: chapters of numbered chambers with stars earned."></picture>
+        <figcaption>The map of the dig, chapter by chapter.</figcaption>
+      </figure>
+      <figure>
+        <picture><source srcset="img/shot-guide.webp" type="image/webp">
+          <img src="img/shot-guide.jpg" width="540" height="960"
+               alt="The guide, listing how each kind of vessel works with a short animation for each."></picture>
+        <figcaption>The guide. Every vessel explains itself, and shows you.</figcaption>
+      </figure>
+      <figure>
+        <picture><source srcset="img/shot-title.webp" type="image/webp">
+          <img src="img/shot-title.jpg" width="540" height="960"
+               alt="The title screen: a pyramid at night under a full moon and a field of stars."></picture>
+        <figcaption>A necropolis at night, under a moon with a secret.</figcaption>
+      </figure>
+      <figure>
+        <picture><source srcset="img/shot-ending.webp" type="image/webp">
+          <img src="img/shot-ending.jpg" width="540" height="960"
+               alt="The ending: a column of coloured sand rising from a pyramid into a dawn sky."></picture>
+        <figcaption>The thousandth chamber, and the dawn after it.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
 
-<div class="promise">
-  <strong>Annuler et recommencer sont gratuits et illimit&eacute;s</strong>,
-  pour tout le monde, pour toujours. Ils ne sont ni vendus ni rationn&eacute;s,
-  et il n'y a ni barre d'&eacute;nergie, ni mani&egrave;re de perdre. Les
-  indices et une fiole en plus viennent par trois, reviennent gratuitement
-  apr&egrave;s une minute d'attente ou pour une publicit&eacute; que vous
-  choisissez de regarder, ou sont &agrave; vous en illimit&eacute; pour un seul
-  petit paiement. Un seul petit paiement retire la publicit&eacute;, ou vous
-  pouvez obtenir la m&ecirc;me chose en regardant des annonces jusqu'&agrave;
-  ce qu'elle soit pay&eacute;e. C'est tout l'argent de ce jeu, et rien ne vous
-  oblige &agrave; payer.
-</div>
+<!-- -------------------------- the pigments -------------------------- -->
 
-<h2>Aide</h2>
-<dl>
-  <dt>Un r&eacute;cipient &agrave; col &eacute;troit</dt>
-  <dd>Ne re&ccedil;oit qu'une couche par vers&eacute;e, quelle que soit la
-      quantit&eacute; inclin&eacute;e vers lui.</dd>
+<section id="made">
+  <div class="wrap">
+    <h2>Made of real things</h2>
+    <p class="lede">The colours are the ones Egyptian painters actually ground, and each one
+      carries a note about where it came from.</p>
+    <ul class="pigments">
+      <li><span class="swatch" style="background:#3A7BC8"></span>Egyptian&nbsp;Blue</li>
+      <li><span class="swatch" style="background:#2F9150"></span>Malachite</li>
+      <li><span class="swatch" style="background:#C4622A"></span>Red&nbsp;Ochre</li>
+      <li><span class="swatch" style="background:#A8352F"></span>Carnelian</li>
+      <li><span class="swatch" style="background:#2C3A9C"></span>Lapis</li>
+      <li><span class="swatch" style="background:#E6DCC6"></span>Natron&nbsp;White</li>
+      <li><span class="swatch" style="background:#59626D"></span>Kohl</li>
+      <li><span class="swatch" style="background:#35B5B0"></span>Turquoise</li>
+      <li><span class="swatch" style="background:#D9B14A"></span>Gold&nbsp;Leaf</li>
+      <li><span class="swatch" style="background:#6B4B33"></span>Nile&nbsp;Silt</li>
+      <li><span class="swatch" style="background:#8A55C4"></span>Amethyst</li>
+      <li><span class="swatch" style="background:#D48C9E"></span>Rose&nbsp;Granite</li>
+      <li><span class="swatch" style="background:#8FA83A"></span>Green&nbsp;Frit</li>
+      <li><span class="swatch" style="background:#8E2A5C"></span>Madder</li>
+    </ul>
 
-  <dt>Un r&eacute;cipient derri&egrave;re une grille de pierre</dt>
-  <dd>Peut se vider, mais rien ne peut y &ecirc;tre vers&eacute;.</dd>
+    <div class="cards" style="margin-top:34px">
+      <div class="card"><h3>A sign on every layer</h3>
+        <p>Each pigment carries its own hieroglyph, stamped on every band of sand, so the
+          board reads by shape as well as by colour. Nobody has to lose because of what
+          their eyes make of red and green.</p></div>
+      <div class="card"><h3>Smoke you can push</h3>
+        <p>The dust from a finished chamber is a real fluid simulation. Put a finger in it
+          and it moves out of the way.</p></div>
+      <div class="card"><h3>Music that never restarts</h3>
+        <p>One playlist for the whole game, crossfading song to song. Finishing a chamber
+          does not interrupt the music, because being interrupted is the opposite of the
+          point.</p></div>
+      <div class="card"><h3>Honest difficulty</h3>
+        <p>Every chamber is checked by a solver before it ships. Nothing is impossible,
+          every hint is a real move, and wrong moves are real too. Some chambers have
+          exactly one solution.</p></div>
+      <div class="card"><h3>Stars for a short line</h3>
+        <p>Three stars for a tidy solution, and never a punishment for a long one. Finishing
+          is finishing.</p></div>
+      <div class="card"><h3>Nothing leaves your phone</h3>
+        <p>No account, no sign-in, no server, no analytics of ours. Your progress lives on
+          your device and nowhere else.</p></div>
+    </div>
+  </div>
+</section>
 
-  <dt>Je suis bloqu&eacute;</dt>
-  <dd>Le bouton Indice se trouve dans la barre au bas d'une chambre&nbsp;:
-      trois gratuits, puis un de plus &agrave; chaque minute d'attente, pour une
-      publicit&eacute; que vous choisissez de regarder, ou en illimit&eacute;
-      une seule fois. Annuler est juste &agrave; c&ocirc;t&eacute;, gratuit, et
-      remonte aussi loin que vous voulez.</dd>
+<!-- ------------------------- the languages -------------------------- -->
 
-  <dt>Je ne distingue pas deux couleurs</dt>
-  <dd>Activez <em>Symboles</em> dans les Options. Chaque pigment re&ccedil;oit
-      son propre hi&eacute;roglyphe.</dd>
+<section id="languages">
+  <div class="read">
+    <h2>Twelve languages</h2>
+    <p class="lede">Every word in the game, in every one of them, with the right script face
+      for each. More are planned.</p>
+    <ul class="langs">
+      <li><b>English</b></li>
+      <li><b>Français</b> French</li>
+      <li><b>Español</b> Spanish</li>
+      <li><b>Deutsch</b> German</li>
+      <li><b>Italiano</b> Italian</li>
+      <li><b>Polski</b> Polish</li>
+      <li><b>Português (Brasil)</b> Portuguese</li>
+      <li><b>Türkçe</b> Turkish</li>
+      <li><b>Bahasa Indonesia</b> Indonesian</li>
+      <li><b>हिन्दी</b> Hindi</li>
+      <li><b>日本語</b> Japanese</li>
+      <li><b>한국어</b> Korean</li>
+    </ul>
+  </div>
+</section>
 
-  <dt>J'ai pay&eacute;, et la publicit&eacute; est revenue</dt>
-  <dd>Options &rarr; <em>Restaurer les achats</em>. C'est le m&ecirc;me achat
-      sur tous les appareils connect&eacute;s &agrave; votre compte, sans frais
-      suppl&eacute;mentaires.</dd>
+<!-- ---------------------------- the help ---------------------------- -->
 
-  <dt>Est-ce que &ccedil;a fonctionne sans Internet&nbsp;?</dt>
-  <dd>Enti&egrave;rement. Tout le jeu est sur l'appareil et rien n'attend le
-      r&eacute;seau.</dd>
-</dl>
+<section id="help">
+  <div class="read">
+    <h2>Help</h2>
+    <p class="lede">The short answers. The
+      <a href="support.html">full support page</a> has these in every language the game
+      speaks.</p>
+    <dl>
+      <dt>A vessel with a narrow neck</dt>
+      <dd>Takes one layer per pour, however much you tip into it.</dd>
 
-<h2>Nous joindre</h2>
-<p>
-  Pour tout&nbsp;&mdash; un bogue, une chambre qui vous a sembl&eacute; injuste,
-  une traduction qui sonne mal &mdash; &eacute;crivez &agrave;
-  <a href="mailto:admin@majorcomputing.ca">admin@majorcomputing.ca</a>&nbsp;: une
-  personne vous lira.
-</p>
+      <dt>A vessel behind a stone grille</dt>
+      <dd>Pours out, but nothing can be poured in.</dd>
 
-</main>
+      <dt>I am stuck</dt>
+      <dd>The Hint button is in the toolbar at the bottom of a chamber: three free ones,
+        then another every minute you wait, or one for an advert you choose to watch, or
+        unlimited for one payment. Undo is beside it, free, and goes back as far as you
+        like.</dd>
 
-<!-- ------------------------------- Español ------------------------------- -->
-<main data-lang="es">
+      <dt>I cannot tell two colours apart</dt>
+      <dd>Turn on <em>Symbols</em> under Options. Every pigment gets its own hieroglyph.</dd>
 
-<p>
-  Cada c&aacute;mara le entrega recipientes de arena de colores en capas.
-  Vi&eacute;rtalos de uno en otro hasta que cada pigmento quede reunido en un
-  recipiente propio. La arena solo se vierte sobre arena del mismo color, y
-  solo donde queda sitio.
-</p>
+      <dt>I paid, and the adverts came back</dt>
+      <dd>Options, then <em>Restore purchases</em>. It is the same purchase on every device
+        signed in to your store account, at no further cost.</dd>
 
-<div class="promise">
-  <strong>Deshacer y reiniciar son gratuitos e ilimitados</strong>, para todo
-  el mundo, siempre. No se venden ni se racionan, y no hay barra de
-  energ&iacute;a ni forma de perder. Las pistas y un frasco extra vienen de
-  tres en tres, vuelven gratis tras un minuto de espera o por un anuncio que
-  usted elija ver, o son suyos ilimitados por un &uacute;nico pago
-  peque&ntilde;o. Un &uacute;nico pago peque&ntilde;o retira la publicidad, o
-  puede conseguir lo mismo viendo anuncios hasta pagarla. Ese es todo el
-  dinero de este juego, y nada le obliga a pagar.
-</div>
+      <dt>Does it work without internet?</dt>
+      <dd>Entirely. The whole game is on the device and nothing waits on a network.</dd>
+    </dl>
+  </div>
+</section>
 
-<h2>Ayuda</h2>
-<dl>
-  <dt>Un recipiente de cuello estrecho</dt>
-  <dd>Admite una sola capa por vertido, por mucho que incline sobre &eacute;l.</dd>
+<!-- --------------------------- the maker ---------------------------- -->
 
-  <dt>Un recipiente tras una reja de piedra</dt>
-  <dd>Puede vaciarse, pero no se le puede verter nada.</dd>
-
-  <dt>Estoy atascado</dt>
-  <dd>El bot&oacute;n Pista est&aacute; en la barra inferior de la
-      c&aacute;mara: tres gratis, luego otra por cada minuto de espera, por un
-      anuncio que usted elija ver, o ilimitadas una sola vez. Deshacer
-      est&aacute; al lado, gratis, y retrocede tanto como quiera.</dd>
-
-  <dt>No distingo dos colores</dt>
-  <dd>Active <em>S&iacute;mbolos</em> en Opciones. Cada pigmento recibe su
-      propio jerogl&iacute;fico.</dd>
-
-  <dt>Pagu&eacute; y la publicidad ha vuelto</dt>
-  <dd>Opciones &rarr; <em>Restaurar compras</em>. Es la misma compra en todos
-      los dispositivos con su cuenta de la tienda, sin coste adicional.</dd>
-
-  <dt>&iquest;Funciona sin internet?</dt>
-  <dd>Por completo. Todo el juego est&aacute; en el dispositivo y nada espera a
-      la red.</dd>
-</dl>
-
-<h2>Contacto</h2>
-<p>
-  Para cualquier cosa &mdash;un fallo, una c&aacute;mara que le pareci&oacute;
-  injusta, una traducci&oacute;n que suena rara&mdash; escriba a
-  <a href="mailto:admin@majorcomputing.ca">admin@majorcomputing.ca</a>: le
-  responder&aacute; una persona.
-</p>
-
-</main>
+<section id="contact">
+  <div class="read">
+    <h2>Who made it</h2>
+    <p>
+      Colored Sands of Egypt is made in British Columbia, Canada, by Major Computing, which
+      is one developer who got tired of being nickel-and-dimed by sorting games.
+    </p>
+    <p>
+      Anything at all &mdash; a bug, a chamber that felt unfair, a translation that reads
+      oddly, a question about any of the above &mdash; goes to
+      <a href="mailto:admin@majorcomputing.ca">admin@majorcomputing.ca</a>, and a person
+      reads it.
+    </p>
+  </div>
+</section>
 
 <footer>
-  <p>&copy; 2026 Major Computing &middot;
-     <a href="privacy.html">Privacy Policy</a> &middot;
-     <a href="mailto:admin@majorcomputing.ca">admin@majorcomputing.ca</a></p>
+  <div class="wrap row">
+    <p>&copy; 2026 Major Computing</p>
+    <p><a href="support.html">Support</a></p>
+    <p><a href="privacy.html">Privacy Policy</a></p>
+    <p><a href="mailto:admin@majorcomputing.ca">admin@majorcomputing.ca</a></p>
+  </div>
 </footer>
-
-<script>
-  var buttons = document.querySelectorAll('.langs button');
-  function choose(lang) {
-    document.querySelectorAll('[data-lang]').forEach(function (el) {
-      el.classList.toggle('on', el.getAttribute('data-lang') === lang);
-    });
-    buttons.forEach(function (b) {
-      b.setAttribute('aria-pressed', String(b.dataset.set === lang));
-    });
-    document.documentElement.lang = lang;
-    try { localStorage.setItem('csoe-lang', lang); } catch (e) {}
-  }
-  buttons.forEach(function (b) {
-    b.addEventListener('click', function () { choose(b.dataset.set); });
-  });
-
-  var saved = null;
-  try { saved = localStorage.getItem('csoe-lang'); } catch (e) {}
-  var wanted = saved || (navigator.language || 'en').slice(0, 2).toLowerCase();
-  if (wanted === 'fr' || wanted === 'es') choose(wanted);
-</script>
 
 </body>
 </html>
