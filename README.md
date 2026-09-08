@@ -3,13 +3,14 @@
 The support and privacy pages for **Colored Sands of Egypt**, served by
 Cloudflare Pages at <https://sands.majorcomputing.ca>.
 
-Two self-contained HTML files. No build step, no framework, no external
-requests â€” every style and script is inline.
+Two self-contained HTML files and one line of text. No build step, no
+framework, no external requests â€” every style and script is inline.
 
 | File | Serves |
 |---|---|
 | `index.html` | the Support URL both app stores require |
 | `privacy.html` | the Privacy Policy URL both app stores require |
+| `app-ads.txt` | the AdMob authorisation advertisers check before bidding |
 
 Each page carries English, French and Spanish in one document, chosen from the
 browser's language and switchable by hand, because each store takes a single
