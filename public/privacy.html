@@ -7,56 +7,84 @@
 <meta name="description" content="What Colored Sands of Egypt does and does not collect.">
 <link rel="icon" href="img/icon.png" type="image/png">
 <style>
+  /* The game's own colours, the same tokens as index.html: a night sky,
+     warm sandstone, gold leaf for anything that speaks. The user,
+     9 September 2026: the support and privacy pages "do not have the same
+     color scheme as the main site, please make a bit more congruent."
+     Dark only, like the front page, so the three pages read as one site. */
   :root {
-    --ink: #2b241c; --dim: #6a5f52; --rule: #ddd2c0;
-    --ground: #f6f1e7; --panel: #fffcf6; --gold: #8a6a1f;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --ink: #e9dfcb; --dim: #a89b86; --rule: #372d22;
-      --ground: #0f0c0a; --panel: #171310; --gold: #d9b14a;
-    }
+    --night: #0b0910; --panel: #1a1410; --rule: #3a2b1e;
+    --ink: #ece2cd; --dim: #a3947c; --gold: #d9b14a; --gilt: #f3d479;
+    --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
+    --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
   * { box-sizing: border-box; }
   body {
-    margin: 0 auto; padding: 36px 22px 80px; max-width: 44rem;
-    background: var(--ground); color: var(--ink);
-    font: 17px/1.7 Georgia, "Iowan Old Style", "Times New Roman", serif;
+    margin: 0; background: var(--night); color: var(--ink);
+    font: 17px/1.7 var(--sans); -webkit-font-smoothing: antialiased;
   }
-  header { border-bottom: 1px solid var(--rule); padding-bottom: 18px; }
-  h1 { font-size: 28px; margin: 0 0 6px; letter-spacing: .01em; }
-  h1 a { color: inherit; text-decoration: none; }
-  h1 a:hover { color: var(--gold); }
+  .wrap { width: min(68rem, 100% - 44px); margin-inline: auto; }
+  .read { width: min(44rem, 100% - 44px); margin-inline: auto; }
+  nav {
+    display: flex; align-items: center; gap: 22px; flex-wrap: wrap;
+    padding: 20px 0; font-size: 14px;
+  }
+  nav .mark {
+    font-family: var(--serif); font-size: 16px; color: var(--gilt);
+    letter-spacing: .08em; margin-right: auto; text-decoration: none;
+  }
+  nav a:not(.mark) { color: var(--dim); text-decoration: none; }
+  nav a:not(.mark):hover, nav a:not(.mark).here { color: var(--gilt); }
+  @media (max-width: 560px) { nav .mark { flex-basis: 100%; margin-right: 0; } nav { gap: 10px 18px; } }
+  .sky {
+    background:
+      radial-gradient(120% 80% at 50% 112%, rgba(196, 98, 42, .30) 0%, rgba(196, 98, 42, 0) 60%),
+      linear-gradient(180deg, #06050b 0%, #110c17 40%, #1c1314 76%, #2a1a12 100%);
+    border-bottom: 1px solid var(--rule);
+  }
+  header.title { padding: 26px 0 40px; }
+  h1 {
+    font-family: var(--serif); font-weight: normal; letter-spacing: .01em;
+    font-size: clamp(30px, 5vw, 44px); line-height: 1.1; margin: 0 0 8px; color: var(--gilt);
+    text-shadow: 0 2px 0 #a07c24, 0 14px 44px rgba(217,177,74,.18);
+  }
   h2 {
-    font-size: 19px; margin: 34px 0 8px; color: var(--gold);
-    font-family: system-ui, sans-serif; letter-spacing: .01em;
+    font-family: var(--serif); font-weight: normal; letter-spacing: .01em;
+    font-size: 24px; margin: 40px 0 10px; color: var(--gilt);
   }
   .sub { color: var(--dim); margin: 0; font-size: 15px; }
-  .intro { color: var(--dim); }
+  .intro { color: var(--dim); font-size: 18px; }
   .picker {
-    margin: 16px 0 0; font-family: system-ui, sans-serif; font-size: 14px;
+    margin: 18px 0 0; font-size: 14px;
     display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
   }
   .picker label { color: var(--dim); }
   .picker select {
-    font: inherit; font-size: 15px; padding: 7px 12px; border-radius: 8px;
-    border: 1px solid var(--rule); background: var(--panel); color: var(--ink);
+    font: inherit; font-size: 15px; padding: 8px 12px; border-radius: 10px;
+    border: 1px solid rgba(217,177,74,.4); background: var(--panel); color: var(--ink);
     max-width: 100%;
   }
-  .picker select:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .picker select:focus-visible { outline: 2px solid var(--gilt); outline-offset: 2px; }
+  main { padding: 36px 0 60px; }
+  main p { margin: 0 0 16px; }
   ul { padding-left: 1.15em; }
   li { margin: 6px 0; }
   dl { margin: 0; }
-  dt { font-weight: bold; margin-top: 18px; }
-  dd { margin: 4px 0 0; color: var(--dim); }
+  dt { color: var(--gilt); font-family: var(--serif); font-size: 19px; margin-top: 22px; }
+  dd { margin: 5px 0 0; color: var(--dim); }
+  dd em, p em { color: var(--ink); font-style: normal; }
   .note {
-    background: var(--panel); border: 1px solid var(--rule); border-radius: 10px;
-    padding: 14px 18px; margin: 22px 0; font-size: 16px;
+    background: linear-gradient(180deg, rgba(217,177,74,.08), rgba(217,177,74,.02));
+    border: 1px solid rgba(217,177,74,.34); border-radius: 14px;
+    padding: 18px 22px; margin: 24px 0; font-size: 16px;
   }
-  a { color: var(--gold); }
+  .note strong { color: var(--gilt); font-weight: normal; }
+  a { color: var(--gold); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { color: var(--gilt); }
+  a:focus-visible, select:focus-visible { outline: 2px solid var(--gilt); outline-offset: 3px; border-radius: 3px; }
   footer {
-    margin-top: 46px; padding-top: 18px; border-top: 1px solid var(--rule);
-    color: var(--dim); font-size: 14px; font-family: system-ui, sans-serif;
+    border-top: 1px solid var(--rule); background: #070609;
+    padding: 34px 0 46px; color: var(--dim); font-size: 14.5px;
   }
   footer p { margin: 0; }
   [data-lang] { display: none; }
@@ -66,12 +94,21 @@
 </head>
 <body>
 
-<header>
-  <h1><a href="./">Colored Sands of Egypt</a></h1>
-  <p class="sub"><span data-lang="en" class="on">Privacy Policy</span><span data-lang="de">Datenschutzerklärung</span><span data-lang="es">Política de privacidad</span><span data-lang="fr">Politique de confidentialité</span><span data-lang="id">Kebijakan Privasi</span><span data-lang="it">Informativa sulla privacy</span><span data-lang="pl">Polityka prywatności</span><span data-lang="pt">Política de Privacidade</span><span data-lang="tr">Gizlilik Politikası</span><span data-lang="hi">गोपनीयता नीति</span><span data-lang="ja">プライバシーポリシー</span><span data-lang="ko">개인정보 처리방침</span> · <span data-lang="en" class="on">Updated 8 September 2026</span><span data-lang="de">Stand 8. September 2026</span><span data-lang="es">Actualizada 8 de septiembre de 2026</span><span data-lang="fr">Mise à jour 8 septembre 2026</span><span data-lang="id">Diperbarui 8 September 2026</span><span data-lang="it">Aggiornata 8 settembre 2026</span><span data-lang="pl">Aktualizacja 8 września 2026</span><span data-lang="pt">Atualizada em 8 de setembro de 2026</span><span data-lang="tr">Güncellendi 8 Eylül 2026</span><span data-lang="hi">अद्यतन 8 सितंबर 2026</span><span data-lang="ja">更新日 2026年9月8日</span><span data-lang="ko">갱신일 2026년 9월 8일</span></p>
-  <div class="picker">
-    <label for="lang"><span data-lang="en" class="on">Language</span><span data-lang="de">Sprache</span><span data-lang="es">Idioma</span><span data-lang="fr">Langue</span><span data-lang="id">Bahasa</span><span data-lang="it">Lingua</span><span data-lang="pl">Język</span><span data-lang="pt">Idioma</span><span data-lang="tr">Dil</span><span data-lang="hi">भाषा</span><span data-lang="ja">言語</span><span data-lang="ko">언어</span></label>
-    <select id="lang">
+<div class="sky">
+  <div class="wrap">
+    <nav>
+      <a class="mark" href="./">COLORED SANDS OF EGYPT</a>
+      <a href="./">The game</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html" class="here">Privacy Policy</a>
+    </nav>
+  </div>
+  <header class="read title">
+    <h1><span data-lang="en" class="on">Privacy Policy</span><span data-lang="de">Datenschutzerklärung</span><span data-lang="es">Política de privacidad</span><span data-lang="fr">Politique de confidentialité</span><span data-lang="id">Kebijakan Privasi</span><span data-lang="it">Informativa sulla privacy</span><span data-lang="pl">Polityka prywatności</span><span data-lang="pt">Política de Privacidade</span><span data-lang="tr">Gizlilik Politikası</span><span data-lang="hi">गोपनीयता नीति</span><span data-lang="ja">プライバシーポリシー</span><span data-lang="ko">개인정보 처리방침</span></h1>
+    <p class="sub"><span data-lang="en" class="on">Updated 8 September 2026</span><span data-lang="de">Stand 8. September 2026</span><span data-lang="es">Actualizada 8 de septiembre de 2026</span><span data-lang="fr">Mise à jour 8 septembre 2026</span><span data-lang="id">Diperbarui 8 September 2026</span><span data-lang="it">Aggiornata 8 settembre 2026</span><span data-lang="pl">Aktualizacja 8 września 2026</span><span data-lang="pt">Atualizada em 8 de setembro de 2026</span><span data-lang="tr">Güncellendi 8 Eylül 2026</span><span data-lang="hi">अद्यतन 8 सितंबर 2026</span><span data-lang="ja">更新日 2026年9月8日</span><span data-lang="ko">갱신일 2026년 9월 8일</span></p>
+    <div class="picker">
+      <label for="lang"><span data-lang="en" class="on">Language</span><span data-lang="de">Sprache</span><span data-lang="es">Idioma</span><span data-lang="fr">Langue</span><span data-lang="id">Bahasa</span><span data-lang="it">Lingua</span><span data-lang="pl">Język</span><span data-lang="pt">Idioma</span><span data-lang="tr">Dil</span><span data-lang="hi">भाषा</span><span data-lang="ja">言語</span><span data-lang="ko">언어</span></label>
+      <select id="lang">
       <option value="en" data-dir="ltr">English</option>
       <option value="de" data-dir="ltr">Deutsch</option>
       <option value="es" data-dir="ltr">Español</option>
@@ -84,10 +121,12 @@
       <option value="hi" data-dir="ltr">हिन्दी</option>
       <option value="ja" data-dir="ltr">日本語</option>
       <option value="ko" data-dir="ltr">한국어</option>
-    </select>
-  </div>
-</header>
+      </select>
+    </div>
+  </header>
+</div>
 
+<div class="read">
 <main data-lang="en" class="on" lang="en" dir="ltr">
 <div class="note">
   <strong>The short version.</strong> The game collects nothing about you. It has
@@ -1470,10 +1509,13 @@
   위쪽의 날짜가 바뀝니다. 조용히 불어나는 판본은 존재하지 않습니다.
 </p>
 </main>
+</div>
 
 <footer>
-  <p>© 2026 Major Computing · <span data-lang="en" class="on"><a href="./">The game</a> · <a href="support.html">Support</a></span><span data-lang="de"><a href="./">Das Spiel</a> · <a href="support.html">Hilfe</a></span><span data-lang="es"><a href="./">El juego</a> · <a href="support.html">Asistencia</a></span><span data-lang="fr"><a href="./">Le jeu</a> · <a href="support.html">Assistance</a></span><span data-lang="id"><a href="./">Gimnya</a> · <a href="support.html">Bantuan</a></span><span data-lang="it"><a href="./">Il gioco</a> · <a href="support.html">Assistenza</a></span><span data-lang="pl"><a href="./">Gra</a> · <a href="support.html">Pomoc</a></span><span data-lang="pt"><a href="./">O jogo</a> · <a href="support.html">Suporte</a></span><span data-lang="tr"><a href="./">Oyun</a> · <a href="support.html">Destek</a></span><span data-lang="hi"><a href="./">खेल</a> · <a href="support.html">सहायता</a></span><span data-lang="ja"><a href="./">ゲームについて</a> · <a href="support.html">サポート</a></span><span data-lang="ko"><a href="./">게임 소개</a> · <a href="support.html">고객 지원</a></span> ·
-     <a href="mailto:admin@majorcomputing.ca">admin@majorcomputing.ca</a></p>
+  <div class="wrap">
+    <p>© 2026 Major Computing · <span data-lang="en" class="on"><a href="./">The game</a> · <a href="support.html">Support</a></span><span data-lang="de"><a href="./">Das Spiel</a> · <a href="support.html">Hilfe</a></span><span data-lang="es"><a href="./">El juego</a> · <a href="support.html">Asistencia</a></span><span data-lang="fr"><a href="./">Le jeu</a> · <a href="support.html">Assistance</a></span><span data-lang="id"><a href="./">Gimnya</a> · <a href="support.html">Bantuan</a></span><span data-lang="it"><a href="./">Il gioco</a> · <a href="support.html">Assistenza</a></span><span data-lang="pl"><a href="./">Gra</a> · <a href="support.html">Pomoc</a></span><span data-lang="pt"><a href="./">O jogo</a> · <a href="support.html">Suporte</a></span><span data-lang="tr"><a href="./">Oyun</a> · <a href="support.html">Destek</a></span><span data-lang="hi"><a href="./">खेल</a> · <a href="support.html">सहायता</a></span><span data-lang="ja"><a href="./">ゲームについて</a> · <a href="support.html">サポート</a></span><span data-lang="ko"><a href="./">게임 소개</a> · <a href="support.html">고객 지원</a></span> ·
+       <a href="mailto:admin@majorcomputing.ca">admin@majorcomputing.ca</a></p>
+  </div>
 </footer>
 
 <script>
