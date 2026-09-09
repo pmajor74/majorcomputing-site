@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Colored Sands of Egypt — a sand-sorting puzzle with nothing to lose</title>
-<meta name="description" content="Pour the sands of Egypt until every pigment rests in a vessel of its own. A thousand chambers, thirteen mechanics, undo and restart free forever, no lives and no timers. Coming to iPhone and Android.">
+<title>Colored Sands of Egypt</title>
+<meta name="description" content="A sand-sorting puzzle under the necropolis. A thousand chambers, thirteen kinds of vessel, undo and restart free forever, and no way to lose. Coming to iPhone and Android.">
 <link rel="icon" href="img/icon.png" type="image/png">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Colored Sands of Egypt">
-<meta property="og:description" content="A sand-sorting puzzle with nothing to lose. A thousand chambers. Undo and restart free, forever.">
+<meta property="og:description" content="Pour the sands of Egypt until every pigment rests in a vessel of its own. A thousand chambers, nothing to lose.">
 <meta property="og:image" content="https://sands.majorcomputing.ca/img/banner.jpg">
 <meta property="og:url" content="https://sands.majorcomputing.ca/">
 <meta name="twitter:card" content="summary_large_image">
@@ -16,16 +16,20 @@
   /* ------------------------------------------------------------------ *
    * The page is the game's own colours: a night sky over warm sandstone,
    * gold leaf for anything that speaks. Everything is inline and nothing
-   * is fetched from anywhere else, which is the rule these pages have
-   * kept since the first one -- a privacy policy that loads a font from
-   * a third party is a privacy policy arguing with itself. The videos
+   * is fetched from anywhere else -- a privacy policy that loads a font
+   * from a third party is a privacy policy arguing with itself. The clips
    * and pictures are served from this same folder.
+   *
+   * What it is not: a feature list. The user, 9 September 2026: "Just make
+   * it a decent marketing promo page for a game. Similar to what you'd see
+   * on good puzzle games on steam for example. You don't have to list
+   * every feature. Just make it sound fun. Show a fun clip or two and
+   * include sounds from those clips." And the ending is a secret: nothing
+   * of the dawn is on this page.
    * ------------------------------------------------------------------ */
   :root {
     --night:  #0b0910;
-    --deep:   #14101a;
     --panel:  #1a1410;
-    --stone:  #241a12;
     --rule:   #3a2b1e;
     --ink:    #ece2cd;
     --dim:    #a3947c;
@@ -38,48 +42,34 @@
   }
 
   * { box-sizing: border-box; }
-
   html { scroll-behavior: smooth; }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
   body {
-    margin: 0;
-    background: var(--night);
-    color: var(--ink);
-    font: 17px/1.65 var(--sans);
-    -webkit-font-smoothing: antialiased;
+    margin: 0; background: var(--night); color: var(--ink);
+    font: 17px/1.65 var(--sans); -webkit-font-smoothing: antialiased;
   }
 
-  /* Every picture and video keeps its own shape. The last version of this
-     page set a width in CSS and left the HTML height attribute standing,
-     so each 540x960 screenshot was drawn 232 wide and 960 tall. `height:
-     auto` here is what stops that ever happening again, and the phone
-     frames below fix the aspect on top of it. */
+  /* Every picture and video keeps its own shape: `height: auto` is what
+     stops a CSS width and an HTML height attribute stretching a screenshot,
+     which is how the last page but one went wrong. */
   img, video { max-width: 100%; height: auto; display: block; }
 
   a { color: var(--gold); text-decoration-thickness: 1px; text-underline-offset: 3px; }
   a:hover { color: var(--gilt); }
-  a:focus-visible, button:focus-visible {
-    outline: 2px solid var(--gilt); outline-offset: 3px; border-radius: 3px;
-  }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--gilt); outline-offset: 3px; border-radius: 3px; }
 
-  .wrap { width: min(70rem, 100% - 44px); margin-inline: auto; }
-  .read { width: min(44rem, 100% - 44px); margin-inline: auto; }
+  .wrap { width: min(68rem, 100% - 44px); margin-inline: auto; }
+  .read { width: min(42rem, 100% - 44px); margin-inline: auto; }
 
   section { padding: 72px 0; }
   section + section { border-top: 1px solid var(--rule); }
 
   h1, h2, h3 { font-family: var(--serif); font-weight: normal; letter-spacing: .01em; }
-  h2 {
-    font-size: clamp(28px, 4.6vw, 40px); margin: 0 0 8px; color: var(--gilt);
-    line-height: 1.12;
-  }
-  h3 { font-size: 19px; margin: 0 0 4px; color: var(--gold); }
-  .lede { color: var(--dim); margin: 0 0 30px; font-size: 18px; max-width: 42rem; }
-  .eyebrow {
-    font-size: 12.5px; letter-spacing: .16em; text-transform: uppercase;
-    color: var(--gold); margin: 0 0 12px;
-  }
+  h2 { font-size: clamp(28px, 4.6vw, 40px); margin: 0 0 10px; color: var(--gilt); line-height: 1.12; }
+  h3 { font-size: 20px; margin: 0 0 6px; color: var(--gold); }
+  .eyebrow { font-size: 12.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); margin: 0 0 12px; }
+  .lede { color: var(--dim); margin: 0 0 30px; font-size: 18px; max-width: 40rem; }
   p { margin: 0 0 16px; }
   p:last-child { margin-bottom: 0; }
 
@@ -92,8 +82,8 @@
       linear-gradient(180deg, #06050b 0%, #110c17 40%, #1c1314 76%, #2a1a12 100%);
     border-bottom: 1px solid var(--rule);
   }
-  /* A field of stars: three layers of tiny radial gradients, tiled at
-     different sizes so the repeat is not obvious. Drawn, not downloaded. */
+  /* A field of stars, drawn rather than downloaded: tiny radial gradients
+     tiled at two sizes so the repeat does not show. */
   .sky::before {
     content: ""; position: absolute; inset: 0; pointer-events: none;
     background-image:
@@ -115,67 +105,33 @@
   }
   .sky > * { position: relative; }
 
-  nav {
-    display: flex; align-items: center; gap: 22px; flex-wrap: wrap;
-    padding: 20px 0; font-size: 14px;
-  }
-  nav .mark {
-    font-family: var(--serif); font-size: 16px; color: var(--gilt);
-    letter-spacing: .08em; margin-right: auto; text-decoration: none;
-  }
+  nav { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; padding: 20px 0; font-size: 14px; }
+  nav .mark { font-family: var(--serif); font-size: 16px; color: var(--gilt); letter-spacing: .08em; margin-right: auto; text-decoration: none; }
   nav a:not(.mark) { color: var(--dim); text-decoration: none; }
   nav a:not(.mark):hover { color: var(--gilt); }
-  /* On a phone the name takes its own line and the links sit under it,
-     rather than one link riding beside the name and the rest below. */
   @media (max-width: 560px) { nav .mark { flex-basis: 100%; margin-right: 0; } nav { gap: 10px 18px; } }
 
   /* ---------------------------- the hero --------------------------- */
 
-  .hero {
-    display: grid; gap: 40px; align-items: center;
-    padding: 28px 0 64px;
-    /* minmax(0, 1fr), never a bare 1fr or auto: an automatic minimum lets
-       a wide child push the column past the container, and this page once
-       scrolled sideways on a phone for exactly that reason. */
-    grid-template-columns: minmax(0, 1fr);
-  }
-  @media (min-width: 880px) {
-    .hero { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); padding: 44px 0 80px; }
-  }
+  .hero { display: grid; gap: 40px; align-items: center; padding: 28px 0 64px; grid-template-columns: minmax(0, 1fr); }
+  @media (min-width: 880px) { .hero { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); padding: 44px 0 80px; } }
   .hero .copy { text-align: center; }
   @media (min-width: 880px) { .hero .copy { text-align: left; } }
 
   .hero h1 {
-    margin: 0; font-size: clamp(42px, 7.6vw, 78px); line-height: .98;
-    color: var(--gilt);
+    margin: 0; font-size: clamp(44px, 7.8vw, 80px); line-height: .98; color: var(--gilt);
     text-shadow: 0 2px 0 var(--shadow), 0 18px 54px rgba(217,177,74,.22);
   }
   .hero h1 .small { display: block; font-size: .5em; color: var(--gold); letter-spacing: .12em; margin-top: 6px; }
-  .tag {
-    font-family: var(--serif); font-size: clamp(20px, 2.7vw, 26px); line-height: 1.35;
-    margin: 22px 0 0; color: var(--ink); max-width: 30rem;
-  }
-  @media (max-width: 879px) { .tag { margin-inline: auto; } }
+  .tag { font-family: var(--serif); font-size: clamp(21px, 2.8vw, 27px); line-height: 1.35; margin: 22px 0 0; color: var(--ink); max-width: 30rem; }
   .under { color: var(--dim); margin: 14px 0 0; max-width: 32rem; font-size: 17px; }
-  @media (max-width: 879px) { .under { margin-inline: auto; } }
-
-  .proofs {
-    display: flex; flex-wrap: wrap; gap: 8px; margin: 26px 0 0; padding: 0; list-style: none;
-  }
-  @media (max-width: 879px) { .proofs { justify-content: center; } }
-  .proofs li {
-    border: 1px solid rgba(217,177,74,.35); border-radius: 999px;
-    padding: 6px 14px; font-size: 14px; color: var(--ink);
-    background: rgba(26,20,16,.6);
-  }
-  .proofs li b { color: var(--gilt); font-weight: normal; }
+  @media (max-width: 879px) { .tag, .under { margin-inline: auto; } }
 
   .badges { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
   @media (max-width: 879px) { .badges { justify-content: center; } }
   .badge {
     display: inline-flex; flex-direction: column; align-items: flex-start;
-    padding: 10px 22px; border-radius: 12px;
-    border: 1px solid rgba(217,177,74,.4);
+    padding: 10px 22px; border-radius: 12px; border: 1px solid rgba(217,177,74,.4);
     background: linear-gradient(180deg, rgba(217,177,74,.14), rgba(217,177,74,.04));
     font-size: 16px; line-height: 1.25; color: var(--gilt);
   }
@@ -186,47 +142,59 @@
   /* ---------------------------- the phone -------------------------- */
 
   .phone {
-    position: relative; margin: 0 auto;
-    width: min(300px, 78vw);
-    aspect-ratio: 390 / 844;
-    border-radius: 40px;
-    background: #050409;
-    padding: 10px;
-    box-shadow:
-      0 0 0 1px rgba(217,177,74,.35),
-      0 0 0 6px #0c0a10,
-      0 0 0 7px rgba(217,177,74,.18),
-      0 40px 90px rgba(0,0,0,.75),
-      0 0 120px rgba(196,98,42,.22);
+    position: relative; margin: 0 auto; width: min(300px, 78vw); aspect-ratio: 390 / 844;
+    border-radius: 40px; background: #050409; padding: 10px;
+    box-shadow: 0 0 0 1px rgba(217,177,74,.35), 0 0 0 6px #0c0a10, 0 0 0 7px rgba(217,177,74,.18),
+                0 40px 90px rgba(0,0,0,.75), 0 0 120px rgba(196,98,42,.22);
   }
-  .phone .screen {
-    display: block; position: relative;
-    width: 100%; height: 100%; border-radius: 30px; overflow: hidden;
-    background: #000;
-  }
-  button.phone { border: 0; font: inherit; color: inherit; display: block; }
-  .phone .screen video, .phone .screen img {
-    width: 100%; height: 100%; object-fit: cover;
-  }
+  .phone .screen { display: block; position: relative; width: 100%; height: 100%; border-radius: 30px; overflow: hidden; background: #000; }
+  .phone .screen video, .phone .screen img { width: 100%; height: 100%; object-fit: cover; }
   .phone::after {
-    /* The punch-hole, so it reads as a phone and not a card. */
-    content: ""; position: absolute; top: 20px; left: 50%; width: 12px; height: 12px;
-    margin-left: -6px; border-radius: 50%; background: #000;
-    box-shadow: 0 0 0 2px rgba(255,255,255,.06);
+    content: ""; position: absolute; top: 20px; left: 50%; width: 12px; height: 12px; margin-left: -6px;
+    border-radius: 50%; background: #000; box-shadow: 0 0 0 2px rgba(255,255,255,.06);
   }
   .hero .phone { width: min(320px, 78vw); }
-  .hero .phone-note { text-align: center; color: var(--dim); font-size: 13.5px; margin: 14px 0 0; }
+  .phone-note { text-align: center; color: var(--dim); font-size: 13.5px; margin: 14px 0 0; }
+
+  /* A round button on the glass: sound on the hero's loop, play on the
+     second clip. A browser will not start sound on its own, so both wait
+     for a tap. */
+  .glass-button {
+    position: absolute; right: 14px; top: 58px; z-index: 2;
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 9px 14px 9px 11px; border-radius: 999px; border: 1px solid rgba(243,212,121,.55);
+    background: rgba(11,9,16,.72); color: var(--gilt); font: 600 13px/1 var(--sans);
+    cursor: pointer; backdrop-filter: blur(6px);
+  }
+  .glass-button svg { width: 16px; height: 16px; fill: var(--gilt); }
+  .glass-button:hover { background: rgba(11,9,16,.9); }
+
+  .clip { position: relative; }
+  .clip .play {
+    position: absolute; inset: 0; display: grid; place-items: center; z-index: 2;
+    background: rgba(0,0,0,.18); border-radius: 30px; cursor: pointer; border: 0; padding: 0;
+    transition: opacity .3s;
+  }
+  .clip .play span {
+    width: 74px; height: 74px; border-radius: 50%; background: rgba(11,9,16,.7);
+    border: 1px solid rgba(243,212,121,.6); display: grid; place-items: center; box-shadow: 0 10px 30px rgba(0,0,0,.5);
+  }
+  .clip .play svg { width: 26px; height: 26px; margin-left: 4px; fill: var(--gilt); }
+  .clip.playing .play { opacity: 0; pointer-events: none; }
+
+  /* ---------------------------- the tiles -------------------------- */
+
+  .tiles { display: grid; gap: 16px; }
+  .tile { background: var(--panel); border: 1px solid var(--rule); border-radius: 14px; padding: 22px 24px; }
+  .tile p { color: var(--dim); font-size: 15.5px; margin: 0; }
+  .tile b { color: var(--gilt); font-weight: normal; }
 
   /* ---------------------------- the reel --------------------------- */
 
-  .reel {
-    display: flex; gap: 22px; overflow-x: auto; padding: 8px 0 26px;
-    scroll-snap-type: x mandatory; scrollbar-color: var(--rule) transparent;
-  }
+  .reel { display: flex; gap: 22px; overflow-x: auto; padding: 8px 0 26px; scroll-snap-type: x mandatory; scrollbar-color: var(--rule) transparent; }
   .reel figure { margin: 0; flex: 0 0 auto; width: 230px; scroll-snap-align: center; }
   .reel .frame {
-    aspect-ratio: 9 / 16; border-radius: 26px; overflow: hidden;
-    border: 1px solid var(--rule); background: #000;
+    aspect-ratio: 9 / 16; border-radius: 26px; overflow: hidden; border: 1px solid var(--rule); background: #000;
     box-shadow: 0 16px 40px rgba(0,0,0,.55), inset 0 0 0 1px rgba(217,177,74,.12);
   }
   .reel .frame img { width: 100%; height: 100%; object-fit: cover; }
@@ -235,118 +203,37 @@
 
   /* ---------------------------- the pitch -------------------------- */
 
-  .pitch {
-    display: grid; gap: 44px; align-items: center;
-    grid-template-columns: minmax(0, 1fr);
-  }
-  @media (min-width: 880px) {
-    .pitch { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
-    .pitch.flip > :first-child { order: 2; }
-  }
+  .pitch { display: grid; gap: 44px; align-items: center; grid-template-columns: minmax(0, 1fr); }
+  @media (min-width: 880px) { .pitch { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } .pitch.flip > :first-child { order: 2; } }
   .pitch p { font-size: 17.5px; }
-  .pitch .big {
-    font-family: var(--serif); font-size: clamp(22px, 3vw, 28px); color: var(--ink);
-    line-height: 1.3; margin: 0 0 18px;
-  }
+  .pitch .big { font-family: var(--serif); font-size: clamp(22px, 3vw, 28px); color: var(--ink); line-height: 1.3; margin: 0 0 18px; }
   .pitch .big b { color: var(--gilt); font-weight: normal; }
-
-  .numbers {
-    display: grid; gap: 18px; margin: 0; padding: 0; list-style: none;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  @media (min-width: 620px) { .numbers { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
-  .numbers li {
-    border: 1px solid var(--rule); border-radius: 14px; padding: 18px 16px;
-    background: var(--panel); text-align: center;
-  }
-  .numbers b {
-    display: block; font-family: var(--serif); font-weight: normal;
-    font-size: clamp(30px, 4vw, 42px); color: var(--gilt); line-height: 1;
-  }
-  .numbers span { display: block; color: var(--dim); font-size: 13.5px; margin-top: 8px; letter-spacing: .04em; }
-
-  /* ---------------------------- the dawn --------------------------- */
-
-  .dawn { position: relative; }
-  .dawn .phone { cursor: pointer; }
-  .dawn .play {
-    position: absolute; inset: 0; display: grid; place-items: center;
-    background: rgba(0,0,0,.18); border-radius: 30px; pointer-events: none;
-    transition: opacity .3s;
-  }
-  .dawn .play span {
-    width: 74px; height: 74px; border-radius: 50%;
-    background: rgba(11,9,16,.7); border: 1px solid rgba(243,212,121,.6);
-    display: grid; place-items: center; box-shadow: 0 10px 30px rgba(0,0,0,.5);
-  }
-  .dawn .play svg { width: 26px; height: 26px; margin-left: 4px; fill: var(--gilt); }
-  .dawn.playing .play { opacity: 0; }
-
-  /* ---------------------------- the cards -------------------------- */
-
-  .cards { display: grid; gap: 16px; }
-  @media (min-width: 620px) { .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-  @media (min-width: 940px) { .cards { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-  .card {
-    background: var(--panel); border: 1px solid var(--rule); border-radius: 14px;
-    padding: 20px 22px;
-  }
-  .card p { color: var(--dim); font-size: 15.5px; margin: 0; }
 
   /* --------------------------- the promise ------------------------- */
 
   .promise {
     background: linear-gradient(180deg, rgba(217,177,74,.08), rgba(217,177,74,.02));
-    border: 1px solid rgba(217,177,74,.34); border-radius: 18px;
-    padding: 34px 32px;
+    border: 1px solid rgba(217,177,74,.34); border-radius: 18px; padding: 34px 32px;
   }
   .promise h2 { margin-top: 0; }
-  .ledger { display: grid; gap: 22px; margin-top: 26px; }
-  @media (min-width: 720px) { .ledger { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-  .ledger h3 { font-family: var(--sans); font-size: 12.5px; letter-spacing: .14em;
-               text-transform: uppercase; color: var(--dim); margin-bottom: 10px; }
-  .ledger ul { margin: 0; padding-left: 1.1em; }
-  .ledger li { margin: 7px 0; }
-  .ledger li b { color: var(--gilt); font-weight: normal; }
+  .promise ul { margin: 18px 0 0; padding-left: 1.1em; columns: 1; }
+  @media (min-width: 720px) { .promise ul { columns: 2; column-gap: 40px; } }
+  .promise li { margin: 7px 0; break-inside: avoid; }
+  .promise li b { color: var(--gilt); font-weight: normal; }
   .price { color: var(--gilt); white-space: nowrap; }
-
-  /* -------------------------- the pigments ------------------------- */
-
-  .pigments { display: flex; flex-wrap: wrap; gap: 10px; margin: 0; padding: 0; list-style: none; }
-  .pigments li {
-    display: flex; align-items: center; gap: 9px;
-    border: 1px solid var(--rule); border-radius: 999px;
-    padding: 5px 14px 5px 6px; font-size: 14px; background: var(--panel);
-  }
-  .swatch { width: 20px; height: 20px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgba(0,0,0,.45); }
-
-  /* ------------------------- the languages ------------------------- */
-
-  .langs { display: flex; flex-wrap: wrap; gap: 8px 22px; margin: 0; padding: 0; list-style: none;
-           color: var(--dim); font-size: 15.5px; }
-  .langs li b { color: var(--ink); font-weight: normal; }
-
-  /* ---------------------------- the help --------------------------- */
-
-  dl { margin: 0; }
-  dt { color: var(--gilt); font-family: var(--serif); font-size: 18px; margin-top: 22px; }
-  dd { margin: 5px 0 0; color: var(--dim); }
 
   /* --------------------------- the close --------------------------- */
 
   .close {
     text-align: center; padding: 84px 0;
-    background:
-      radial-gradient(90% 70% at 50% 100%, rgba(196, 98, 42, .30) 0%, rgba(196, 98, 42, 0) 60%),
-      linear-gradient(180deg, var(--night), #1e1412);
+    background: radial-gradient(90% 70% at 50% 100%, rgba(196, 98, 42, .30) 0%, rgba(196, 98, 42, 0) 60%),
+                linear-gradient(180deg, var(--night), #1e1412);
   }
   .close h2 { font-size: clamp(30px, 5vw, 46px); }
   .close .badges { justify-content: center; }
+  .close .langs { color: var(--dim); font-size: 14.5px; margin-top: 22px; }
 
-  footer {
-    border-top: 1px solid var(--rule); background: #070609;
-    padding: 34px 0 46px; color: var(--dim); font-size: 14.5px;
-  }
+  footer { border-top: 1px solid var(--rule); background: #070609; padding: 34px 0 46px; color: var(--dim); font-size: 14.5px; }
   footer .row { display: flex; gap: 10px 22px; flex-wrap: wrap; align-items: baseline; }
   footer .row p { margin: 0; }
   footer a { color: var(--gold); }
@@ -359,9 +246,8 @@
     <nav>
       <a class="mark" href="#top">COLORED SANDS OF EGYPT</a>
       <a href="#play">The game</a>
-      <a href="#mechanics">Mechanics</a>
       <a href="#fair">Fair play</a>
-      <a href="#help">Help</a>
+      <a href="support.html">Support</a>
       <a href="privacy.html">Privacy</a>
     </nav>
   </div>
@@ -371,55 +257,127 @@
       <p class="eyebrow">A sand-sorting puzzle for iPhone and Android</p>
       <h1>Colored Sands<span class="small">OF EGYPT</span></h1>
       <p class="tag">Pour the sands of Egypt until every pigment rests in a vessel of its own.</p>
-      <p class="under">A thousand chambers under the necropolis, thirteen ways a vessel can
-        surprise you, and nothing to lose: no lives, no timers, no move limits.</p>
-      <ul class="proofs">
-        <li><b>1,000</b> chambers</li>
-        <li><b>13</b> mechanics</li>
-        <li><b>12</b> languages</li>
-        <li><b>0</b> ways to fail</li>
-      </ul>
+      <p class="under">A thousand chambers under the necropolis. Vessels that seal, tip, hide and
+        pour the wrong way. And nothing to lose: no lives, no timers, no move limits.</p>
       <div class="badges">
         <span class="badge"><small>Coming soon</small>App&nbsp;Store</span>
         <span class="badge"><small>Coming soon</small>Google&nbsp;Play</span>
       </div>
-      <p class="free"><b>Undo and restart are free, forever.</b> Two small purchases, each
-        with a free way to the same thing. <a href="#fair">The whole of it, in one place.</a></p>
+      <p class="free"><b>Undo and restart are free, forever.</b> The only two things for sale
+        each have a free way to the same place. <a href="#fair">The whole of it, in one place.</a></p>
     </div>
 
     <div>
       <div class="phone">
         <div class="screen">
-          <video id="loop" autoplay muted loop playsinline preload="metadata"
-                 poster="img/play-poster.jpg"
-                 aria-label="A chamber being played: vessels of layered sand are poured into one another until each holds a single pigment, then the glass breaks and the dust rises.">
-            <source src="video/play.mp4" type="video/mp4">
+          <video id="loop" autoplay muted loop playsinline preload="metadata" poster="img/sealed-poster.jpg"
+                 aria-label="A chamber being played: vessels of layered sand are poured into one another until each holds a single pigment, a wax seal lifts, then the glass breaks and the dust rises.">
+            <source src="video/sealed.mp4" type="video/mp4">
           </video>
+          <button class="glass-button" id="sound" type="button" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4zm12.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4z"/></svg>
+            <span>Sound on</span>
+          </button>
         </div>
       </div>
-      <p class="phone-note">Chamber 26, played through. Real footage, nothing staged.</p>
+      <p class="phone-note">Real footage. What you hear is the game.</p>
     </div>
   </header>
 </div>
 
+<!-- ---------------------------- the hook ---------------------------- -->
+
+<section id="play">
+  <div class="wrap">
+    <div class="pitch">
+      <div>
+        <p class="eyebrow">How it plays</p>
+        <h2>One rule. A thousand rooms.</h2>
+        <p class="big">Sand settles only on sand of the <b>same colour</b>, and only where
+          there is room. That is the whole of it.</p>
+        <p>
+          Tip a vessel into another and the top band pours across. Gather every pigment
+          into a vessel of its own and the chamber is done: the glass breaks, the colours
+          rise in a turning column of dust, and the stone door opens on the next room.
+        </p>
+        <p>
+          Then the vessels start to misbehave. One is sealed in wax until you gather the
+          colour it names. One hides its sand under Nile silt. One pours from the bottom.
+          One is a kiln that fires two pigments into a third. Every ten chambers or so,
+          something new is waiting, and by the end they are all on the board at once.
+        </p>
+      </div>
+      <div class="tiles">
+        <div class="tile"><h3>No way to lose</h3>
+          <p>No lives, no energy, no timers, no move limits. Undo goes back as far as you like.
+            Stuck? <b>Skip it.</b> No chamber is a wall.</p></div>
+        <div class="tile"><h3>Rooms that change</h3>
+          <p>Eighty-odd rooms under the necropolis, drawn in cinematic pixel art and lit by
+            torch, brazier and shafts of daylight. A new one every ten chambers.</p></div>
+        <div class="tile"><h3>Sand you can touch</h3>
+          <p>The dust of a finished chamber is a real fluid. Put a finger in it and it
+            moves out of the way.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ---------------------------- the kiln ---------------------------- -->
+
+<section id="kiln">
+  <div class="wrap">
+    <div class="pitch flip">
+      <div class="clip" id="kiln-clip">
+        <div class="phone">
+          <div class="screen">
+            <video id="kiln-video" playsinline preload="metadata" poster="img/kiln-poster.jpg"
+                   aria-label="A kiln chamber being played: malachite and natron are loaded into the kiln, it fires, and Egyptian blue pours out.">
+              <source src="video/kiln.mp4" type="video/mp4">
+            </video>
+            <button class="play" type="button" aria-label="Play the kiln chamber, with sound">
+              <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3l15 9-15 9z"/></svg></span>
+            </button>
+          </div>
+        </div>
+        <p class="phone-note">The kiln, chamber 99. Tap to play, with sound.</p>
+      </div>
+      <div>
+        <p class="eyebrow">Made of real things</p>
+        <h2>Fire two pigments into a third</h2>
+        <p class="big">Malachite and natron go in. <b>Egyptian blue</b> comes out, the way it
+          actually did, four thousand years ago.</p>
+        <p>
+          The fourteen colours are the ones Egyptian painters ground, every layer of sand
+          wears its own hieroglyph, and a blended pigment shows the grains of both halves
+          it is made of. It is a puzzle about sand, so the sand had to be right.
+        </p>
+        <p>
+          One playlist runs under the whole game, oud and ney and qanun, crossfading song
+          to song and never restarting for a chamber. It is a calm game. It stays calm.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ---------------------------- the reel ---------------------------- -->
 
-<section id="screens" style="padding-top:56px">
+<section id="screens" style="padding-bottom:56px">
   <div class="wrap">
     <div class="reel">
       <figure>
         <div class="frame"><picture><source srcset="img/shot-board.webp" type="image/webp">
           <img src="img/shot-board.jpg" width="540" height="960" loading="lazy"
                alt="A chamber: vessels of layered sand against a torch-lit sandstone wall."></picture></div>
-        <figcaption><b>A chamber.</b> Every layer wears its hieroglyph, so the board reads
-          by shape as well as colour.</figcaption>
+        <figcaption><b>A chamber.</b> Every layer wears its hieroglyph, so the board reads by
+          shape as well as colour.</figcaption>
       </figure>
       <figure>
         <div class="frame"><picture><source srcset="img/shot-chambers.webp" type="image/webp">
           <img src="img/shot-chambers.jpg" width="540" height="960" loading="lazy"
                alt="The map of the dig: chapters of numbered chambers with the stars earned."></picture></div>
-        <figcaption><b>The map of the dig.</b> Ten chapters, a hundred chambers each,
-          nothing locked behind anything but the one before it.</figcaption>
+        <figcaption><b>The map of the dig.</b> Ten chapters, a hundred chambers each, nothing
+          locked behind anything but the one before it.</figcaption>
       </figure>
       <figure>
         <div class="frame"><picture><source srcset="img/shot-guide.webp" type="image/webp">
@@ -433,125 +391,6 @@
                alt="The title screen: a pyramid at night under a full moon."></picture></div>
         <figcaption><b>The necropolis at night.</b> Under a moon with a secret.</figcaption>
       </figure>
-      <figure>
-        <div class="frame"><picture><source srcset="img/shot-ending.webp" type="image/webp">
-          <img src="img/shot-ending.jpg" width="540" height="960" loading="lazy"
-               alt="The ending: a column of light and coloured sand rising from a pyramid into a dawn sky."></picture></div>
-        <figcaption><b>The thousandth chamber,</b> and the dawn after it.</figcaption>
-      </figure>
-    </div>
-  </div>
-</section>
-
-<!-- ---------------------------- the rule ---------------------------- -->
-
-<section id="play">
-  <div class="wrap">
-    <div class="pitch">
-      <div>
-        <p class="eyebrow">How it plays</p>
-        <h2>One rule. A thousand rooms.</h2>
-        <p class="big">Sand settles only on sand of the <b>same colour</b>, and only where
-          there is room for it. That is the whole of it.</p>
-        <p>
-          Every chamber hands you vessels of layered, jumbled sand. Tip one into another and
-          the top band pours across, as much as will fit. Gather every pigment into a vessel
-          of its own and the chamber is done: the glass breaks, the colours rise in a turning
-          column of dust, and the stone door opens on the next room.
-        </p>
-        <p>
-          The first hundred chambers teach thirteen ideas, one at a time, each on a chamber
-          built to teach it. The nine hundred after that mix them, ten chapters deep, from
-          the Shifting Antechamber to the House of Gold.
-        </p>
-      </div>
-      <ul class="numbers">
-        <li><b>1,000</b><span>chambers, every one checked by a solver</span></li>
-        <li><b>10</b><span>chapters under the necropolis</span></li>
-        <li><b>80+</b><span>rooms, lit by torch, brazier and daylight</span></li>
-        <li><b>14</b><span>pigments the Egyptians actually ground</span></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- ------------------------- the mechanics -------------------------- -->
-
-<section id="mechanics">
-  <div class="wrap">
-    <p class="eyebrow">Thirteen mechanics</p>
-    <h2>Every ten chambers, the rules grow</h2>
-    <p class="lede">Each one arrives on a chamber that teaches it, is practised, and then
-      joins the mix for good. By the end they are all on the board at once.</p>
-    <div class="cards">
-      <div class="card"><h3>The narrow neck</h3>
-        <p>An amphora that takes one layer per pour, however much you tip into it.</p></div>
-      <div class="card"><h3>The one-way vessel</h3>
-        <p>A stone grille over the mouth. Sand runs out of it; nothing goes in.</p></div>
-      <div class="card"><h3>The sealed vessel</h3>
-        <p>Wax over the mouth until its pigment is gathered somewhere else on the board.
-          What it was hiding is then yours to deal with.</p></div>
-      <div class="card"><h3>The bound vessel</h3>
-        <p>Opens on a number, not a colour. Finish enough vessels and the binding lifts.</p></div>
-      <div class="card"><h3>Vessels of different depths</h3>
-        <p>Tall and short on one board, so room is no longer the same everywhere.</p></div>
-      <div class="card"><h3>The tar jar</h3>
-        <p>Lined with pitch. It lets go of one layer at a time, and no more.</p></div>
-      <div class="card"><h3>The silted vessel</h3>
-        <p>Buried under Nile silt. You cannot see what is under it until you move it.</p></div>
-      <div class="card"><h3>The clepsydra</h3>
-        <p>A water clock. It pours from the bottom, so the layer you get is the one you
-          have been ignoring.</p></div>
-      <div class="card"><h3>The cartouche</h3>
-        <p>A named order of layers. Build the name exactly and the seal breaks.</p></div>
-      <div class="card"><h3>The twin seal</h3>
-        <p>Two pigments named on one wax. Gather both, anywhere, and it opens.</p></div>
-      <div class="card"><h3>The mirror</h3>
-        <p>The board is two halves. Every pour you make in one is made again in the other,
-          if it is legal there.</p></div>
-      <div class="card"><h3>The lodestone gate</h3>
-        <p>A magnet that pulls the iron-red out of a blend as it falls, splitting purple
-          back into carnelian and lapis. It is awake only while the jar wired to it is
-          full, so you decide when it works.</p></div>
-      <div class="card"><h3>The kiln</h3>
-        <p>Fires two pigments into a third. Malachite and natron become Egyptian blue,
-          the way they actually did.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ---------------------------- the dawn ---------------------------- -->
-
-<section id="dawn">
-  <div class="wrap">
-    <div class="pitch flip">
-      <div class="dawn" id="dawn-player">
-        <button class="phone" type="button" aria-label="Play the ending, with sound">
-          <span class="screen">
-            <video id="dawn-video" playsinline preload="metadata" poster="img/dawn-poster.jpg">
-              <source src="video/dawn.mp4" type="video/mp4">
-            </video>
-            <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3l15 9-15 9z"/></svg></span></span>
-          </span>
-        </button>
-        <p class="phone-note">The dawn after chamber one thousand, with its music. Tap to play.</p>
-      </div>
-      <div>
-        <p class="eyebrow">It has an ending</p>
-        <h2>Come up into the day</h2>
-        <p class="big">A thousand chambers down, and the tomb <b>opens on a dawn</b>: a beam
-          from the capstone, and all the sand you ever sorted rising through it in bands
-          of colour.</p>
-        <p>
-          The sand is a real fluid. Put a finger in it and it moves out of the way, there
-          and on every finished chamber, where the dust of the broken glass gathers into a
-          turning column you can push about while you decide to move on.
-        </p>
-        <p>
-          The music is one playlist for the whole game, crossfading song to song and never
-          restarting for a chamber, because being interrupted is the opposite of the point.
-        </p>
-      </div>
     </div>
   </div>
 </section>
@@ -563,155 +402,21 @@
     <div class="promise">
       <p class="eyebrow">Fair play</p>
       <h2>The fair one</h2>
-      <p class="lede">Sorting puzzles stopped being fair. You pay twelve dollars to remove the
-        adverts and they still charge you for the undo button. This one was built to be the
-        other thing, and to say so before you install it.</p>
-      <p>
-        Two purchases, each once and forever, and beside every one of them a free way to the
-        same thing. Nothing is rationed to make you pay, and nothing is sold twice.
-      </p>
-
-      <div class="ledger">
-        <div>
-          <h3>Free, always</h3>
-          <ul>
-            <li><b>Undo.</b> As far back as you like, as often as you like.</li>
-            <li><b>Restart.</b> The same.</li>
-            <li><b>Skip.</b> No chamber is a wall.</li>
-            <li><b>All thousand chambers.</b> No pack is held back.</li>
-            <li><b>The whole game offline.</b> No account, no sign-in, no server.</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Bought once, or earned</h3>
-          <ul>
-            <li><b>Remove the adverts, <span class="price">$2.99</span>.</b> Or watch
-              adverts until they have paid for themselves, and they stop for good. A meter
-              shows how far along you are.</li>
-            <li><b>Unlimited hints and the extra vial, <span class="price">$1.29</span>.</b>
-              Both aids, one payment. Or three of each free, another every minute you wait,
-              and one for any advert you choose to watch.</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Never sold</h3>
-          <ul>
-            <li>No coins, gems or any other currency</li>
-            <li>No subscription and no battle pass</li>
-            <li>No lives, no energy, no waiting to play</li>
-            <li>No offer at the moment you fail, because there is no failing</li>
-          </ul>
-        </div>
-      </div>
-
-      <p style="margin-top:26px">
-        Adverts appear between chambers only, never over a puzzle, and never in the first
-        eighteen chambers. When an aid runs out, the screen says all three ways to another
-        one, every time, and the free one is never hidden.
-      </p>
+      <p class="lede" style="margin-bottom:0">Sorting puzzles stopped being fair somewhere along the
+        way: twelve dollars to remove the adverts, and they still charge you for undo. This one
+        was built to be the other thing, and to say so before you install it.</p>
+      <ul>
+        <li><b>Undo, restart and skip.</b> Free, unlimited, forever.</li>
+        <li><b>All thousand chambers.</b> No pack held back, no account, no server, works offline.</li>
+        <li><b>Remove the adverts, <span class="price">$2.99</span>,</b> once. Or watch adverts until
+          they have paid for themselves, and they stop for good.</li>
+        <li><b>Unlimited hints and the extra vial, <span class="price">$1.29</span>,</b> once. Or three
+          of each free, another every minute you wait, one for any advert you choose to watch.</li>
+        <li><b>Never sold:</b> coins, gems, lives, energy, subscriptions, battle passes, or an offer
+          at the moment you fail, because there is no failing.</li>
+        <li><b>Adverts</b> come between chambers only, never over a puzzle, never in the first eighteen.</li>
+      </ul>
     </div>
-  </div>
-</section>
-
-<!-- -------------------------- the pigments -------------------------- -->
-
-<section id="made">
-  <div class="wrap">
-    <p class="eyebrow">The craft</p>
-    <h2>Made of real things</h2>
-    <p class="lede">The colours are the ones Egyptian painters ground, the rooms are drawn in
-      cinematic pixel art for this game, and every sign on the sand is a real hieroglyph.</p>
-    <ul class="pigments">
-      <li><span class="swatch" style="background:#3A7BC8"></span>Egyptian&nbsp;Blue</li>
-      <li><span class="swatch" style="background:#2F9150"></span>Malachite</li>
-      <li><span class="swatch" style="background:#C4622A"></span>Red&nbsp;Ochre</li>
-      <li><span class="swatch" style="background:#A8352F"></span>Carnelian</li>
-      <li><span class="swatch" style="background:#2C3A9C"></span>Lapis</li>
-      <li><span class="swatch" style="background:#E6DCC6"></span>Natron&nbsp;White</li>
-      <li><span class="swatch" style="background:#59626D"></span>Kohl</li>
-      <li><span class="swatch" style="background:#35B5B0"></span>Turquoise</li>
-      <li><span class="swatch" style="background:#D9B14A"></span>Gold&nbsp;Leaf</li>
-      <li><span class="swatch" style="background:#6B4B33"></span>Nile&nbsp;Silt</li>
-      <li><span class="swatch" style="background:#8A55C4"></span>Amethyst</li>
-      <li><span class="swatch" style="background:#D48C9E"></span>Rose&nbsp;Granite</li>
-      <li><span class="swatch" style="background:#8FA83A"></span>Green&nbsp;Frit</li>
-      <li><span class="swatch" style="background:#8E2A5C"></span>Madder</li>
-    </ul>
-
-    <div class="cards" style="margin-top:34px">
-      <div class="card"><h3>A sign on every layer</h3>
-        <p>Each pigment carries its own hieroglyph, stamped on every band of sand, always.
-          Nobody has to lose because of what their eyes make of red and green.</p></div>
-      <div class="card"><h3>A new room every ten chambers</h3>
-        <p>Storerooms, painted corridors, flooded halls and vaults of gold, each with its
-          own fire and its own air.</p></div>
-      <div class="card"><h3>Honest difficulty</h3>
-        <p>Every chamber is solved by a machine before it ships. Nothing is impossible,
-          every hint is a real move, and wrong moves are real too. Some chambers have
-          exactly one solution.</p></div>
-      <div class="card"><h3>Stars for a short line</h3>
-        <p>Three stars for the shortest line, and never a punishment for a long one.
-          Finishing is finishing.</p></div>
-      <div class="card"><h3>Blends you can see</h3>
-        <p>Purple is carnelian and lapis, and its sand carries grains of both. Look closely
-          and the lodestone's work is written on the board before it starts.</p></div>
-      <div class="card"><h3>Nothing leaves your phone</h3>
-        <p>No account, no sign-in, no server, no analytics of ours. Your progress lives on
-          your device and nowhere else.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ------------------------- the languages -------------------------- -->
-
-<section id="languages">
-  <div class="read">
-    <p class="eyebrow">Twelve languages</p>
-    <h2>Every word, in every one of them</h2>
-    <p class="lede">With the right script face for each. More are planned.</p>
-    <ul class="langs">
-      <li><b>English</b></li>
-      <li><b>Français</b> French</li>
-      <li><b>Español</b> Spanish</li>
-      <li><b>Deutsch</b> German</li>
-      <li><b>Italiano</b> Italian</li>
-      <li><b>Polski</b> Polish</li>
-      <li><b>Português (Brasil)</b> Portuguese</li>
-      <li><b>Türkçe</b> Turkish</li>
-      <li><b>Bahasa Indonesia</b> Indonesian</li>
-      <li><b>हिन्दी</b> Hindi</li>
-      <li><b>日本語</b> Japanese</li>
-      <li><b>한국어</b> Korean</li>
-    </ul>
-  </div>
-</section>
-
-<!-- ---------------------------- the help ---------------------------- -->
-
-<section id="help">
-  <div class="read">
-    <p class="eyebrow">Help</p>
-    <h2>The short answers</h2>
-    <p class="lede">The <a href="support.html">support page</a> has these and more, in every
-      language the game speaks.</p>
-    <dl>
-      <dt>I am stuck</dt>
-      <dd>Hint is in the toolbar at the foot of the chamber: three free, then another for
-        every minute you wait, or for an advert you choose to watch, or unlimited for one
-        payment. Undo is beside it and free. So is Skip, which opens the next chamber and
-        leaves this one for later.</dd>
-
-      <dt>What does this vessel do?</dt>
-      <dd>Guide, in the same toolbar, lists every kind of vessel with a short animation of
-        it working. The first chamber that carries one shows you before you play.</dd>
-
-      <dt>I paid, and the adverts came back</dt>
-      <dd>Options, then <em>Restore purchase</em>. It is the same purchase on every device
-        signed in to your store account, at no further cost.</dd>
-
-      <dt>Does it work without internet?</dt>
-      <dd>Entirely. The whole game is on the device and nothing waits on a network.</dd>
-    </dl>
   </div>
 </section>
 
@@ -720,16 +425,17 @@
 <section class="close" id="contact">
   <div class="read">
     <h2>A thousand chambers are waiting.</h2>
-    <p class="lede" style="margin-inline:auto">Made in British Columbia, Canada, by one
-      developer who got tired of being nickel-and-dimed by sorting games.</p>
+    <p class="lede" style="margin-inline:auto">Made in British Columbia, Canada, by one developer
+      who got tired of being nickel-and-dimed by sorting games.</p>
     <div class="badges">
       <span class="badge"><small>Coming soon</small>App&nbsp;Store</span>
       <span class="badge"><small>Coming soon</small>Google&nbsp;Play</span>
     </div>
-    <p style="margin-top:28px;color:var(--dim)">
-      A bug, a chamber that felt unfair, a translation that reads oddly, a question about
-      any of the above: <a href="mailto:admin@majorcomputing.ca">admin@majorcomputing.ca</a>,
-      and a person reads it.
+    <p class="langs">In English, French, Spanish, German, Italian, Polish, Portuguese, Turkish,
+      Indonesian, Hindi, Japanese and Korean.</p>
+    <p style="margin-top:22px;color:var(--dim)">
+      Questions, bugs, a chamber that felt unfair:
+      <a href="mailto:admin@majorcomputing.ca">admin@majorcomputing.ca</a>, and a person reads it.
     </p>
   </div>
 </section>
@@ -744,24 +450,37 @@
 </footer>
 
 <script>
-  // Two courtesies, nothing more. The gameplay loop stays still for anyone
-  // who has asked their system for less motion, and the dawn plays with its
-  // sound on a tap, since a browser will not start audio on its own.
+  // Three courtesies. The hero loop stays still for anyone who asked their
+  // system for less motion; its sound comes on with a tap, since a browser
+  // will not start audio on its own; and the kiln clip plays with sound on
+  // a tap for the same reason.
   (function () {
     var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var play = document.getElementById('loop');
-    if (still && play) { play.removeAttribute('autoplay'); play.pause(); }
-
-    var box = document.getElementById('dawn-player');
-    var dawn = document.getElementById('dawn-video');
-    if (!box || !dawn) return;
-    function toggle() {
-      if (dawn.paused) { dawn.muted = false; dawn.play(); } else { dawn.pause(); }
+    var loop = document.getElementById('loop');
+    var sound = document.getElementById('sound');
+    if (still && loop) { loop.removeAttribute('autoplay'); loop.pause(); }
+    if (loop && sound) {
+      sound.addEventListener('click', function () {
+        var on = loop.muted;
+        loop.muted = !on;
+        sound.setAttribute('aria-pressed', on ? 'true' : 'false');
+        sound.querySelector('span').textContent = on ? 'Sound off' : 'Sound on';
+        if (on) { loop.currentTime = 0; }
+        loop.play();
+      });
     }
-    box.querySelector('.phone').addEventListener('click', toggle);
-    dawn.addEventListener('play', function () { box.classList.add('playing'); });
-    dawn.addEventListener('pause', function () { box.classList.remove('playing'); });
-    dawn.addEventListener('ended', function () { box.classList.remove('playing'); });
+
+    var box = document.getElementById('kiln-clip');
+    var kiln = document.getElementById('kiln-video');
+    if (!box || !kiln) return;
+    function toggle() {
+      if (kiln.paused) { kiln.muted = false; kiln.play(); } else { kiln.pause(); }
+    }
+    box.querySelector('.play').addEventListener('click', toggle);
+    kiln.addEventListener('click', toggle);
+    kiln.addEventListener('play', function () { box.classList.add('playing'); });
+    kiln.addEventListener('pause', function () { box.classList.remove('playing'); });
+    kiln.addEventListener('ended', function () { box.classList.remove('playing'); kiln.currentTime = 0; });
   })();
 </script>
 
