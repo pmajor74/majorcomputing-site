@@ -209,6 +209,24 @@
   .pitch .big { font-family: var(--serif); font-size: clamp(22px, 3vw, 28px); color: var(--ink); line-height: 1.3; margin: 0 0 18px; }
   .pitch .big b { color: var(--gilt); font-weight: normal; }
 
+  /* ------------------------- feel the music ------------------------ */
+
+  .feel-art { max-width: 380px; margin: 0 auto; }
+  .feel-art svg { width: 100%; height: auto; display: block; }
+  .feel-art .ring { stroke-width: 2.5; opacity: .18; transform-origin: 210px 210px; }
+  .feel-art .handset { filter: drop-shadow(0 18px 30px rgba(0,0,0,.6)); }
+  /* Rings that leave the phone on the beat, the way a vibration would, and
+     the bars that jump with it. Still for anyone who asked for less motion. */
+  @keyframes ring-out { 0% { transform: scale(.45); opacity: .8; } 100% { transform: scale(1); opacity: 0; } }
+  @keyframes beat-jump { 0%, 40%, 100% { transform: scaleY(1); } 12% { transform: scaleY(1.3); } }
+  @media (prefers-reduced-motion: no-preference) {
+    .feel-art .ring { animation: ring-out 2.4s cubic-bezier(.2,.6,.3,1) infinite; }
+    .feel-art .r2 { animation-delay: .6s; }
+    .feel-art .r3 { animation-delay: 1.2s; }
+    .feel-art .r4 { animation-delay: 1.8s; }
+    .feel-art .beat { transform-origin: 210px 210px; animation: beat-jump .6s ease-out infinite; }
+  }
+
   /* --------------------------- the promise ------------------------- */
 
   .promise {
@@ -246,6 +264,7 @@
     <nav>
       <a class="mark" href="#top">COLORED SANDS OF EGYPT</a>
       <a href="#play">The game</a>
+      <a href="#feel">Feel the music</a>
       <a href="#fair">Fair play</a>
       <a href="support.html">Support</a>
       <a href="privacy.html">Privacy</a>
@@ -258,7 +277,8 @@
       <h1>Colored Sands<span class="small">OF EGYPT</span></h1>
       <p class="tag">Pour the sands of Egypt until every pigment rests in a vessel of its own.</p>
       <p class="under">A thousand chambers under the necropolis. Vessels that seal, tip, hide and
-        pour the wrong way. And nothing to lose: no lives, no timers, no move limits.</p>
+        pour the wrong way. A soundtrack you can <a href="#feel">feel in your hand</a>. And nothing to
+        lose: no lives, no timers, no move limits.</p>
       <div class="badges">
         <span class="badge"><small>Coming soon</small>App&nbsp;Store</span>
         <span class="badge"><small>Coming soon</small>Google&nbsp;Play</span>
@@ -271,9 +291,9 @@
     <div>
       <div class="phone">
         <div class="screen">
-          <video id="loop" autoplay muted loop playsinline preload="metadata" poster="img/sealed-poster.jpg"
-                 aria-label="A chamber being played: vessels of layered sand are poured into one another until each holds a single pigment, a wax seal lifts, then the glass breaks and the dust rises.">
-            <source src="video/sealed.mp4" type="video/mp4">
+          <video id="loop" autoplay muted loop playsinline preload="metadata" poster="img/hero-poster.jpg"
+                 aria-label="Five chambers being played, one after another: a kiln is loaded and fired, a mirrored board pours twice at once, a blend falls through a lodestone and comes apart, sand runs a copper coil, and a jar turned on its wheel empties from the bottom until every pigment rests in a vessel of its own, the glass breaks and the dust rises.">
+            <source src="video/hero.mp4" type="video/mp4">
           </video>
           <button class="glass-button" id="sound" type="button" aria-pressed="false">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4zm12.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4z"/></svg>
@@ -304,15 +324,15 @@
         <p>
           Then the vessels start to misbehave. One is sealed in wax until you gather the
           colour it names. One hides its sand under Nile silt. One pours from the bottom.
-          One is a kiln that fires two pigments into a third. Every ten chambers or so,
+          One is a kiln that fires two pigments into a third. Every fifteen chambers or so,
           something new is waiting, and by the end they are all on the board at once.
         </p>
       </div>
       <div class="tiles">
         <div class="tile"><h3>No way to lose</h3>
           <p>No lives, no energy, no timers, no move limits. Restart is free and unlimited,
-            and hints, the extra vial and undo refill themselves: <b>one back a minute, and one of
-            the three every time a chamber earns its third star</b>. Or any of them unlimited,
+            and hints, the extra vial and undo refill themselves: <b>one back every three minutes,
+            and one of the three the first time a chamber earns its third star</b>. Or any of them unlimited,
             once, for $1.99 CAD.</p></div>
         <div class="tile"><h3>Rooms that change</h3>
           <p>Eighty-odd rooms under the necropolis, drawn in cinematic pixel art and lit by
@@ -357,6 +377,55 @@
         <p>
           One playlist runs under the whole game, oud and ney and qanun, crossfading song
           to song and never restarting for a chamber. It is a calm game. It stays calm.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ------------------------- feel the music ------------------------- -->
+
+<section id="feel">
+  <div class="wrap">
+    <div class="pitch">
+      <div class="feel-art" aria-hidden="true">
+        <svg viewBox="0 0 420 420">
+          <g class="rings" fill="none" stroke="#d9b14a">
+            <circle class="ring r1" cx="210" cy="210" r="86"/>
+            <circle class="ring r2" cx="210" cy="210" r="122"/>
+            <circle class="ring r3" cx="210" cy="210" r="158"/>
+            <circle class="ring r4" cx="210" cy="210" r="194"/>
+          </g>
+          <g class="handset">
+            <rect x="150" y="96" width="120" height="228" rx="22" fill="#0b0910" stroke="#d9b14a" stroke-width="2.5"/>
+            <rect x="160" y="112" width="100" height="196" rx="12" fill="#14101b"/>
+            <circle cx="210" cy="104" r="3" fill="#2a2433"/>
+            <!-- the game's own Feel the music mark: a beat, drawn as bars -->
+            <g class="beat" fill="#f3d479">
+              <rect x="183" y="198" width="6" height="24" rx="3"/>
+              <rect x="195" y="184" width="6" height="52" rx="3"/>
+              <rect x="207" y="170" width="6" height="80" rx="3"/>
+              <rect x="219" y="184" width="6" height="52" rx="3"/>
+              <rect x="231" y="198" width="6" height="24" rx="3"/>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <p class="eyebrow">Feel the music</p>
+        <h2>A soundtrack you can feel</h2>
+        <p class="big">Turn on <b>Feel the music</b> and the drums play in your hand: every beat of
+          the score is a vibration, timed to the note.</p>
+        <p>
+          The deep doums, the sharp hits, the rolls. Your phone's own vibration motor follows the
+          drummer, so the music is under your fingers as well as in the room, and the game's
+          rhythm reaches players who cannot hear it at all. No earbuds, no extra kit, nothing to buy.
+        </p>
+        <p>
+          Every phone hears and vibrates on its own clock, so one quick step lines them up: lay the
+          phone on a table and in about forty seconds it plays clicks, vibrates, and listens to
+          itself through its microphone until each beat lands exactly where you hear it. Tune it by
+          hand instead if you prefer, adjust how hard it hits, or skip the whole thing and play.
         </p>
       </div>
     </div>
@@ -410,15 +479,16 @@
         was built to be the other thing, and to say so before you install it.</p>
       <ul>
         <li><b>Restart.</b> Free, unlimited, forever.</li>
-        <li><b>Undo.</b> Fifteen to start, one back a minute, a chance at one more every time a
-          chamber earns its third star, or unlimited, once, for <span class="price">$1.99 CAD</span>.</li>
+        <li><b>Undo.</b> Fifteen to start, one back every three minutes, a chance at one more the
+          first time a chamber earns its third star, or unlimited, once, for <span class="price">$1.99 CAD</span>.</li>
         <li><b>All thousand chambers.</b> No pack held back, no account, no server, works offline.</li>
         <li><b>Remove the adverts, <span class="price">$4.99 CAD</span>,</b> once. This is the one
           thing with no free way to it: the adverts are what pay for the free game.</li>
         <li><b>Unlimited hints, <span class="price">$1.99 CAD</span>, or unlimited extra vials,
           <span class="price">$1.99 CAD</span>,</b> once each. Or three hints and one vial free to
-          start, another every minute you wait, one for any advert you choose to watch, one of each
-          for every tenth chamber you finish, and a chance at one more for a chamber's third star.</li>
+          start, another every three minutes you wait, one for any advert you choose to watch, one
+          vial for every tenth chamber and one hint for every twenty-fifth, and a chance at one more
+          the first time a chamber earns its third star.</li>
         <li><b>Never sold:</b> coins, gems, lives, energy, subscriptions, battle passes, or an offer
           at the moment you fail, because there is no failing.</li>
         <li><b>Adverts</b> come between chambers only, never over a puzzle, never in the first eighteen.</li>
