@@ -136,6 +136,10 @@
     font-size: 16px; line-height: 1.25; color: var(--gilt);
   }
   .badge small { color: var(--dim); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+  /* A badge that is a real link: a store the game is live in. */
+  a.badge { text-decoration: none; transition: border-color .2s, background .2s; }
+  a.badge:hover, a.badge:focus-visible { border-color: rgba(243,212,121,.85);
+    background: linear-gradient(180deg, rgba(217,177,74,.24), rgba(217,177,74,.08)); }
   .free { margin: 18px 0 0; color: var(--dim); font-size: 15px; }
   .free b { color: var(--ink); font-weight: normal; }
 
@@ -280,7 +284,7 @@
         pour the wrong way. A soundtrack you can <a href="#feel">feel in your hand</a>. And nothing to
         lose: no lives, no timers, no move limits.</p>
       <div class="badges">
-        <span class="badge"><small>Coming soon</small>App&nbsp;Store</span>
+        <a class="badge live" href="https://apps.apple.com/us/app/colored-sands-of-egypt/id6806325573" rel="noopener"><small>Download on the</small>App&nbsp;Store</a>
         <span class="badge"><small>Coming soon</small>Google&nbsp;Play</span>
       </div>
       <p class="free"><b>Restart is free, forever.</b> Four things are for sale, once
@@ -505,7 +509,7 @@
     <p class="lede" style="margin-inline:auto">Made in British Columbia, Canada, by one developer
       who got tired of being nickel-and-dimed by sorting games.</p>
     <div class="badges">
-      <span class="badge"><small>Coming soon</small>App&nbsp;Store</span>
+      <a class="badge live" href="https://apps.apple.com/us/app/colored-sands-of-egypt/id6806325573" rel="noopener"><small>Download on the</small>App&nbsp;Store</a>
       <span class="badge"><small>Coming soon</small>Google&nbsp;Play</span>
     </div>
     <p class="langs">In English, French, Spanish, German, Italian, Polish, Portuguese, Turkish,
